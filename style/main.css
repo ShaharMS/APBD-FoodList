@@ -48,15 +48,42 @@ blockquote:hover {
     align-items: center;
 }
 
+.language-switch, .sort-switch {
+    width: 100px;
+    height: 40px;
+    border: 2px solid #333333;
+    background-color: #333333;
+    color: white;
+    font-size: 0.6em;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-switch:hover, .sort-switch:hover {
+    scale: 1.1;
+}
+
+.sort-switch {
+    width: 200px;
+}
+
 #search-form {
     width: 100%;
     display: flex;
+    flex-direction: row;
     height: 40px;
     font-size: 1.2em;
 }
 
+#search-form *:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
 .search {
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     border-radius: 0px;
     border: 0px;
@@ -66,9 +93,11 @@ blockquote:hover {
     color: white;
     font-size: 1.8em;
     font-weight: 800;
+    text-align: center;
     display: flex;
-    align-items: center;
+    vertical-align: middle;
     justify-content: center;
+    align-items: center;
 }
 
 #search-food {
@@ -79,8 +108,6 @@ blockquote:hover {
     background-color: #222222;
     border: 2px solid #333333;
     color: white;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
 }
 
 #food-list {
@@ -90,6 +117,7 @@ blockquote:hover {
 
 #food-list td:nth-child(n) {
     text-align: center;
+    overflow-x: hidden;
 }
 
 #food-list td:nth-child(1) {
@@ -106,4 +134,7 @@ blockquote:hover {
 }
 #food-list th:nth-child(3) {
     justify-content: center;
+}
+#food-list tr:hover {
+    background-color: #333333;
 }

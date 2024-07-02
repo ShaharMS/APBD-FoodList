@@ -1,0 +1,392 @@
+<tr class="header">
+    <th>Name</th>
+    <th>Glycemic Index</th>
+    <th>Glycemic Load</th>
+    <th>Sugars</th>
+    <th>Carbs</th>
+</tr>
+<tr>
+    <td>Avocado</td>
+    <td><span style="color: #00ff00">10</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.9 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Avocado");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Avocado"><span style='color: #00ff00'>0.9000000000000001</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Artichoke</td>
+    <td><span style="color: #00ff00">20</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.2 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Artichoke");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Artichoke"><span style='color: #00ff00'>1.2</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Eggplant</td>
+    <td><span style="color: #00ff00">20</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.7 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Eggplant");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Eggplant"><span style='color: #00ff00'>1.7000000000000002</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Eggplant Caviar</td>
+    <td><span style="color: #9fe2bf">40</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (5.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Eggplant Caviar");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Eggplant Caviar"><span style='color: #00ff00'>5.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Sweet potato (batata, yam)</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (11.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Sweet potato (batata, yam)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Sweet potato (batata, yam)"><span style='color: #ffff00'>11.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Broccoli</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.5 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Broccoli");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Broccoli"><span style='color: #00ff00'>0.5</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Broccoli (cooked)</td>
+    <td><span style="color: #9fe2bf">45</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (3.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Broccoli (cooked)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Broccoli (cooked)"><span style='color: #00ff00'>3.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Rutabaga, fodder beets</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (6.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Rutabaga, fodder beets");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Rutabaga, fodder beets"><span style='color: #00ff00'>6.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Brussels sprouts (fresh)</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Brussels sprouts (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Brussels sprouts (fresh)"><span style='color: #00ff00'>1.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Boiled potatoes</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (12.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Boiled potatoes");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Boiled potatoes"><span style='color: #ffff00'>12.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Baked potato</td>
+    <td><span style="color: #ff0000">95</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (20 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Baked potato");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Baked potato"><span style='color: #ff0000'>20</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Squash caviar</td>
+    <td><span style="color: #ff0000">75</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (3.6 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Squash caviar");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Squash caviar"><span style='color: #00ff00'>3.6000000000000005</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Squash</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.7 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Squash");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Squash"><span style='color: #00ff00'>0.7</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Capers</td>
+    <td><span style="color: #00ff00">20</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Capers");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Capers"><span style='color: #00ff00'>0.8</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>White cabbage</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.9 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-White cabbage");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-White cabbage"><span style='color: #00ff00'>0.9000000000000001</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Brussels sprouts</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Brussels sprouts");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Brussels sprouts"><span style='color: #00ff00'>0.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Sauerkraut</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Sauerkraut");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Sauerkraut"><span style='color: #00ff00'>0.8</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Cauliflower</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Cauliflower");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Cauliflower"><span style='color: #00ff00'>0.8</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Fried potato</td>
+    <td><span style="color: #ff0000">95</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (19.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Fried potato");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Fried potato"><span style='color: #ffff00'>19.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Mashed potatoes</td>
+    <td><span style="color: #ff0000">83</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (11.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Mashed potatoes");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Mashed potatoes"><span style='color: #ffff00'>11.4</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Kohlrabi</td>
+    <td><span style="color: #00ff00">20</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (2.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Kohlrabi");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Kohlrabi"><span style='color: #00ff00'>2.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Pickled Cucumber</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.7 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Pickled Cucumber");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Pickled Cucumber"><span style='color: #00ff00'>0.7</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Black olives</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (4.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Black olives");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Black olives"><span style='color: #00ff00'>4.8</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Carrot (cooked)</td>
+    <td><span style="color: #ff0000">85</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (4.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Carrot (cooked)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Carrot (cooked)"><span style='color: #00ff00'>4.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Carrot (fresh)</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (2 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Carrot (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Carrot (fresh)"><span style='color: #00ff00'>2</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Canned vegetables (factory)</td>
+    <td><span style="color: #ffff00">65</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (3.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Canned vegetables (factory)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Canned vegetables (factory)"><span style='color: #00ff00'>3.4000000000000004</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Cucumber</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Cucumber");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Cucumber"><span style='color: #00ff00'>0.4</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Dill pickles</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.2 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Dill pickles");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Dill pickles"><span style='color: #00ff00'>0.2</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Olives</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.9 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Olives");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Olives"><span style='color: #00ff00'>0.9000000000000001</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Parsnip</td>
+    <td><span style="color: #ff0000">85</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (15.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Parsnip");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Parsnip"><span style='color: #ffff00'>15.299999999999999</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Chinese cabbage</td>
+    <td><span style="color: #00ff00">20</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Chinese cabbage");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Chinese cabbage"><span style='color: #00ff00'>0.4</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Sweet pepper</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Sweet pepper");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Sweet pepper"><span style='color: #00ff00'>0.8</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Chilli</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Chilli");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Chilli"><span style='color: #00ff00'>1.4</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Chilli Green (Fresh)</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.2 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Chilli Green (Fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Chilli Green (Fresh)"><span style='color: #00ff00'>1.2</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tomatoes (fresh)</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Tomatoes (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Tomatoes (fresh)"><span style='color: #00ff00'>1.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Ratatouille</td>
+    <td><span style="color: #00ff00">20</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Ratatouille");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Ratatouille"><span style='color: #00ff00'>1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Rhubarb</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Rhubarb");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Rhubarb"><span style='color: #00ff00'>0.4</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Radish</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.5 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Radish");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Radish"><span style='color: #00ff00'>0.5</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Turnip (cooked, boiled)</td>
+    <td><span style="color: #ff0000">85</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (3.9 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Turnip (cooked, boiled)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Turnip (cooked, boiled)"><span style='color: #00ff00'>3.9</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Turnip (raw)</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.9 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Turnip (raw)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Turnip (raw)"><span style='color: #00ff00'>1.9</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Beets (Boiled)</td>
+    <td><span style="color: #ffff00">65</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (7 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Beets (Boiled)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Beets (Boiled)"><span style='color: #00ff00'>7.000000000000001</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Beetroot (fresh)</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (2.6 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Beetroot (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Beetroot (fresh)"><span style='color: #00ff00'>2.6</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Scorzonera (Kozelec)</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Scorzonera (Kozelec)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Scorzonera (Kozelec)"><span style='color: #00ff00'>0.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Sweet pepper (red, green), paprika</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Sweet pepper (red, green), paprika");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Sweet pepper (red, green), paprika"><span style='color: #00ff00'>1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Salted cucumbers</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Salted cucumbers");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Salted cucumbers"><span style='color: #00ff00'>0.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tomatoes</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.1 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Tomatoes");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Tomatoes"><span style='color: #00ff00'>1.1</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Tomatoes (dried)</td>
+    <td><span style="color: #9fe2bf">35</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (10.2 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Tomatoes (dried)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Tomatoes (dried)"><span style='color: #ffff00'>10.2</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Jerusalem artichoke (fresh)</td>
+    <td><span style="color: #9fe2bf">50</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (6.4 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Jerusalem artichoke (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Jerusalem artichoke (fresh)"><span style='color: #00ff00'>6.4</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Turnip, turnip (fresh)</td>
+    <td><span style="color: #9fe2bf">30</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (1.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Turnip, turnip (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Turnip, turnip (fresh)"><span style='color: #00ff00'>1.8000000000000003</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Pumpkin</td>
+    <td><span style="color: #ffff00">65</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (4.5 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Pumpkin");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Pumpkin"><span style='color: #00ff00'>4.5</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Pumpkin (boiled)</td>
+    <td><span style="color: #ff0000">75</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (5.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Pumpkin (boiled)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Pumpkin (boiled)"><span style='color: #00ff00'>5.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Cauliflower (fresh)</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.8 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Cauliflower (fresh)");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Cauliflower (fresh)"><span style='color: #00ff00'>0.8</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Braised Cauliflower</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Braised Cauliflower");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Braised Cauliflower"><span style='color: #00ff00'>0</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Zucchini</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.5 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Zucchini");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Zucchini"><span style='color: #00ff00'>0.5</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <td>Chayote (Mexican cucumber), mashed from it</td>
+    <td><span style="color: #9fe2bf">50</span></td>
+    <td><input type="number" id="grams" value="100" onchange='var v = (2.3 / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-Chayote (Mexican cucumber), mashed from it");if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'> <span id="GLFIELD-Chayote (Mexican cucumber), mashed from it"><span style='color: #00ff00'>2.3</span></span></td>
+    <td></td>
+    <td></td>
+</tr>
