@@ -1,3 +1,5 @@
+const parameters = new URLSearchParams(window.location.search);
+
 let table = document.getElementById("food-list");
 
 const response = await fetch(window.location.href.split("?")[0] + "/content/table.html")
@@ -7,34 +9,6 @@ table.innerHTML = html
  * @type {HTMLTableRowElement[]}
  */
 let rows = Array.from(table.getElementsByTagName("tr"));
-let parameters = new URLSearchParams(window.location.search);
-if (!parameters.has("lang")) parameters.set("lang", "en");
-// Switch language if needed
-if (parameters.has("lang")) {
-    // This one is more serious, since it switches the entire website.
-    let index;
-    switch (parameters.get("lang")) {
-        case "en": index = 0;
-        case "he": index = 1;
-        default: index = 0;
-    }
-    const translations = await fetch(window.location.href.split("?")[0] + "/content/translations.txt")
-    const text = await translations.text()
-    let arrays = text.split("⤓");
-
-    let wordRegex = /\{\{([^}]+)\}\}/g;
-    let words = document.body.innerHTML.match(wordRegex);
-    for (let i = 0; i < words.length; i++) {
-        let word = words[i];
-        let name = word.substring(2, word.length - 2);
-        let chosen = arrays.find(str => str.includes(name));
-        if (chosen) {
-            let translation = chosen.split("¦")[index];
-            document.body.innerHTML = document.body.innerHTML.replace(word, translation);
-        }
-    }
-    console.log("Language switched to " + parameters.get("lang"));
-}
 // Sort if needed
 if (parameters.has("sort")) {
     console.log("Sorting by " + parameters.get("sort"));
@@ -154,7 +128,8 @@ for (let i = 0; i < rows.length; i++) {
         /**
          * @type {HTMLSpanElement}
          */
-        let gl = cells[2].getElementsByTagName("span")[0].getElementsByTagName("span")[0];
+        let gl = cells[3].getElementsByTagName("span")[0].getElementsByTagName("span")[0];
+        console.log(cells[3], gl);
         if (gl.innerText.includes(".")) {
             gl.innerText = gl.innerText.split(".")[0] + "." + gl.innerText.split(".")[1].substring(0, 2);
             if (gl.innerText.endsWith(".00")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 3);
@@ -165,9 +140,11 @@ for (let i = 0; i < rows.length; i++) {
 
 // All references are lost after postprocessing, except for the rows array
 
-let table = document.getElementById("food-list")
-table.innerHTML = rows.map(row => row.outerHTML).join("\n");
-console.log(table.innerHTML);
-console.log("tables done, activating buttons");
+const TABLE = document.getElementById("food-list")
+TABLE.innerHTML = rows.map(row => row.outerHTML).join("\n")
+console.log("tables done, translating if needed");
+if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang") === "en")) {
+    await translate("en");
+} else await translate(parameters.get("lang"));
 activateSwitches()
 activateSearchbar()

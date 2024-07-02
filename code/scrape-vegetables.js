@@ -14,7 +14,11 @@ function GI_Color(gi) {
  */
 function GL(gl, name) {
     console.log(gl, name);
-    let changeFunction = `var v = (${gl} / 100) * parseFloat(this.value);var e = document.getElementById("GLFIELD-${name}");if (v < 10) e.innerHTML = "<span style=\\"color: #00ff00\\">" + v + "</span>";else if (v < 20) e.innerHTML = "<span style=\\"color: #ffff00\\">" + v + "</span>";else e.innerHTML = "<span style=\\"color: #ff0000\\">" + v + "</span>";`;
+    let changeFunction = `var v = (${gl} / 100) * parseFloat(this.value);
+var e = document.getElementById("GLFIELD-${name}");
+if (v < 10) e.innerHTML = "<span style=\\"color: #00ff00\\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\\"color: #ffff00\\">" + v + "</span>";
+else e.innerHTML = "<span style=\\"color: #ff0000\\">" + v + "</span>";`;
     let gramsInput = `<input type="number" id="grams" value="100" onchange='${changeFunction}'>`;
     let v = (gl / 100) * 100;
     let glField = `<span id="GLFIELD-${name}">${v < 10 ? "<span style='color: #00ff00'>" + v + "</span>" : v < 20 ? "<span style='color: #ffff00'>" + v + "</span>" : "<span style='color: #ff0000'>" + v + "</span>" }</span>`;

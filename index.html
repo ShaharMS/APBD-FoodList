@@ -9,16 +9,16 @@
 </head>
 <body>
     <header>
-        <h1>{{APBD Foods List}}</h1>
+        <h1 ti="0">{{APBD Foods List}}</h1>
         <nav class="header-menu">
-            <a href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
-            <a href="#">{{Contribute}}</a>
-            <a href="#">{{Contact}}</a>
+            <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
+            <a ti="2" href="#">{{Contribute}}</a>
+            <a ti="3" href="#">{{Contact}}</a>
         </nav>
     </header>
 
     <div class="container">
-        <blockquote>
+        <blockquote ti="4">
             {{A list of foods sorted by multiple catorgories,
             such as glycemic indices, glycemic loads, sugers & carbs.
             Low glycemic loads & indices should be better for people with APBD.}}
@@ -28,20 +28,20 @@
             <button class="search">⌕</button>
             <input id="search-food" placeholder="Search..." autocomplete="on">
             <select class="sort-switch" id="sort-switch">
-                <option value="name-d">{{Name}} &darr;</option>
-                <option value="name-u">{{Name}} &uarr;</option>
-                <option value="glycemic-index-d">{{Glycemic Index}} &darr;</option>
-                <option value="glycemic-index-u">{{Glycemic Index}} &uarr;</option>
-                <option value="glycemic-load-d">{{Glycemic Load}}   &darr;</option>
-                <option value="glycemic-load-u">{{Glycemic Load}}   &uarr;</option>
-                <option value="sugars-d">{{Sugars}} &darr;</option>
-                <option value="sugars-u">{{Sugars}} &uarr;</option>
-                <option value="carbs-d">{{Carbs}} &darr;</option>
-                <option value="carbs-u">{{Carbs}} &uarr;</option>
+                <option ti="5" value="name-d">{{Name}} &darr;</option>
+                <option ti="5" value="name-u">{{Name}} &uarr;</option>
+                <option ti="6" value="glycemic-index-d">{{Glycemic Index}} &darr;</option>
+                <option ti="6" value="glycemic-index-u">{{Glycemic Index}} &uarr;</option>
+                <option ti="7" value="glycemic-load-d">{{Glycemic Load}}   &darr;</option>
+                <option ti="7" value="glycemic-load-u">{{Glycemic Load}}   &uarr;</option>
+                <option ti="8" value="sugars-d">{{Sugars}} &darr;</option>
+                <option ti="8" value="sugars-u">{{Sugars}} &uarr;</option>
+                <option ti="9" value="carbs-d">{{Carbs}} &darr;</option>
+                <option ti="9" value="carbs-u">{{Carbs}} &uarr;</option>
             </select>
             <select class="language-switch" id="language-switch">
-                <option value="en">{{English}}</option>
-                <option value="he">{{Hebrew}}</option>
+                <option ti="10" value="en">{{English}}</option>
+                <option ti="11" value="he">{{Hebrew}}</option>
             </select>
         </form>
     
@@ -50,6 +50,7 @@
         </table>
     </div>
     
+    <script src="code/translator.js"></script>
     <script src="code/switches.js"></script>
     <script src="code/searchbar.js"></script>
     <script type="module" src="code/table-loader.js"></script>

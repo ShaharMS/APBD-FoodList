@@ -3,9 +3,30 @@ About¦אודות⤓
 Contribute¦הוספה לאתר⤓
 Contact¦צרו קשר⤓
 A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugers & carbs. Low glycemic loads & indices should be better for people with APBD.¦רשימת מאכלים ממויינת לקטגוריות, כגון ערך גליקמי, עומס גליקמי, פחמימות וסוכרים. עומסים גליקמיים נמוכים אמורים להיות טובים יותר לאכילה לאנשים עם ABPD.⤓
-Search...¦חיפוש...⤓
 Name¦שם מאכל⤓
 Glycemic Index¦ערך גליקמי⤓
 Glycemic Load¦עומס גליקמי⤓
 Sugars¦סוכרים⤓
 Carbs¦פחמימות⤓
+English¦אנגלית⤓
+Hebrew¦עברית⤓
+Avocado¦אבוקדו⤓
+Artichoke¦ארטישוק⤓
+Eggplant¦אגגות⤓
+Sweet Potato¦בטטה⤓
+Broccoli¦ברוקלי⤓
+Cabbage¦כרוב⤓
+Brussel Sprouts¦כרוב ניצנים⤓
+Cauliflower¦כרובית⤓
+Kohlrabi¦קולורבי⤓
+Carrot¦גזר⤓
+Cucumber¦מלפפון⤓
+Cucumber (peeled)¦מלפפון (מקולף)⤓
+Tomato¦עגבניה⤓
+Radish¦צנון⤓
+Turnip¦לפת⤓
+Beetroot¦סלק⤓
+Jerusalem Artichoke¦ארטישוק ירושלמי⤓
+Pumpkin¦דלעת⤓
+Zucchini¦זוקיני⤓
+Weight (In Grams)¦משקל (בגרמים)⤓
