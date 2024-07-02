@@ -42,7 +42,7 @@ for (var i = 0; i < rows.length; i++) {
         };
 
         arr.push(`<tr>
-    <td>${food.name}</td>
+    <td>{{${food.name}}}</td>
     <td>${GI_Color(parseFloat(food.gi))}</td>
     <td>${GL(parseFloat(food.gl), food.name)}</td>
     <td></td>

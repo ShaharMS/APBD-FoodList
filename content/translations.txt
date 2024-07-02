@@ -1,0 +1,11 @@
+APBD Foods List¦רשימת מאכלים: APBD⤓
+About¦אודות⤓
+Contribute¦הוספה לאתר⤓
+Contact¦צרו קשר⤓
+A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugers & carbs. Low glycemic loads & indices should be better for people with APBD.¦רשימת מאכלים ממויינת לקטגוריות, כגון ערך גליקמי, עומס גליקמי, פחמימות וסוכרים. עומסים גליקמיים נמוכים אמורים להיות טובים יותר לאכילה לאנשים עם ABPD.⤓
+Search...¦חיפוש...⤓
+Name¦שם מאכל⤓
+Glycemic Index¦ערך גליקמי⤓
+Glycemic Load¦עומס גליקמי⤓
+Sugars¦סוכרים⤓
+Carbs¦פחמימות⤓
