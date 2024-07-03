@@ -11,6 +11,13 @@
 </head>
 
 <body>
+    <script>
+        if (window.location.href.endsWith("#")) {
+            window.location.href = window.location.origin
+        } else if (window.location.href.endsWith("/index.html")) {
+            window.location.href = window.location.origin + window.location.search
+        }
+    </script>
     <header>
         <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}</h1>
         <nav class="header-menu">

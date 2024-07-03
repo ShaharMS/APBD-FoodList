@@ -11,11 +11,12 @@ function createHelpMark(content, parent) {
     let mark = document.createElement("help-sign");
     mark.textContent = "?";
 
-    mark.onmouseenter = function () {
+    mark.onmouseenter = mark.ontouchstart = function () {
         blockquote.innerText = content;
     }
 
-    mark.onmouseleave = function () {
+
+    mark.onmouseleave = mark.ontouchend = function () {
         blockquote.innerText = blockquoteContent;
     }
 

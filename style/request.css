@@ -30,3 +30,8 @@
     font-size: 1.5em;
     padding: 5px;
 }
+
+#submition-output {
+    margin-top: 20px;
+    text-align: center;
+}

@@ -120,6 +120,7 @@ blockquote:hover {
 
 .header-menu {
     display: flex;
+    float: inline-end;
 }
 
 .container {
@@ -152,7 +153,7 @@ blockquote:hover {
 }
 
 #search-form {
-    width: 100%;
+    width: min(100%, 1200px);
     display: flex;
     flex-direction: row;
     height: 40px;
@@ -259,8 +260,24 @@ blockquote:hover {
         font-size: 0.8em;
     }
 
-    header {
-        padding-inline: 15px;
+    header a {
+        padding-inline: 10px;
+    }
+
+    #contact {
+        padding-inline-start: 15px;
+        margin-inline-end: -20px;
+    }
+
+    #discord {
+        font-size: 0.8em;
+    }
+
+    header h1 {
+        font-size: 1.1em;
+        font-weight: 700;
+        margin-inline-start: -10px;
+        margin-inline-end: -20px;
     }
 
     .container {
@@ -273,7 +290,7 @@ blockquote:hover {
         font-size: 0.8em;
     }
     
-    header {
+    header a {
         padding-inline: 10px;
     }
 }

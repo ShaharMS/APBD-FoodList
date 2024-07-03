@@ -47,3 +47,4 @@ Used in two places:¦חשוב בשני מקומות:⤓
 When Provided, This name will be added to the contribution chart (if necessary) and a "contribution point" will be added to your name¦אם מסופק, תרשם בטבלת התורמים, ותווסף "נקודת תרומה" אחת לשמך⤓
 On the developer's side, foods are documented in english, and only then translations to other languages are added¦בצד המפתח, קודם כל מתועד שם המאכל באנגלית, ורק אז מסופקים התרגומים לשפות אחרות.⤓
 I (the developer) will greatly appreciate if further translations (currently: hebrew) - it makes my job a little easier¦אני (מפתח האתר) אעריך אם אתם יכולים לתת תרגומים לשפות נוספות שהאתר תומך בהן (כרגע: עברית) - זה מקל קצת על העבודה שלי⤓
+Submitting...¦שולח בקשה...⤓

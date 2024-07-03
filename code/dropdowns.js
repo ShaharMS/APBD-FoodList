@@ -21,6 +21,15 @@ function activateDropdowns() {
         contributeMenu.style.display = "none";
     }
 
+    const switchContributeMenu = (e) => {console.log("switch trib");
+        hideContactMenu();
+        if (contributeMenu.style.display == "block") {
+            hideContributeMenu();
+        } else {
+            showContributeMenu();
+        }
+    }   
+
     const showContactMenu = (e) => {console.log("show contact");
         contactMenu.style.display = "block";
     }
@@ -29,10 +38,22 @@ function activateDropdowns() {
         contactMenu.style.display = "none";
     }
 
+    const switchContactMenu = (e) => {console.log("switch contact");
+        hideContributeMenu();
+        if (contactMenu.style.display == "block") {
+            hideContactMenu();
+        } else {
+            showContactMenu();
+        }
+    }
+
     contribute.addEventListener("mouseenter", showContributeMenu)
     contributeMenu.addEventListener("mouseenter", showContributeMenu)
     contributeMenu.addEventListener("mouseleave", hideContributeMenu)
     contribute.addEventListener("mouseleave", hideContributeMenu)
+
+    contribute.addEventListener("touchstart", switchContributeMenu)
+    contact.addEventListener("touchstart", switchContactMenu)
 
     contact.addEventListener("mouseenter", showContactMenu)
     contactMenu.addEventListener("mouseenter", showContactMenu)
