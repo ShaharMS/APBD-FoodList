@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APBD - Request food info</title>
+
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/request.css">
+</head>
+
+<body>
+    <header>
+        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
+        </h1>
+        <nav class="header-menu">
+            <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
+            <div>
+                <a ti="2" id="contribute" href="#">{{Contribute}}</a>
+                <div id="contribute-menu">
+                    <a ti="32"
+                        onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
+                        href="#">{{Request data}}</a>
+                    <a ti="33"
+                        onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search"
+                        href="#">{{Provide data}}</a>
+                </div>
+            </div>
+
+            <div>
+                <a ti="3" id="contact" href="#">{{Contact}}</a>
+                <div id="contact-menu">
+                    <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
+                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
+                        shaharms</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <blockquote ti="37">
+            {{This page exists to help you and other people, by expanding the list of documented foods.}}
+        </blockquote>
+
+        <form id="request-form">
+            <table id="request-table">
+                <tr>
+                    <th>
+                        <help ti="46">{{Name description}}.</help> 
+                        <span ti="44">Name</span>
+                    </th>
+                    <td>
+                        <input id="name" placeholder="Name...">
+                        <div class="button-row">
+                            <button type="button" ti="42">I'd rather not provide</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    
+                    <th>
+                        <help ti="47">{{Food name description}}.</help>
+                        <span ti="38">{{Food name (english)}}</span>
+                    </th>
+                    <td>
+                        <input id="food-name" placeholder="Food name...">
+                        <div class="button-row">
+                            <button type="button" ti="41">I'm not sure</button>
+                            <button type="button" ti="40">I don't know</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <help ti="48">{{Additional Translations description}} :)</help>
+                        <span ti="39">{{Additional Translations}}</span>
+                    </th>
+                    <td>
+                        <input id="translations" placeholder="Translations...">
+                        <div class="button-row">
+                            <button type="button" ti="41">I'm not sure</button>
+                            <button type="button" ti="40">I don't know any</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <button type="submit" id="submit" ti="43">{{Submit}}</button>
+    </div>
+
+    <script src="../code/dropdowns.js"></script>
+    <script src="../code/translator.js"></script>
+    <script src="../code/help-marks.js"></script>
+    <script src="../code/choice-buttons.js"></script>
+
+    <script type="module">
+        let urlParams = new URLSearchParams(window.location.search);
+
+        let lang = urlParams.get("lang") || "en";
+        await translate(lang);
+        activateDropdowns();
+        activateHelpMarks();
+        activateChoiceButtons();
+    </script>
+</body>
+
+</html>

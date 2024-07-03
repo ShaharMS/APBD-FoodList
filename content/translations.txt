@@ -2,17 +2,17 @@ APBD Foods List¦רשימת מאכלים: APBD⤓
 About¦אודות⤓
 Contribute¦הוספה לאתר⤓
 Contact¦צרו קשר⤓
-A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugers & carbs. Low glycemic loads & indices should be better for people with APBD.¦רשימת מאכלים ממויינת לקטגוריות, כגון ערך גליקמי, עומס גליקמי, פחמימות וסוכרים. עומסים גליקמיים נמוכים אמורים להיות טובים יותר לאכילה לאנשים עם ABPD.⤓
+A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugers & carbs. Low glycemic loads & indices should be better for people with APBD. Some foods are missing? click the "contribute" option to request/provide data.¦רשימת מאכלים ממויינת לקטגוריות, כגון ערך גליקמי, עומס גליקמי, פחמימות וסוכרים. עומסים גליקמיים נמוכים אמורים להיות טובים יותר לאכילה לאנשים עם ABPD. חסר מאכלים? לחצו על אפשרות "הוספה לאתר" כדי לבקש/לספק נתונים.⤓
 Name¦שם מאכל⤓
 Glycemic Index¦ערך גליקמי⤓
 Glycemic Load¦עומס גליקמי⤓
-Sugars¦סוכרים⤓
-Carbs¦פחמימות⤓
+Sugars (In Grams)¦סוכרים (בגרמים)⤓
+Carbs (In Grams)¦פחמימות (בגרמים)⤓
 English¦אנגלית⤓
 Hebrew¦עברית⤓
 Avocado¦אבוקדו⤓
 Artichoke¦ארטישוק⤓
-Eggplant¦אגגות⤓
+Eggplant¦חציל⤓
 Sweet Potato¦בטטה⤓
 Broccoli¦ברוקלי⤓
 Cabbage¦כרוב⤓
@@ -30,3 +30,20 @@ Jerusalem Artichoke¦ארטישוק ירושלמי⤓
 Pumpkin¦דלעת⤓
 Zucchini¦זוקיני⤓
 Weight (In Grams)¦משקל (בגרמים)⤓
+Request Food Info¦בקש נתוני מאכל⤓
+Provide Data¦ספק נתונים⤓
+Website Code¦קוד האתר⤓
+Discord¦דיסקורד⤓
+Username Copied¦שם משתמש הועתק⤓
+This page exists to help you and other people, by expanding the list of documented foods. Don't hesitate to choose "I dont know" or "I'm not sure". I've got your back :)¦העמוד הזה קיים על מנת לאפשר לך ולאנשים אחרים לעזור אחד לשני, ע"י הרחבה של רשימת המאכלים המתועדים. אין צורך לחשוש אם לא בטוחים/יודעים שם של מאכל - אין מה לדאוג, אני על זה :)⤓
+Food Name (english)¦שם המאכל (אנגלית)⤓
+Additional Translations¦תרגומים נוספים⤓
+I don't know¦אני לא יודע⤓
+I'm not sure¦אני לא בטוח⤓
+I'd rather not provide¦מעדיף שלא להגיד⤓
+Submit¦שלח⤓
+First And Last Name¦שם פרטי ושם משפחה⤓
+Used in two places:¦חשוב בשני מקומות:⤓
+When Provided, This name will be added to the contribution chart (if necessary) and a "contribution point" will be added to your name¦אם מסופק, תרשם בטבלת התורמים, ותווסף "נקודת תרומה" אחת לשמך⤓
+On the developer's side, foods are documented in english, and only then translations to other languages are added¦בצד המפתח, קודם כל מתועד שם המאכל באנגלית, ורק אז מסופקים התרגומים לשפות אחרות.⤓
+I (the developer) will greatly appreciate if further translations (currently: hebrew) - it makes my job a little easier¦אני (מפתח האתר) אעריך אם אתם יכולים לתת תרגומים לשפות נוספות שהאתר תומך בהן (כרגע: עברית) - זה מקל קצת על העבודה שלי⤓

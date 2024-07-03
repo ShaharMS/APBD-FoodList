@@ -37,8 +37,8 @@ if (parameters.has("sort")) {
         }
         case "glycemic-index-d": {
             rows.sort((a, b) => {
-                let aIndex = parseFloat(a.getElementsByTagName("td")[1].getElementsByTagName("span")[0].innerText);
-                let bIndex = parseFloat(b.getElementsByTagName("td")[1].getElementsByTagName("span")[0].innerText);
+                let aIndex = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
+                let bIndex = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 if (aIndex > bIndex) return 1;
                 if (aIndex < bIndex) return -1;
                 return 0;
@@ -47,8 +47,8 @@ if (parameters.has("sort")) {
         }
         case "glycemic-index-u": {
             rows.sort((a, b) => {
-                let aIndex = parseFloat(a.getElementsByTagName("td")[1].getElementsByTagName("span")[0].innerText);
-                let bIndex = parseFloat(b.getElementsByTagName("td")[1].getElementsByTagName("span")[0].innerText);
+                let aIndex = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
+                let bIndex = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 if (aIndex < bIndex) return 1;
                 if (aIndex > bIndex) return -1;
                 return 0;
@@ -57,8 +57,8 @@ if (parameters.has("sort")) {
         }
         case "glycemic-load-d": {
             rows.sort((a, b) => {
-                let aLoad = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
-                let bLoad = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
+                let aLoad = parseFloat(a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
+                let bLoad = parseFloat(b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 if (aLoad > bLoad) return 1;
                 if (aLoad < bLoad) return -1;
                 return 0;
@@ -67,8 +67,8 @@ if (parameters.has("sort")) {
         }
         case "glycemic-load-u": {
             rows.sort((a, b) => {
-                let aLoad = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
-                let bLoad = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
+                let aLoad = parseFloat(a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
+                let bLoad = parseFloat(b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 if (aLoad < bLoad) return 1;
                 if (aLoad > bLoad) return -1;
                 return 0;
@@ -77,8 +77,8 @@ if (parameters.has("sort")) {
         }
         case "sugars-d": {
             rows.sort((a, b) => {
-                let aSugars = a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText;
-                let bSugars = b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText;
+                let aSugars = parseFloat(a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
+                let bSugars = parseFloat(b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 if (aSugars > bSugars) return 1;
                 if (aSugars < bSugars) return -1;
                 return 0;
@@ -87,8 +87,8 @@ if (parameters.has("sort")) {
         }
         case "sugars-u": {
             rows.sort((a, b) => {
-                let aSugars = a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText;
-                let bSugars = b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText;
+                let aSugars = parseFloat(a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
+                let bSugars = parseFloat(b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 if (aSugars < bSugars) return 1;
                 if (aSugars > bSugars) return -1;
                 return 0;
@@ -97,8 +97,8 @@ if (parameters.has("sort")) {
         }
         case "carbs-d": {
             rows.sort((a, b) => {
-                let aCarbs = a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText;
-                let bCarbs = b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText;
+                let aCarbs = parseFloat(a.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
+                let bCarbs = parseFloat(b.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 if (aCarbs > bCarbs) return 1;
                 if (aCarbs < bCarbs) return -1;
                 return 0;
@@ -107,8 +107,8 @@ if (parameters.has("sort")) {
         }
         case "carbs-u": {
             rows.sort((a, b) => {
-                let aCarbs = a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText;
-                let bCarbs = b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText;
+                let aCarbs = parseFloat(a.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
+                let bCarbs = parseFloat(b.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 if (aCarbs < bCarbs) return 1;
                 if (aCarbs > bCarbs) return -1;
                 return 0;
@@ -143,8 +143,10 @@ for (let i = 0; i < rows.length; i++) {
 const TABLE = document.getElementById("food-list")
 TABLE.innerHTML = rows.map(row => row.outerHTML).join("\n")
 console.log("tables done, translating if needed");
+
+activateSwitches()
+activateSearchbar()
+activateDropdowns()
 if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang") === "en")) {
     await translate("en");
 } else await translate(parameters.get("lang"));
-activateSwitches()
-activateSearchbar()

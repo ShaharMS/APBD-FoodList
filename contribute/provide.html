@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APBD - Contribute To List</title>
+
+    <link rel="stylesheet" href="../style/main.css">
+</head>
+<body>
+    <header>
+        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}</h1>
+        <nav class="header-menu">
+            <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
+            <div>
+                <a ti="2" id="contribute" href="#">{{Contribute}}</a>
+                <div id="contribute-menu">
+                    <a ti="32" onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search" href="#">{{Request data}}</a>
+                    <a ti="33" onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search" href="#">{{Provide data}}</a>
+                </div>
+            </div>
+
+            <div>
+                <a ti="3" id="contact" href="#">{{Contact}}</a>
+                <div id="contact-menu">
+                    <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
+                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}: shaharms</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    
+    
+    <script src="../code/dropdowns.js"></script>
+    <script src="../code/translator.js"></script>
+
+    <script type="module">
+        let urlParams = new URLSearchParams(window.location.search);
+
+        let lang = urlParams.get("lang") || "en";
+        await translate(lang);
+        activateDropdowns();
+    </script>
+</body>
+</html>

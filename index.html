@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APBD Foods List</title>
-    <meta name="description" content="Lists of foods sorted by glycemic indices, glycemic loads, suger & carbs, To help people with APBD">
+    <meta name="description"
+        content="Lists of foods sorted by glycemic indices, glycemic loads, suger & carbs, To help people with APBD">
     <link rel="stylesheet" href="style/main.css">
 </head>
+
 <body>
     <header>
-        <h1 ti="0">{{APBD Foods List}}</h1>
+        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}</h1>
         <nav class="header-menu">
             <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
-            <a ti="2" href="#">{{Contribute}}</a>
-            <a ti="3" href="#">{{Contact}}</a>
+            <div>
+                <a ti="2" id="contribute" href="#">{{Contribute}}</a>
+                <div id="contribute-menu">
+                    <a ti="32" onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search" href="#">{{Request data}}</a>
+                    <a ti="33" onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search" href="#">{{Provide data}}</a>
+                </div>
+            </div>
+
+            <div>
+                <a ti="3" id="contact" href="#">{{Contact}}</a>
+                <div id="contact-menu">
+                    <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
+                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}: shaharms</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -23,17 +39,17 @@
             such as glycemic indices, glycemic loads, sugers & carbs.
             Low glycemic loads & indices should be better for people with APBD.}}
         </blockquote>
-    
+
         <form id="search-form">
-            <button class="search">⌕</button>
-            <input id="search-food" placeholder="Search..." autocomplete="on">
+            <button type="button" class="search">⌕</button>
+            <input id="food-search" placeholder="Search..." autocomplete="on">
             <select class="sort-switch" id="sort-switch">
                 <option ti="5" value="name-d">{{Name}} &darr;</option>
                 <option ti="5" value="name-u">{{Name}} &uarr;</option>
                 <option ti="6" value="glycemic-index-d">{{Glycemic Index}} &darr;</option>
                 <option ti="6" value="glycemic-index-u">{{Glycemic Index}} &uarr;</option>
-                <option ti="7" value="glycemic-load-d">{{Glycemic Load}}   &darr;</option>
-                <option ti="7" value="glycemic-load-u">{{Glycemic Load}}   &uarr;</option>
+                <option ti="7" value="glycemic-load-d">{{Glycemic Load}} &darr;</option>
+                <option ti="7" value="glycemic-load-u">{{Glycemic Load}} &uarr;</option>
                 <option ti="8" value="sugars-d">{{Sugars}} &darr;</option>
                 <option ti="8" value="sugars-u">{{Sugars}} &uarr;</option>
                 <option ti="9" value="carbs-d">{{Carbs}} &darr;</option>
@@ -44,15 +60,17 @@
                 <option ti="11" value="he">{{Hebrew}}</option>
             </select>
         </form>
-    
+
         <table id="food-list">
-            
+
         </table>
     </div>
-    
+
     <script src="code/translator.js"></script>
     <script src="code/switches.js"></script>
     <script src="code/searchbar.js"></script>
+    <script src="code/dropdowns.js"></script>
     <script type="module" src="code/table-loader.js"></script>
 </body>
+
 </html>
