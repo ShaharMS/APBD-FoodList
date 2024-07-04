@@ -10,14 +10,14 @@ let r = rows.shift()
 
 for (let i = 0; i < rows.length; i++) {
     let row = rows[i]
-    let normalContribs = parseInt(row.getElementsByTagName("td")[1].innerText)
-    let directContribs = parseInt(row.getElementsByTagName("td")[2].innerText)
+    let normalContribs = parseInt(row.getElementsByTagName("td")[0].innerText)
+    let directContribs = parseInt(row.getElementsByTagName("td")[1].innerText)
 
-    row.getElementsByTagName("td")[3].innerText = normalContribs + directContribs * 10
+    row.getElementsByTagName("td")[2].innerText = normalContribs + directContribs * 10
 }
 
 rows = rows.sort((a, b) => {
-    return parseInt(b.getElementsByTagName("td")[3].innerText) - parseInt(a.getElementsByTagName("td")[3].innerText)
+    return parseInt(b.getElementsByTagName("td")[2].innerText) - parseInt(a.getElementsByTagName("td")[2].innerText)
 })
 
 rows.unshift(r)
