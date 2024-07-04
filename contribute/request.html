@@ -7,7 +7,7 @@
     <title>APBD - Request food info</title>
 
     <link rel="stylesheet" href="../style/main.css">
-    <link rel="stylesheet" href="../style/request.css">
+    <link rel="stylesheet" href="../style/contribute.css">
 </head>
 
 <body>
@@ -25,6 +25,10 @@
                     <a ti="33"
                         onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search"
                         href="#">{{Provide data}}</a>
+                    <a ti="56"
+                        onclick="window.location.href = window.location.origin + '/contribute/leaderboards.html' + window.location.search"
+                        href="#">{{Leaderboards}}</a>
+
                 </div>
             </div>
 
@@ -48,7 +52,7 @@
             <table id="request-table">
                 <tr>
                     <th>
-                        <help ti="46">{{Name description}}.</help> 
+                        <help ti="46">{{Name description}}.</help>
                         <span ti="44">Name</span>
                     </th>
                     <td>
@@ -59,7 +63,7 @@
                     </td>
                 </tr>
                 <tr>
-                    
+
                     <th>
                         <help ti="47">{{Food name description}}.</help>
                         <span ti="38">{{Food name (english)}}</span>
@@ -91,7 +95,7 @@
         <button type="submit" id="submit" ti="43">{{Submit}}</button>
         <h3 id="submition-output"></h3>
 
-        
+
     </div>
 
     <script src="../code/dropdowns.js"></script>
@@ -101,9 +105,9 @@
 
     <script>
         let submit = document.getElementById("submit");
+        let output = document.getElementById("submition-output");
         submit.onclick = () => {
             submit.textContent = translationMatrix[49][languageIndex];
-            let output = document.getElementById("submition-output");
 
             let name = document.getElementById("name").value;
             let name_RatherNotProvide = document.getElementById("n-np").classList.contains("selected");

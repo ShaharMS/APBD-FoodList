@@ -2,13 +2,14 @@ const parameters = new URLSearchParams(window.location.search);
 
 let table = document.getElementById("food-list");
 
-const response = await fetch(window.location.href.split("?")[0] + "/content/table.html")
+const response = await fetch(window.location.origin + "/content/table.html")
 const html = await response.text()
 table.innerHTML = html
 /**
  * @type {HTMLTableRowElement[]}
  */
 let rows = Array.from(table.getElementsByTagName("tr"));
+
 // Sort if needed
 if (parameters.has("sort")) {
     console.log("Sorting by " + parameters.get("sort"));
@@ -122,21 +123,6 @@ if (parameters.has("sort")) {
 
 console.log("postprocessing table");
 
-for (let i = 0; i < rows.length; i++) {
-    let cells = rows[i].getElementsByTagName("td");
-    if (cells.length > 0) {
-        /**
-         * @type {HTMLSpanElement}
-         */
-        let gl = cells[3].getElementsByTagName("span")[0].getElementsByTagName("span")[0];
-        console.log(cells[3], gl);
-        if (gl.innerText.includes(".")) {
-            gl.innerText = gl.innerText.split(".")[0] + "." + gl.innerText.split(".")[1].substring(0, 2);
-            if (gl.innerText.endsWith(".00")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 3);
-            else if (gl.innerText.endsWith("0")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 1);
-        }
-    }
-}
 
 // All references are lost after postprocessing, except for the rows array
 
@@ -150,3 +136,42 @@ activateDropdowns()
 if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang") === "en")) {
     await translate("en");
 } else await translate(parameters.get("lang"));
+
+// translate resets HTML references
+
+table = document.getElementById("food-list");
+rows = table.getElementsByTagName("tr");
+for (let i = 0; i < rows.length; i++) {
+    let cells = rows[i].getElementsByTagName("td");
+    if (cells.length > 0) {
+
+        function fixFloatingPoint() {
+            let gl = cells[3].getElementsByTagName("span")[0].getElementsByTagName("span")[0];
+            let sugar = cells[4].getElementsByTagName("span")[0];
+            let carbs = cells[5].getElementsByTagName("span")[0];
+            
+            if (gl.innerText.includes(".")) {
+                gl.innerText = gl.innerText.split(".")[0] + "." + gl.innerText.split(".")[1].substring(0, 3);
+                if (gl.innerText.endsWith(".000")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 4);
+                if (gl.innerText.endsWith("00")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 2);
+                else if (gl.innerText.endsWith("0")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 1);
+            }
+            if (sugar.innerText.includes(".")) {
+                sugar.innerText = sugar.innerText.split(".")[0] + "." + sugar.innerText.split(".")[1].substring(0, 3);
+                if (sugar.innerText.endsWith(".000")) sugar.innerText = sugar.innerText.substring(0, sugar.innerText.length - 4);
+                else if (sugar.innerText.endsWith("00")) sugar.innerText = sugar.innerText.substring(0, sugar.innerText.length - 2);
+                else if (sugar.innerText.endsWith("0")) sugar.innerText = sugar.innerText.substring(0, sugar.innerText.length - 1); 
+            }
+            if (carbs.innerText.includes(".")) {
+                carbs.innerText = carbs.innerText.split(".")[0] + "." + carbs.innerText.split(".")[1].substring(0, 3);
+                if (carbs.innerText.endsWith(".000")) carbs.innerText = carbs.innerText.substring(0, carbs.innerText.length - 4);
+                else if (carbs.innerText.endsWith("00")) carbs.innerText = carbs.innerText.substring(0, carbs.innerText.length - 2);
+                else if (carbs.innerText.endsWith("0")) carbs.innerText = carbs.innerText.substring(0, carbs.innerText.length - 1);
+            }
+        }
+        fixFloatingPoint();
+        
+        let input = cells[0].getElementsByTagName("input")[0];
+        input.addEventListener("change", fixFloatingPoint);
+    }
+}

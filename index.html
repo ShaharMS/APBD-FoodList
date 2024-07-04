@@ -19,14 +19,22 @@
         }
     </script>
     <header>
-        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}</h1>
+        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
+        </h1>
         <nav class="header-menu">
-            <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
+            <a ti="1" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
             <div>
                 <a ti="2" id="contribute" href="#">{{Contribute}}</a>
                 <div id="contribute-menu">
-                    <a ti="32" onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search" href="#">{{Request data}}</a>
-                    <a ti="33" onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search" href="#">{{Provide data}}</a>
+                    <a ti="32"
+                        onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
+                        href="#">{{Request data}}</a>
+                    <a ti="33"
+                        onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search"
+                        href="#">{{Provide data}}</a>
+                    <a ti="56"
+                        onclick="window.location.href = window.location.origin + '/contribute/leaderboards.html' + window.location.search"
+                        href="#">{{Leaderboards}}</a>
                 </div>
             </div>
 
@@ -34,7 +42,8 @@
                 <a ti="3" id="contact" href="#">{{Contact}}</a>
                 <div id="contact-menu">
                     <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
-                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}: shaharms</a>
+                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
+                        shaharms</a>
                 </div>
             </div>
         </nav>
@@ -57,10 +66,10 @@
                 <option ti="6" value="glycemic-index-u">{{Glycemic Index}} &uarr;</option>
                 <option ti="7" value="glycemic-load-d">{{Glycemic Load}} &darr;</option>
                 <option ti="7" value="glycemic-load-u">{{Glycemic Load}} &uarr;</option>
-                <option ti="8" value="sugars-d">{{Sugars}} &darr;</option>
-                <option ti="8" value="sugars-u">{{Sugars}} &uarr;</option>
-                <option ti="9" value="carbs-d">{{Carbs}} &darr;</option>
-                <option ti="9" value="carbs-u">{{Carbs}} &uarr;</option>
+                <option ti="8 50" value="sugars-d">{{Sugars}}&darr;</option>
+                <option ti="8 50" value="sugars-u">{{Sugars}}&uarr;</option>
+                <option ti="9 50" value="carbs-d">{{Carbs}}&darr;</option>
+                <option ti="9 50" value="carbs-u">{{Carbs}}&uarr;</option>
             </select>
             <select class="language-switch" id="language-switch">
                 <option ti="10" value="en">{{English}}</option>

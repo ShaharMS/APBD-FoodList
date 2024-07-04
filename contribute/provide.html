@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APBD - Contribute To List</title>
 
     <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/contribute.css">
+
 </head>
+
 <body>
     <header>
-        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}</h1>
+        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
+        </h1>
         <nav class="header-menu">
             <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
             <div>
                 <a ti="2" id="contribute" href="#">{{Contribute}}</a>
                 <div id="contribute-menu">
-                    <a ti="32" onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search" href="#">{{Request data}}</a>
-                    <a ti="33" onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search" href="#">{{Provide data}}</a>
+                    <a ti="32"
+                        onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
+                        href="#">{{Request data}}</a>
+                    <a ti="33"
+                        onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search"
+                        href="#">{{Provide data}}</a>
+                    <a ti="56"
+                        onclick="window.location.href = window.location.origin + '/contribute/leaderboards.html' + window.location.search"
+                        href="#">{{Leaderboards}}</a>
                 </div>
             </div>
 
@@ -24,16 +36,251 @@
                 <a ti="3" id="contact" href="#">{{Contact}}</a>
                 <div id="contact-menu">
                     <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
-                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}: shaharms</a>
+                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
+                        shaharms</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    
-    
+    <div class="container">
+        <blockquote ti="37" style="margin-top: 30px;">
+            {{This page exists to help you and other people, by expanding the list of documented foods.}}
+        </blockquote>
+
+        <form id="provide-form">
+            <table id="provide-table">
+                <tr>
+                    <th>
+                        <help ti="46">{{Name description}}.</help>
+                        <span ti="44">Name</span>
+                    </th>
+                    <td>
+                        <input id="name" placeholder="Name...">
+                        <div class="button-row">
+                            <button id="n-np" type="button" ti="42">I'd rather not provide</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+
+                    <th>
+                        <help ti="47">{{Food name description}}.</help>
+                        <span ti="38">{{Food name (english)}}</span>
+                    </th>
+                    <td>
+                        <input id="food-name" placeholder="Food name...">
+                        <div class="button-row">
+                            <button id="fn-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="fn-dk" type="button" ti="40">I don't know</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <help ti="48">{{Additional Translations description}} :)</help>
+                        <span ti="39">{{Additional Translations}}</span>
+                    </th>
+                    <td>
+                        <input id="translations" placeholder="Translations...">
+                        <div class="button-row">
+                            <button id="t-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="t-dk" type="button" ti="40">I don't know any</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <help ti="52">{{Glycemic Index description}}.</help>
+                        <span ti="6">{{Glycemic Index}}</span>
+                    </th>
+                    <td>
+                        <input id="glycemic-index" type="number" placeholder="Between 0 and 100" min="0" max="100">
+                        <div class="button-row">
+                            <button id="gi-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="gi-dk" type="button" ti="40">I don't know any</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <help ti="53">{{Glycemic Load description}}.</help>
+                        <span ti="7 51">{{Glycemic Load}} ({{Per 100g}})</span>
+                    </th>
+                    <td>
+                        <input id="glycemic-load" type="number" placeholder="Glycemic Load" min="0">
+                        <div class="button-row">
+                            <button id="gl-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="gl-dk" type="button" ti="40">I don't know any</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <help ti="54">{{Sugar description}}.</help>
+                        <span ti="8 51">{{Sugar}} ({{Per 100g}})</span>
+                    </th>
+                    <td>
+                        <input id="sugar" type="number" placeholder="Sugar (grams)" min="0">
+                        <div class="button-row">
+                            <button id="s-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="s-dk" type="button" ti="40">I don't know any</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        <help ti="55">{{Carbs description}}.</help>
+                        <span ti="9 51">{{Carbs}} ({{Per 100g}})</span>
+                    </th>
+                    <td>
+                        <input id="carbs" type="number" placeholder="Carbs (grams)" min="0">
+                        <div class="button-row">
+                            <button id="c-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="c-dk" type="button" ti="40">I don't know any</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <button type="submit" id="submit" ti="43">{{Submit}}</button>
+        <h3 id="submition-output"></h3>
+
+        
+    <script>
+        let submit = document.getElementById("submit");
+        let output = document.getElementById("submition-output");
+        submit.onclick = () => {
+            submit.textContent = translationMatrix[43][languageIndex];
+
+            output.innerHTML = "";
+
+            let name = document.getElementById("name").value;
+            let name__RatherNotProvided = document.getElementById("n-np").checked;
+
+            if (name.length === 0 && !name_RatherNotProvide) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide a name, or select 'I'd rather not provide'.";
+                    case 1: output.innerHTML = "אנא הכנס שם, או בחר 'מעדיף שלא להגיד'";
+                }
+                return;
+            }
+
+            let foodName = document.getElementById("food-name").value;
+            let foodName__NotSure = document.getElementById("fn-ns").checked;
+            let foodName__DontKnow = document.getElementById("fn-dk").checked;
+
+            if (foodName.length === 0 && !foodName__DontKnow) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide a food name, or select 'I don't know'.";
+                    case 1: output.innerHTML = "אנא הכנס שם מאכל, או בחר 'אני לא יודע,'";
+                }
+                return;
+            }
+
+            let translations = document.getElementById("translations").value;
+            let translations__NotSure = document.getElementById("t-ns").checked;
+            let translations__DontKnowAny = document.getElementById("t-dk").checked;
+
+            let glycemicIndex = document.getElementById("glycemic-index").value;
+            let glycemicIndex__NotSure = document.getElementById("gi-ns").checked;
+            let glycemicIndex__DontKnow = document.getElementById("gi-dk").checked;
+
+            if (glycemicIndex.length === 0 && !glycemicIndex__DontKnow) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide a glycemic index, or select 'I don't know'.";
+                    case 1: output.innerHTML = "אנא הכנס ערך גליקמי, או בחר 'אני לא יודע,'";
+                }
+                return;
+            }
+
+            let glycemicLoad = document.getElementById("glycemic-load").value;
+            let glycemicLoad__NotSure = document.getElementById("gl-ns").checked;
+            let glycemicLoad__DontKnow = document.getElementById("gl-dk").checked;
+
+            if (glycemicLoad.length === 0 && !glycemicLoad__DontKnow) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide a glycemic load, or select 'I don't know'.";
+                    case 1: output.innerHTML = "אנא הכנס עומס גליקמי, או בחר 'אני לא יודע,'";
+                }
+                return;
+            }
+
+            let sugar = document.getElementById("sugar").value;
+            let sugar__NotSure = document.getElementById("s-ns").checked;
+            let sugar__DontKnow = document.getElementById("s-dk").checked;
+
+            if (sugar.length === 0 && !sugar__DontKnow) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide sugar amount, or select 'I don't know'.";
+                    case 1: output.innerHTML = "אנא הכנס כמות סוכר, או בחר 'אני לא יודע,'";
+                }
+                return;
+            }
+
+            let carbs = document.getElementById("carbs").value;
+            let carbs__NotSure = document.getElementById("c-ns").checked;
+            let carbs__DontKnow = document.getElementById("c-dk").checked;
+
+            if (carbs.length === 0 && !carbs__DontKnow) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide carbs amount, or select 'I don't know'.";
+                    case 1: output.innerHTML = "אנא הכנס כמות פחמימות, או בחר 'אני לא יודע,'";
+                }
+                return;
+            }
+
+            let payload = {
+                type: "provide",
+                name: name.length === 0 || name_RatherNotProvide ? "Anonymous" : name,
+                foodName: foodName.length === 0 ? "Not Given" : foodName,
+                foodNameSecurity: foodName__DontKnow ? 0 : (foodName__NotSure ? 1 : 2),
+                translations: translations.length === 0 ? "Not Given" : translations,
+                translationsSecurity: translations__DontKnowAny ? 0 : (translations__NotSure ? 1 : 2),
+                glycemicIndex: glycemicIndex.length === 0 ? "Not Given" : glycemicIndex,
+                glycemicIndexSecurity: glycemicIndex__DontKnow ? 0 : (glycemicIndex__NotSure ? 1 : 2),
+                glycemicLoad: glycemicLoad.length === 0 ? "Not Given" : glycemicLoad,
+                glycemicLoadSecurity: glycemicLoad__DontKnow ? 0 : (glycemicLoad__NotSure ? 1 : 2),
+                sugar: sugar.length === 0 ? "Not Given" : sugar,
+                sugarSecurity: sugar__DontKnow ? 0 : (sugar__NotSure ? 1 : 2),
+                carbs: carbs.length === 0 ? "Not Given" : carbs,
+                carbsSecurity: carbs__DontKnow ? 0 : (carbs__NotSure ? 1 : 2),
+            }
+
+            if (payload.name.length === 0 && payload.translations.length === 0 && payload.glycemicIndex.length === -1 && payload.glycemicLoad.length === -1 && payload.sugar.length === -1 && payload.carbs.length === -1) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Contribution not submitted: no information provided.";
+                    case 1: output.innerHTML = "תרומת תוכן לא נשלחה: לא סופק מידע.";
+                }
+                return;
+            } else {
+                fetch("https://apbd-contrib-bot.shaharmsecond.workers.dev/", {
+                    /*Need a post request with payload*/
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                    /* CORS...*/
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        output.innerHTML = data;
+                        submit.textContent = translationMatrix[43][languageIndex];
+                    });
+            }
+
+
+        }   
+    </script>
+
+    </div>
+
     <script src="../code/dropdowns.js"></script>
     <script src="../code/translator.js"></script>
+    <script src="../code/help-marks.js"></script>
+    <script src="../code/choice-buttons.js"></script>
 
     <script type="module">
         let urlParams = new URLSearchParams(window.location.search);
@@ -41,6 +288,9 @@
         let lang = urlParams.get("lang") || "en";
         await translate(lang);
         activateDropdowns();
+        activateHelpMarks();
+        activateChoiceButtons();
     </script>
 </body>
+
 </html>
