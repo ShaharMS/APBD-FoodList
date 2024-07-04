@@ -1,23 +1,28 @@
 > **Important** - I'm not a medical professional, therefore I only have limited knowledge about APBD. I'm just tryna help :)
 
-# APBD-FoodList
-Lists of foods sorted by glycemic indices, glycemic loads, suger & carbs.
+# APBD Food List
 
+Lists of foods sorted by glycemic indices, glycemic loads, sugar & carbs.
+
+Should 
 
 ## Goal
-Providing a list, from which people with APBD can eat/cook "safely".
+
+Providing a list, from which people with APBD can eat/cook while being sure the food they're eating doesnt harm them unnecessarily.
+
+The aim for the food list itself, is to contain most if not all of the simple fruits & vegetables, and even have data about specific products from specific companies.
 
 ## Contribute
 
 This website is open source - pull requests are welcome, and credits should be given to contributors on the main/about web page (this isn't decided yet).
 
-An in-site form for non-developer contributors is planned, allowing for people to ask for food additions using minimal identification
+On the website itself there are also contribution forms, intended to steamline the contribution process, expand the list, and in-turn make the website more useful.
 
-While I am aware this is abusable, I'm willing to bare the possiblility of this feature's abuse, to have a broader range of food.
+While I am aware this is abusable, I'm willing to endure abuse of this feature, Since the benefits greatly outwheigh the risks (benefit: expansion of the website, risk: potentially needing to fight off spam on the development end)
 
-## Theoretical Background
+## APBD: Theoretical Background
 
-When blood suger is high, the body tries to produce glycogen, which is used to store the sugar for later use.
+When blood sugar is high, the body tries to produce glycogen, which is used to store the sugar for later use.
 
 One of the steps to produce glycogen is called **branching**, in which series of glucose molecules are capped, and other series of glucosed can be attached to that cap, giving glycogen a tree-like structure.
 
@@ -33,8 +38,8 @@ Complex carbohydrates are digested slowly, causing a more gradual release of glu
 
 Therefore, I assume that less blood glucose spikes ar good, and we can expect these spikes from foods with a high glycemic load.
 
-Glycemic load is calculated by multiplying a foods glycemic index, converted from 0 to 100 percentage to a 0 to 1 range, multiplied by its amount in grams:
-$$Load_{grams} = \frac{index}{100} \cdot grams$$
+Glycemic load is calculated by multiplying a foods glycemic index, converted from 0 to 100 percentage to a 0 to 1 range, multiplied by the amount of carbs the food contains if the food weighs `grams`:
+$$Load_{grams} = \frac{index}{100} \cdot FoodCarbs(grams)$$
 
 
 ## Liability
