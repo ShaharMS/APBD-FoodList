@@ -65,3 +65,8 @@ Contributions¦תרומות תוכן⤓
 Direct Contributions¦תרומות תוכן ישירות⤓ 
 Score¦נקודות⤓
 Contribution Leaderboards¦לוח הישגים⤓
+Onion¦APBD Foods List¦רשימת מאכלים: APBD⤓
+About¦אודות⤓
+Contribute¦הוספה לאתר⤓
+Contact¦צרו קשר⤓
+A list of foods sorted by multiple catorgories⤓
