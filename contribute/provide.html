@@ -238,17 +238,17 @@
                 foodNameSecurity: foodName__DontKnow ? 0 : (foodName__NotSure ? 1 : 2),
                 translations: translations.length === 0 ? "Not Given" : translations,
                 translationsSecurity: translations__DontKnowAny ? 0 : (translations__NotSure ? 1 : 2),
-                glycemicIndex: glycemicIndex.length === 0 ? "Not Given" : glycemicIndex,
+                glycemicIndex: glycemicIndex.length === 0 ? -1 : parseFloat(glycemicIndex),
                 glycemicIndexSecurity: glycemicIndex__DontKnow ? 0 : (glycemicIndex__NotSure ? 1 : 2),
-                glycemicLoad: glycemicLoad.length === 0 ? "Not Given" : glycemicLoad,
+                glycemicLoad: glycemicLoad.length === 0 ? -1 : parseFloat(glycemicLoad),
                 glycemicLoadSecurity: glycemicLoad__DontKnow ? 0 : (glycemicLoad__NotSure ? 1 : 2),
-                sugar: sugar.length === 0 ? "Not Given" : sugar,
+                sugar: sugar.length === 0 ? -1 : parseFloat(sugar),
                 sugarSecurity: sugar__DontKnow ? 0 : (sugar__NotSure ? 1 : 2),
-                carbs: carbs.length === 0 ? "Not Given" : carbs,
+                carbs: carbs.length === 0 ? -1 : parseFloat(carbs),
                 carbsSecurity: carbs__DontKnow ? 0 : (carbs__NotSure ? 1 : 2),
             }
 
-            if (payload.name.length === 0 && payload.translations.length === 0 && payload.glycemicIndex.length === -1 && payload.glycemicLoad.length === -1 && payload.sugar.length === -1 && payload.carbs.length === -1) {
+            if (payload.name.length === 0 && payload.translations.length === 0 && payload.glycemicIndex === -1 && payload.glycemicLoad === -1 && payload.sugar === -1 && payload.carbs === -1) {
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Contribution not submitted: no information provided.";
                     case 1: output.innerHTML = "תרומת תוכן לא נשלחה: לא סופק מידע.";
