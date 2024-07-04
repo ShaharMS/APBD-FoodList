@@ -152,14 +152,14 @@
         let submit = document.getElementById("submit");
         let output = document.getElementById("submition-output");
         submit.onclick = () => {
-            submit.textContent = translationMatrix[43][languageIndex];
+            submit.textContent = translationMatrix[49][languageIndex];
 
             output.innerHTML = "";
 
             let name = document.getElementById("name").value;
-            let name__RatherNotProvided = document.getElementById("n-np").checked;
+            let name__RatherNotProvide = document.getElementById("n-np").classList.contains("selected");
 
-            if (name.length === 0 && !name_RatherNotProvide) {
+            if (name.length === 0 && !name__RatherNotProvide) {
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Please provide a name, or select 'I'd rather not provide'.";
                     case 1: output.innerHTML = "אנא הכנס שם, או בחר 'מעדיף שלא להגיד'";
@@ -168,8 +168,8 @@
             }
 
             let foodName = document.getElementById("food-name").value;
-            let foodName__NotSure = document.getElementById("fn-ns").checked;
-            let foodName__DontKnow = document.getElementById("fn-dk").checked;
+            let foodName__NotSure = document.getElementById("fn-ns").classList.contains("selected");
+            let foodName__DontKnow = document.getElementById("fn-dk").classList.contains("selected");
 
             if (foodName.length === 0 && !foodName__DontKnow) {
                 switch (languageIndex) {
@@ -180,12 +180,12 @@
             }
 
             let translations = document.getElementById("translations").value;
-            let translations__NotSure = document.getElementById("t-ns").checked;
-            let translations__DontKnowAny = document.getElementById("t-dk").checked;
+            let translations__NotSure = document.getElementById("t-ns").classList.contains("selected");
+            let translations__DontKnowAny = document.getElementById("t-dk").classList.contains("selected");
 
             let glycemicIndex = document.getElementById("glycemic-index").value;
-            let glycemicIndex__NotSure = document.getElementById("gi-ns").checked;
-            let glycemicIndex__DontKnow = document.getElementById("gi-dk").checked;
+            let glycemicIndex__NotSure = document.getElementById("gi-ns").classList.contains("selected");
+            let glycemicIndex__DontKnow = document.getElementById("gi-dk").classList.contains("selected");
 
             if (glycemicIndex.length === 0 && !glycemicIndex__DontKnow) {
                 switch (languageIndex) {
@@ -196,8 +196,8 @@
             }
 
             let glycemicLoad = document.getElementById("glycemic-load").value;
-            let glycemicLoad__NotSure = document.getElementById("gl-ns").checked;
-            let glycemicLoad__DontKnow = document.getElementById("gl-dk").checked;
+            let glycemicLoad__NotSure = document.getElementById("gl-ns").classList.contains("selected");
+            let glycemicLoad__DontKnow = document.getElementById("gl-dk").classList.contains("selected");
 
             if (glycemicLoad.length === 0 && !glycemicLoad__DontKnow) {
                 switch (languageIndex) {
@@ -208,8 +208,8 @@
             }
 
             let sugar = document.getElementById("sugar").value;
-            let sugar__NotSure = document.getElementById("s-ns").checked;
-            let sugar__DontKnow = document.getElementById("s-dk").checked;
+            let sugar__NotSure = document.getElementById("s-ns").classList.contains("selected");
+            let sugar__DontKnow = document.getElementById("s-dk").classList.contains("selected");
 
             if (sugar.length === 0 && !sugar__DontKnow) {
                 switch (languageIndex) {
@@ -220,8 +220,8 @@
             }
 
             let carbs = document.getElementById("carbs").value;
-            let carbs__NotSure = document.getElementById("c-ns").checked;
-            let carbs__DontKnow = document.getElementById("c-dk").checked;
+            let carbs__NotSure = document.getElementById("c-ns").classList.contains("selected");
+            let carbs__DontKnow = document.getElementById("c-dk").classList.contains("selected");
 
             if (carbs.length === 0 && !carbs__DontKnow) {
                 switch (languageIndex) {
@@ -233,10 +233,10 @@
 
             let payload = {
                 type: "provide",
-                name: name.length === 0 || name_RatherNotProvide ? "Anonymous" : name,
-                foodName: foodName.length === 0 ? "Not Given" : foodName,
+                name: name.length === 0 || name__RatherNotProvide ? "Anonymous" : name,
+                foodName: foodName.length === 0 ? "Food Item" : foodName,
                 foodNameSecurity: foodName__DontKnow ? 0 : (foodName__NotSure ? 1 : 2),
-                translations: translations.length === 0 ? "Not Given" : translations,
+                translations: translations.length === 0 ? "<translations not given>" : translations,
                 translationsSecurity: translations__DontKnowAny ? 0 : (translations__NotSure ? 1 : 2),
                 glycemicIndex: glycemicIndex.length === 0 ? -1 : parseFloat(glycemicIndex),
                 glycemicIndexSecurity: glycemicIndex__DontKnow ? 0 : (glycemicIndex__NotSure ? 1 : 2),
