@@ -323,3 +323,18 @@
 	<td><span id="SUGARFIELD-Onion">4.2</span></td>
 	<td><span id="CARBFIELD-Onion">10.94</span></td>
 </tr>
+<tr>
+	<td><input type="number" id="grams" value="100"
+	    onchange='var v = (0 / 100) * parseFloat(this.value);
+	    document.getElementById("SUGARFIELD-Water").innerText = (0 / 100) * this.value;
+	    document.getElementById("CARBFIELD-Water").innerText = (0 / 100) * this.value;
+	    var e = document.getElementById("GLFIELD-Water");
+	    if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+	    else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'>
+	</td>
+	<td ti="68">{{Water}}</td>
+	<td><span style="color: #00ff00">0</span></td>
+	<td><span id="GLFIELD-Water"><span style='color: #00ff00'>0</span></span></td>
+	<td><span id="SUGARFIELD-Water">0</span></td>
+	<td><span id="CARBFIELD-Water">0</span></td>
+</tr>
