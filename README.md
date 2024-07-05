@@ -4,8 +4,6 @@
 
 Lists of foods sorted by glycemic indices, glycemic loads, sugar & carbs.
 
-Should 
-
 ## Goal
 
 Providing a list, from which people with APBD can eat/cook while being sure the food they're eating doesnt harm them unnecessarily.
