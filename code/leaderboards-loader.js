@@ -27,3 +27,11 @@ table.innerHTML = ""
 for (let i = 0; i < rows.length; i++) {
     table.appendChild(rows[i])
 }
+
+let urlParams = new URLSearchParams(window.location.search);
+
+        let lang = urlParams.get("lang") || "en";
+        await translate(lang);
+        activateDropdowns();
+        activateHelpMarks();
+        activateChoiceButtons();
