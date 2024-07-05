@@ -52,8 +52,8 @@ function activateDropdowns() {
     contributeMenu.addEventListener("mouseleave", hideContributeMenu)
     contribute.addEventListener("mouseleave", hideContributeMenu)
 
-    contribute.addEventListener("touchstart", switchContributeMenu)
-    contact.addEventListener("touchstart", switchContactMenu)
+    contribute.addEventListener("touchstart", switchContributeMenu, {passive: true})
+    contact.addEventListener("touchstart", switchContactMenu, {passive: true})
 
     contact.addEventListener("mouseenter", showContactMenu)
     contactMenu.addEventListener("mouseenter", showContactMenu)
