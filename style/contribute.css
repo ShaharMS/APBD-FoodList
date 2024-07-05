@@ -33,10 +33,33 @@
     margin-top: 20px;
     font-size: 1.5em;
     padding: 5px;
+    width: 100px;
+    height: 46px;
     cursor: pointer;
+    font-weight: 400;
+}
+
+#language-switch {
+    background-color: #2b2a33;
+    border: 1px solid #8f8f9d;
+    border-radius: 4px;
+    width: 100px;
+    height: 46px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 #submition-output {
     margin-top: 20px;
     text-align: center;
+    unicode-bidi: embed;
 }

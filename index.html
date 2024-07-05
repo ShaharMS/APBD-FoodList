@@ -51,12 +51,10 @@
 
     <div class="container">
         <blockquote ti="4">
-            {{A list of foods sorted by multiple catorgories,
-            such as glycemic indices, glycemic loads, sugers & carbs.
-            Low glycemic loads & indices should be better for people with APBD.}}
+            {{A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugars & carbs. Low glycemic loads & indices should be better for people with APBD. Some foods are missing? click the "contribute" option}}
         </blockquote>
 
-        <form id="search-form">
+        <div id="search-form">
             <button type="button" class="search">⌕</button>
             <input id="food-search" placeholder="Search..." autocomplete="on">
             <select class="sort-switch" id="sort-switch">
@@ -66,16 +64,16 @@
                 <option ti="6" value="glycemic-index-u">{{Glycemic Index}} &uarr;</option>
                 <option ti="7" value="glycemic-load-d">{{Glycemic Load}} &darr;</option>
                 <option ti="7" value="glycemic-load-u">{{Glycemic Load}} &uarr;</option>
-                <option ti="8 50" value="sugars-d">{{Sugars}}&darr;</option>
-                <option ti="8 50" value="sugars-u">{{Sugars}}&uarr;</option>
-                <option ti="9 50" value="carbs-d">{{Carbs}}&darr;</option>
-                <option ti="9 50" value="carbs-u">{{Carbs}}&uarr;</option>
+                <option ti="8 50" value="sugars-d">{{Sugars}} ({{In Grams}})&darr;</option>
+                <option ti="8 50" value="sugars-u">{{Sugars}} ({{In Grams}})&uarr;</option>
+                <option ti="9 50" value="carbs-d">{{Carbs}} ({{In Grams}})&darr;</option>
+                <option ti="9 50" value="carbs-u">{{Carbs}} ({{In Grams}})&uarr;</option>
             </select>
             <select class="language-switch" id="language-switch">
                 <option ti="10" value="en">{{English}}</option>
                 <option ti="11" value="he">{{Hebrew}}</option>
             </select>
-        </form>
+        </div>
 
         <table id="food-list">
 

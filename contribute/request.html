@@ -92,7 +92,13 @@
             </table>
         </form>
 
-        <button type="submit" id="submit" ti="43">{{Submit}}</button>
+        <div class="row">
+            <button type="submit" id="submit" ti="43">{{Submit}}</button>
+            <select class="language-switch" id="language-switch">
+                <option ti="10" value="en">{{English}}</option>
+                <option ti="11" value="he">{{Hebrew}}</option>
+            </select>
+        </div>
         <h3 id="submition-output"></h3>
 
 
@@ -102,11 +108,16 @@
     <script src="../code/translator.js"></script>
     <script src="../code/help-marks.js"></script>
     <script src="../code/choice-buttons.js"></script>
+    <script src="../code/switches.js"></script>
 
     <script>
         let submit = document.getElementById("submit");
         let output = document.getElementById("submition-output");
         submit.onclick = () => {
+            console.log(languageIndex);
+            let notice = confirm("Are you sure you want to submit?");
+            if (!notice) return;
+            
             submit.textContent = translationMatrix[49][languageIndex];
 
             let name = document.getElementById("name").value;
@@ -114,9 +125,10 @@
 
             if (name.length === 0 && !name_RatherNotProvide) {
                 switch (languageIndex) {
-                    case 0: output.innerHTML = "Please provide a name, or select 'I'd rather not provide'.";
-                    case 1: output.innerHTML = "אנא הכנס שם, או בחר 'מעדיף שלא להגיד'";
+                    case 0: output.innerHTML = "Please provide a name, or select 'I'd rather not provide'."; break;
+                    case 1: output.innerHTML = "אנא הכנס שם, או בחר 'מעדיף שלא להגיד'&rlm;"; break;
                 }
+                submit.textContent = translationMatrix[43][languageIndex];
                 return;
             }
 
@@ -126,9 +138,10 @@
 
             if (foodName.length === 0 && !foodName_DontKnow) {
                 switch (languageIndex) {
-                    case 0: output.innerHTML = "Please provide a food name, or select 'I don't know'.";
-                    case 1: output.innerHTML = "אנא הכנס שם מאכל, או בחר 'אני לא יודע,'";
+                    case 0: output.innerHTML = "Please provide a food name, or select 'I don't know'."; break;
+                    case 1: output.innerHTML = "אנא הכנס שם מאכל, או בחר 'אני לא יודע'&rlm;"; break;
                 }
+                submit.textContent = translationMatrix[43][languageIndex];
                 return;
             }
 
@@ -148,9 +161,10 @@
             if (payload.name.length === 0 && payload.foodName.length === 0 && payload.translations.length === 0) {
                 // Ignore "nonsense" requests
                 switch (languageIndex) {
-                    case 0: output.innerHTML = "Request not submitted: no information provided.";
-                    case 1: output.innerHTML = "בקשה לא נשלחה: לא סופק מידע.";
+                    case 0: output.innerHTML = "Request not submitted: no information provided."; break;
+                    case 1: output.innerHTML = "בקשה לא נשלחה: לא סופק מידע."; break;
                 }
+                submit.textContent = translationMatrix[43][languageIndex];
                 return;
             } else {
                 fetch("https://apbd-contrib-bot.shaharmsecond.workers.dev/", {
@@ -179,6 +193,7 @@
         activateDropdowns();
         activateHelpMarks();
         activateChoiceButtons();
+        activateSwitches();
     </script>
 </body>
 

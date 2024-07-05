@@ -30,8 +30,8 @@ Jerusalem Artichoke¦ארטישוק ירושלמי⤓
 Pumpkin¦דלעת⤓
 Zucchini¦זוקיני⤓
 Weight¦משקל⤓
-Request Food Info¦בקש נתוני מאכל⤓
-Provide Data¦ספק נתונים⤓
+Request Food Addition¦בקשה להוספת מאכל⤓
+Provide Food Data¦ספק נתוני מאכל⤓
 Website Code¦קוד האתר⤓
 Discord¦דיסקורד⤓
 Username Copied¦שם משתמש הועתק⤓

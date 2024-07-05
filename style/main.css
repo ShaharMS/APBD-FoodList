@@ -10,6 +10,7 @@ body {
     margin: 0;
     color: white;
     font-family: 'Open Sans', sans-serif;
+    height: 100vh;
 }
 
 header {
@@ -52,6 +53,7 @@ help-sign {
     text-align: center;
     line-height: 0.8rem;
     content: "?";
+    user-select: none;
     font-size: 0.8rem;
     width: 0.8rem;
     height: 0.8rem;
@@ -120,7 +122,12 @@ blockquote:hover {
 
 .header-menu {
     display: flex;
-    float: inline-end;
+}
+
+.header-menu div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container {
@@ -264,9 +271,12 @@ blockquote:hover {
         padding-inline: 10px;
     }
 
+    header {
+        padding-inline-end: 0px;
+    }
+
     #contact {
         padding-inline-start: 15px;
-        margin-inline-end: -20px;
     }
 
     #discord {
@@ -277,11 +287,15 @@ blockquote:hover {
         font-size: 1.1em;
         font-weight: 700;
         margin-inline-start: -10px;
-        margin-inline-end: -20px;
+        margin-inline-end: -10px;
     }
 
     .container {
         padding-inline: 10px;
+    }
+
+    #food-list td:nth-child(1) > input {
+        width: 50px;
     }
 }
 
@@ -289,8 +303,38 @@ blockquote:hover {
     #food-list {
         font-size: 0.8em;
     }
+
+    header {
+        padding-inline-start: 5px;
+    }
+
+    header a, header h1, #contribute-menu a, #contact-menu a {
+        line-height: normal;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important; 
+    }
+
+    header h1 {
+        margin-inline-start: unset;
+    }
+
+    #discord {
+        line-height: normal !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #food-list td:nth-child(1) > input {
+        width: 42px;
+    }
     
-    header a {
-        padding-inline: 10px;
+    blockquote {
+        width: 80%;
+        margin-inline-start: calc(50px + 5%);
+        margin-block: 30px;
     }
 }
