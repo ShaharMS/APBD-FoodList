@@ -67,3 +67,56 @@ Score¦נקודות⤓
 Contribution Leaderboards¦לוח הישגים⤓
 Onion¦בצל⤓
 Water¦מים⤓
+Apricot¦משמש⤓
+Quince¦חבוש⤓
+Pineapple¦אננס⤓
+Orange¦תפוז⤓
+Watermelon¦אבטיח⤓
+Acerola Cherries¦דובדבן ברבדוס⤓
+Banana¦בננה⤓
+Green Banana¦בננה ירוקה⤓
+Green Grapes¦ענבים ירוקים⤓
+Red Grapes¦ענבים אדומים⤓
+Purple Grapes¦ענבים סגולים⤓
+Black Grapes¦ענבים שחורים⤓
+Pomegranate¦רימון⤓
+Grapefruit¦פומלה⤓
+Pear¦אגס⤓
+Pepino¦פיפנו⤓
+Melon¦מלון⤓
+Blackberry¦אוסנה⤓
+Yellow Gooseberry¦דומדמנית צהובה⤓
+Black Raisins¦צימוקים שחורים⤓
+Red Raisins¦צימוקים אדומים⤓
+Gold Raisins¦צימוקים זהובים⤓
+Fig¦תאנה⤓
+Kiwi¦קיווי⤓
+Strawberry¦תות⤓
+Cranberries¦חמוציות⤓
+Lemon¦לימון⤓
+Lychee¦ליצ'י⤓
+Raspberries¦פטל (פרי)⤓
+Mango¦מנגו⤓
+Mandarin¦תפוז סיני⤓
+Passion Fruit¦פסיפלורה⤓
+Cloudberry¦Cloudberry⤓
+Medlar¦שסק⤓
+Nectarine¦נקטרינה⤓
+Sea Buckthorn¦היפופיאה⤓
+Prickly Pear¦צבר⤓
+Papaya¦פאפאיה⤓
+Peach¦אפרסק⤓
+Breadfruit¦פרי עץ לחם⤓
+Pomelo¦פומלה⤓
+Plum¦שזיף⤓
+Red Currant¦דומדמנית⤓
+Black Currant¦ענבי שועל⤓
+Physalis¦שלפח⤓
+Date¦תמר⤓
+Persimmon¦אפרסמון⤓
+Cherries¦פירות יער⤓
+Blueberries¦אוכמניות⤓
+Prune¦שזיפים מיובשים⤓
+Dried Apples¦תפוח מיובש⤓
+Apple¦תפוח⤓
+Goji Berries¦Goji Berries⤓
