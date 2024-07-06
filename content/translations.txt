@@ -86,9 +86,9 @@ Pepino¦פיפנו⤓
 Melon¦מלון⤓
 Blackberry¦אוסנה⤓
 Yellow Gooseberry¦דומדמנית צהובה⤓
-Black Raisins¦צימוקים שחורים⤓
-Red Raisins¦צימוקים אדומים⤓
-Gold Raisins¦צימוקים זהובים⤓
+No Data¦אין מידע⤓
+¦⤓
+Raisins¦צימוקים⤓
 Fig¦תאנה⤓
 Kiwi¦קיווי⤓
 Strawberry¦תות⤓
@@ -99,7 +99,7 @@ Raspberries¦פטל (פרי)⤓
 Mango¦מנגו⤓
 Mandarin¦תפוז סיני⤓
 Passion Fruit¦פסיפלורה⤓
-Cloudberry¦Cloudberry⤓
+Cloudberry¦אוכמניית ענן⤓
 Medlar¦שסק⤓
 Nectarine¦נקטרינה⤓
 Sea Buckthorn¦היפופיאה⤓
@@ -114,9 +114,9 @@ Black Currant¦ענבי שועל⤓
 Physalis¦שלפח⤓
 Date¦תמר⤓
 Persimmon¦אפרסמון⤓
-Cherries¦פירות יער⤓
+Cherries¦דובדבנים⤓
 Blueberries¦אוכמניות⤓
 Prune¦שזיפים מיובשים⤓
 Dried Apples¦תפוח מיובש⤓
 Apple¦תפוח⤓
-Goji Berries¦Goji Berries⤓
+Goji Berries¦אוכמניות גוג'י⤓

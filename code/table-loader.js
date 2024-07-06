@@ -40,6 +40,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aIndex = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 let bIndex = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
+                if (aIndex == -1 && bIndex == -1) return 0;
+                if (aIndex == -1) return 1;
+                if (bIndex == -1) return -1;
                 if (aIndex > bIndex) return 1;
                 if (aIndex < bIndex) return -1;
                 return 0;
@@ -50,6 +53,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aIndex = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 let bIndex = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
+                if (aIndex == -1 && bIndex == -1) return 0;
+                if (aIndex == -1) return 1;
+                if (bIndex == -1) return -1;
                 if (aIndex < bIndex) return 1;
                 if (aIndex > bIndex) return -1;
                 return 0;
@@ -60,6 +66,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aLoad = parseFloat(a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 let bLoad = parseFloat(b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
+                if (aLoad < 0 && bLoad < 0) return 0;
+                if (aLoad < 0) return 1;
+                if (bLoad < 0) return -1;
                 if (aLoad > bLoad) return 1;
                 if (aLoad < bLoad) return -1;
                 return 0;
@@ -70,6 +79,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aLoad = parseFloat(a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 let bLoad = parseFloat(b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
+                if (aLoad < 0 && bLoad < 0) return 0;
+                if (aLoad < 0) return 1;
+                if (bLoad < 0) return -1;
                 if (aLoad < bLoad) return 1;
                 if (aLoad > bLoad) return -1;
                 return 0;
@@ -80,6 +92,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aSugars = parseFloat(a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 let bSugars = parseFloat(b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
+                if (aSugars < 0 && bSugars < 0) return 0;
+                if (aSugars < 0) return 1;
+                if (bSugars < 0) return -1;
                 if (aSugars > bSugars) return 1;
                 if (aSugars < bSugars) return -1;
                 return 0;
@@ -90,6 +105,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aSugars = parseFloat(a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 let bSugars = parseFloat(b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
+                if (aSugars < 0 && bSugars < 0) return 0;
+                if (aSugars < 0) return 1;
+                if (bSugars < 0) return -1;
                 if (aSugars < bSugars) return 1;
                 if (aSugars > bSugars) return -1;
                 return 0;
@@ -100,6 +118,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aCarbs = parseFloat(a.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 let bCarbs = parseFloat(b.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
+                if (aCarbs < 0 && bCarbs < 0) return 0;
+                if (aCarbs < 0) return 1;
+                if (bCarbs < 0) return -1;              
                 if (aCarbs > bCarbs) return 1;
                 if (aCarbs < bCarbs) return -1;
                 return 0;
@@ -110,6 +131,9 @@ if (parameters.has("sort")) {
             rows.sort((a, b) => {
                 let aCarbs = parseFloat(a.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 let bCarbs = parseFloat(b.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
+                if (aCarbs < 0 && bCarbs < 0) return 0;
+                if (aCarbs < 0) return 1;
+                if (bCarbs < 0) return -1;
                 if (aCarbs < bCarbs) return 1;
                 if (aCarbs > bCarbs) return -1;
                 return 0;
@@ -141,6 +165,9 @@ if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang")
 
 table = document.getElementById("food-list");
 rows = table.getElementsByTagName("tr");
+
+// Post-process th table
+
 for (let i = 0; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
     if (cells.length > 0) {
@@ -173,5 +200,28 @@ for (let i = 0; i < rows.length; i++) {
         
         let input = cells[0].getElementsByTagName("input")[0];
         input.addEventListener("change", fixFloatingPoint);
+
+        // Get the "gi", "gl", "sugar" and "carbs" spans
+        let gi = cells[2].getElementsByTagName("span")[0];
+        let gl = cells[3].getElementsByTagName("span")[0];
+        let sugar = cells[4].getElementsByTagName("span")[0];
+        let carbs = cells[5].getElementsByTagName("span")[0];
+
+        // Check for missing data
+        let elements = [gi, gl, sugar, carbs];
+        for (let element of elements) {
+            if (parseFloat(element.innerText) < 0) {
+                let par = document.createElement("span");
+                par.innerText = translationMatrix[88][languageIndex];
+                par.style.color = "gray";
+                element.style.display = "none";
+                element.after(par)
+            } else if (element.hasAttribute("innacurate")) {
+                let par = document.createElement("span");
+                par.innerText = "~"
+                par.style.marginInlineStart = "-0.25em";
+                element.after(par)
+            }
+        }
     }
 }

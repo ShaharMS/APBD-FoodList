@@ -10,6 +10,13 @@
     border: 2px solid #333333;
 }
 
+#request-table input, #provide-table input {
+    background-color: #2b2a33;
+    border: 1px solid #8f8f9d;
+    border-radius: 4px;
+    width: 180px;
+}
+
 #request-table td, #provide-table td {
     display: flex;
     flex-direction: column;
@@ -37,6 +44,9 @@
     height: 46px;
     cursor: pointer;
     font-weight: 400;
+    background-color: #2b2a33;
+    border: 1px solid #8f8f9d;
+    border-radius: 4px;
 }
 
 #language-switch {

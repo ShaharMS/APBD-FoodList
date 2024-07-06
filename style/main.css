@@ -111,9 +111,10 @@ blockquote:hover {
 
 .button-row button {
     background-color: #333333;
+    border: 1px solid #8f8f9d;
     color: white;
     border-radius: 4px;
-
+    width: calc(max(100px, 100%));
 }
 
 .button-row .selected {
@@ -262,7 +263,7 @@ blockquote:hover {
     /*border: 4px solid #444444; */
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     :root {
         font-size: 0.8em;
     }

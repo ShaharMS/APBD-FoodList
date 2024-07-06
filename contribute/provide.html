@@ -157,6 +157,9 @@
 
         
     <script>
+        String.prototype.attemptedXSS = function() {
+            return /[<>]/.test(this);
+        }
         let submit = document.getElementById("submit");
         let output = document.getElementById("submition-output");
         submit.onclick = () => {
@@ -244,6 +247,15 @@
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Please provide carbs amount, or select 'I don't know'."; break;
                     case 1: output.innerHTML = "אנא הכנס כמות פחמימות, או בחר 'אני לא יודע'&rlm;"; break;
+                }
+                submit.textContent = translationMatrix[43][languageIndex];
+                return;
+            }
+
+            if (name.attemptedXSS() || foodName.attemptedXSS() || glycemicIndex.attemptedXSS() || glycemicLoad.attemptedXSS() || sugar.attemptedXSS() || carbs.attemptedXSS() || translations.attemptedXSS()) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Nice try 😉"; break;
+                    case 1: output.innerHTML = "נסיון חמוד 😉"; break;
                 }
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;

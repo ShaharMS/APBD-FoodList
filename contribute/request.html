@@ -112,6 +112,9 @@
     <script src="../code/switches.js"></script>
 
     <script>
+        String.prototype.attemptedXSS = function () {
+            return /[<>]/.test(this);
+        }
         let submit = document.getElementById("submit");
         let output = document.getElementById("submition-output");
         submit.onclick = () => {
@@ -149,6 +152,15 @@
             let translations = document.getElementById("translations").value;
             let translations_NotSure = document.getElementById("t-ns").classList.contains("selected");
             let translations_DontKnow = document.getElementById("t-dk").classList.contains("selected");
+
+            if (name.attemptedXSS() || foodName.attemptedXSS() || translations.attemptedXSS()) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Nice try 😉"; break;
+                    case 1: output.innerHTML = "נסיון חמוד 😉"; break;
+                }
+                submit.textContent = translationMatrix[43][languageIndex];
+                return;
+            }
 
             let payload = {
                 type: "request",
