@@ -120,3 +120,4 @@ Prune¦שזיפים מיובשים⤓
 Dried Apples¦תפוח מיובש⤓
 Apple¦תפוח⤓
 Goji Berries¦אוכמניות גוג'י⤓
+Garlic¦שום⤓
