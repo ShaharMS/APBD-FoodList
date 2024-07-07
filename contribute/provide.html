@@ -264,10 +264,10 @@
             let payload = {
                 type: "provide",
                 name: name.length === 0 || name__RatherNotProvide ? "Anonymous" : name,
-                foodName: foodName.length === 0 ? "Food Item" : foodName,
-                foodNameSecurity: foodName__DontKnow ? 0 : (foodName__NotSure ? 1 : 2),
-                translations: translations.length === 0 ? "<translations not given>" : translations,
-                translationsSecurity: translations__DontKnowAny ? 0 : (translations__NotSure ? 1 : 2),
+                foodEnglish: foodName.length === 0 ? "<english not given>" : foodName,
+                foodEnglishSecurity: foodName__DontKnow ? 0 : (foodName__NotSure ? 1 : 2),
+                foodHebrew: translations.length === 0 ? "<hebrew not given>" : translations,
+                foodHebrewSecurity: translations__DontKnowAny ? 0 : (translations__NotSure ? 1 : 2),
                 glycemicIndex: glycemicIndex.length === 0 ? -1 : parseFloat(glycemicIndex),
                 glycemicIndexSecurity: glycemicIndex__DontKnow ? 0 : (glycemicIndex__NotSure ? 1 : 2),
                 glycemicLoad: glycemicLoad.length === 0 ? -1 : parseFloat(glycemicLoad),
@@ -278,10 +278,10 @@
                 carbsSecurity: carbs__DontKnow ? 0 : (carbs__NotSure ? 1 : 2),
             }
 
-            if (payload.name.length === 0 && payload.translations.length === 0 && payload.glycemicIndex === -1 && payload.glycemicLoad === -1 && payload.sugar === -1 && payload.carbs === -1) {
+            if (payload.foodEnglishSecurity == 0 && payload.foodHebrewSecurity == 0 && payload.glycemicIndexSecurity == 0) {
                 switch (languageIndex) {
-                    case 0: output.innerHTML = "Contribution not submitted: no information provided."; break;
-                    case 1: output.innerHTML = "תרומת תוכן לא נשלחה: לא סופק מידע."; break;
+                    case 0: output.innerHTML = "Contribution not submitted: not enough information provided."; break;
+                    case 1: output.innerHTML = "תרומת תוכן לא נשלחה: לא סופק מספיק מידע.&rlm;"; break;
                 }
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
@@ -293,7 +293,6 @@
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(payload),
-                    /* CORS...*/
                 })
                     .then(response => response.text())
                     .then(data => {
