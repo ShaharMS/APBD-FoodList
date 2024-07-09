@@ -15,10 +15,19 @@
         <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
         </h1>
         <nav class="header-menu">
-            <a ti="1" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{About}}</a>
+            <div>
+                <a ti="1" id="about" href="#">{{About}}</a>
+                <div id="about-menu" class="navbar-menu">
+                    <a ti="145" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{Website}} <span>&UpperRightArrow;</span></a>
+                    <a target="_blank" href="https://rarediseases.org/rare-diseases/adult-polyglucosan-body-disease/">APBD <span>&UpperRightArrow;</span></a>
+                    <a ti="146" 
+                        onclick="window.location.href = window.location.origin + '/about/database.html' + window.location.search"
+                        href="#">{{Food Database}}</a>
+                </div>
+            </div>
             <div>
                 <a ti="2" id="contribute" href="#">{{Contribute}}</a>
-                <div id="contribute-menu">
+                <div id="contribute-menu" class="navbar-menu">
                     <a ti="32"
                         onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
                         href="#">{{Request data}}</a>
@@ -28,13 +37,12 @@
                     <a ti="56"
                         onclick="window.location.href = window.location.origin + '/contribute/leaderboards.html' + window.location.search"
                         href="#">{{Leaderboards}}</a>
-
                 </div>
             </div>
 
             <div>
                 <a ti="3" id="contact" href="#">{{Contact}}</a>
-                <div id="contact-menu">
+                <div id="contact-menu" class="navbar-menu">
                     <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
                     <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
                         shaharms</a>

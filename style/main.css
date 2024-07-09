@@ -69,7 +69,7 @@ help-sign:hover {
     background-color: #444444;
 }
 
-#contribute-menu, #contact-menu {
+.navbar-menu {
     display: none;
     background: #222222;
     font-size: 0.9em;
@@ -77,7 +77,7 @@ help-sign:hover {
     padding-inline: 5px;
 }
 
-#contribute-menu a, #contact-menu a {
+.navbar-menu a {
     color: white;
     display: block;
     width: 100%;
@@ -88,7 +88,7 @@ help-sign:hover {
     text-decoration: none;
 }
 
-#contribute-menu a:hover, #contact-menu a:hover {
+.navbar-menu a:hover {
     background-color: #333333;
 }
 
@@ -125,7 +125,7 @@ blockquote:hover {
     display: flex;
 }
 
-.header-menu div {
+.navbar-menu div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,6 +137,7 @@ blockquote:hover {
     padding-inline: 60px;
     gap: 20px;
     align-items: center;
+    margin-bottom: 100px;
 }
 
 .language-switch, .sort-switch {
@@ -309,7 +310,7 @@ blockquote:hover {
         padding-inline-start: 5px;
     }
 
-    header a, header h1, #contribute-menu a, #contact-menu a {
+    header a, header h1, .navbar-menu a {
         line-height: normal;
         display: flex !important;
         align-items: center !important;

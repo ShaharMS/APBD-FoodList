@@ -135,3 +135,13 @@ Poppy Seeds¦פרג⤓
 Dried Oregano¦אורגנו מיובש⤓
 Caraway Seeds¦כרוויה תרבותית⤓
 Horseradish¦חזרת⤓
+Goose Fat¦שומן אווז⤓
+Fat¦שומן⤓
+Raw Coconut Milk¦חלב קוקוס לא מעובד⤓
+Butter¦חמאה⤓
+Almond Oil¦שמן שקדים⤓
+Olive Oil¦שמן זית⤓
+Pesto Sauce¦רוטב פסטו⤓
+Vegetable Fat¦שומן ירקות⤓
+Website¦האתר⤓
+Food Database¦מסד נתוני מאכלים⤓

@@ -1,182 +1,112 @@
 <tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (0.1 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Basil").innerHTML = (0.3 / 100) * this.value;
-document.getElementById("CARBFIELD-Basil").innerHTML = (2.7 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Basil");
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Goose fat").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Goose fat").innerHTML = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Goose fat");
 if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
 else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
 else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="124">{{Basil}}</td>
-    <td><span style="color: #00ff00">5</span></td>
-    <td><span id="GLFIELD-Basil"><span style="color: #00ff00">0.1</span></span></td>
-    <td><span id="SUGARFIELD-Basil">0.3</span></td>
-    <td><span id="CARBFIELD-Basil">2.7</span></td>
+    <td>{{Goose fat}}</td>
+    <td><span style="color: #00ff00">0</span></td>
+    <td><span id="GLFIELD-Goose fat"><span style="color: #00ff00">0</span></span></td>
+    <td><span id="SUGARFIELD-Goose fat">0</span></td>
+    <td><span id="CARBFIELD-Goose fat">0</span></td>
 </tr>
 <tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (2.8 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Balsamic vinegar").innerHTML = (15 / 100) * this.value;
-document.getElementById("CARBFIELD-Balsamic vinegar").innerHTML = (17 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Balsamic vinegar");
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Fat").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Fat").innerHTML = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Fat");
 if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
 else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
 else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="125">{{Balsamic vinegar}}</td>
-    <td><span style="color: #00ff00">5</span></td>
-    <td><span id="GLFIELD-Balsamic vinegar"><span style="color: #00ff00">2.8</span></span></td>
-    <td><span id="SUGARFIELD-Balsamic vinegar">15</span></td>
-    <td><span id="CARBFIELD-Balsamic vinegar">17</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (3.3 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Vanilla").innerHTML = (13 / 100) * this.value;
-document.getElementById("CARBFIELD-Vanilla").innerHTML = (13 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Vanilla");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="126">{{Vanilla Spice}}</td>
-    <td><span style="color: #00ff00">5</span></td>
-    <td><span id="GLFIELD-Vanilla"><span style="color: #00ff00">3.3</span></span></td>
-    <td><span id="SUGARFIELD-Vanilla">13</span></td>
-    <td><span id="CARBFIELD-Vanilla">13</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (0.6 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Ginger").innerHTML = (1.7 / 100) * this.value;
-document.getElementById("CARBFIELD-Ginger").innerHTML = (18 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Ginger");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="127">{{Ginger}}</td>
-    <td><span style="color: #00ff00">15</span></td>
-    <td><span id="GLFIELD-Ginger"><span style="color: #00ff00">0.6</span></span></td>
-    <td><span id="SUGARFIELD-Ginger">1.7</span></td>
-    <td><span id="CARBFIELD-Ginger">18</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (2.9 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Cinnamon").innerHTML = (2.2 / 100) * this.value;
-document.getElementById("CARBFIELD-Cinnamon").innerHTML = (81 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Cinnamon");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="128">{{Cinnamon}}</td>
-    <td><span style="color: #00ff00">5</span></td>
-    <td><span id="GLFIELD-Cinnamon"><span style="color: #00ff00">2.9</span></span></td>
-    <td><span id="SUGARFIELD-Cinnamon">2.2</span></td>
-    <td><span id="CARBFIELD-Cinnamon">81</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (4.3 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Sesame seed").innerHTML = (0.3 / 100) * this.value;
-document.getElementById("CARBFIELD-Sesame seed").innerHTML = (23 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Sesame seed");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="129">{{Sesame seed}}</td>
-    <td><span style="color: #9fe2bf">35</span></td>
-    <td><span id="GLFIELD-Sesame seed"><span style="color: #00ff00">4.3</span></span></td>
-    <td><span id="SUGARFIELD-Sesame seed">0.3</span></td>
-    <td><span id="CARBFIELD-Sesame seed">23</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (11.7 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Carob (carob powder)").innerHTML = (42.8 / 100) * this.value;
-document.getElementById("CARBFIELD-Carob (carob powder)").innerHTML = (78 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Carob (carob powder)");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="130">{{Carob Powder}}</td>
-    <td><span style="color: #00ff00">15</span></td>
-    <td><span id="GLFIELD-Carob (carob powder)"><span style="color: #ffff00">11.7</span></span></td>
-    <td><span id="SUGARFIELD-Carob (carob powder)">42.8</span></td>
-    <td><span innacurate id="CARBFIELD-Carob (carob powder)">78</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (4.1 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Lotus (root)").innerHTML = (0 / 100) * this.value;
-document.getElementById("CARBFIELD-Lotus (root)").innerHTML = (17.2 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Lotus (root)");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="131">{{Lotus Root}}</td>
-    <td><span style="color: #9fe2bf">33</span></td>
-    <td><span id="GLFIELD-Lotus (root)"><span style="color: #00ff00">4.1</span></span></td>
-    <td><span id="SUGARFIELD-Lotus (root)">0</span></td>
-    <td><span id="CARBFIELD-Lotus (root)">17.2</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (0.6 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Flaxseed").innerHTML = (1.6 / 100) * this.value;
-document.getElementById("CARBFIELD-Flaxseed").innerHTML = (29 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Flaxseed");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="132">{{Flaxseed}}</td>
-    <td><span style="color: #9fe2bf">35</span></td>
-    <td><span id="GLFIELD-Flaxseed"><span style="color: #00ff00">0.6</span></span></td>
-    <td><span id="SUGARFIELD-Flaxseed">1.6</span></td>
-    <td><span id="CARBFIELD-Flaxseed">29</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (9.8 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Poppy seed").innerHTML = (3 / 100) * this.value;
-document.getElementById("CARBFIELD-Poppy seed").innerHTML = (28 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Poppy seed");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="133">{{Poppy seed}}</td>
-    <td><span style="color: #9fe2bf">35</span></td>
-    <td><span id="GLFIELD-Poppy seed"><span style="color: #9fe2bf">9.8</span></span></td>
-    <td><span id="SUGARFIELD-Poppy seed">3</span></td>
-    <td><span id="CARBFIELD-Poppy seed">28</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (3.2 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Oregano").innerHTML = (4.09 / 100) * this.value;
-document.getElementById("CARBFIELD-Oregano").innerHTML = (68.9 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Oregano");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="134">{{Dried Oregano}}</td>
-    <td><span style="color: #00ff00">5</span></td>
-    <td><span id="GLFIELD-Oregano"><span style="color: #00ff00">3.2</span></span></td>
-    <td><span id="SUGARFIELD-Oregano">4.09</span></td>
-    <td><span id="CARBFIELD-Oregano">68.9</span></td>
-</tr>
-<tr>
-    <td><input type="number" id="grams" value="100" onchange='var v = (0.6 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Caraway").innerHTML = (0.64 / 100) * this.value;
-document.getElementById("CARBFIELD-Caraway").innerHTML = (49.9 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Caraway");
-if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="135">{{Caraway Seeds}}</td>
-    <td><span style="color: #00ff00">5</span></td>
-    <td><span id="GLFIELD-Caraway"><span style="color: #00ff00">0.6</span></span></td>
-    <td><span id="SUGARFIELD-Caraway">0.64</span></td>
-    <td><span id="CARBFIELD-Caraway">49.9</span></td>
+    <td>{{Fat}}</td>
+    <td><span style="color: #00ff00">0</span></td>
+    <td><span id="GLFIELD-Fat"><span style="color: #00ff00">0</span></span></td>
+    <td><span id="SUGARFIELD-Fat">0</span></td>
+    <td><span id="CARBFIELD-Fat">0</span></td>
 </tr>
 <tr>
     <td><input type="number" id="grams" value="100" onchange='var v = (1.1 / 100) * parseFloat(this.value);
-document.getElementById("SUGARFIELD-Horseradish").innerHTML = (7.99 / 100) * this.value;
-document.getElementById("CARBFIELD-Horseradish").innerHTML = (11.29 / 100) * this.value;
-var e = document.getElementById("GLFIELD-Horseradish");
+document.getElementById("SUGARFIELD-Raw Coconut milk").innerHTML = (3.34 / 100) * this.value;
+document.getElementById("CARBFIELD-Raw Coconut milk").innerHTML = (5.54 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Raw Coconut milk");
 if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
 else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
 else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
-    <td ti="136">{{Horseradish}}</td>
-    <td><span style="color: #00ff00">10</span></td>
-    <td><span id="GLFIELD-Horseradish"><span style="color: #00ff00">1.1</span></span></td>
-    <td><span id="SUGARFIELD-Horseradish">7.99</span></td>
-    <td><span id="CARBFIELD-Horseradish">11.29</span></td>
+    <td>{{Raw Coconut milk}}</td>
+    <td><span style="color: #9fe2bf">40</span></td>
+    <td><span id="GLFIELD-Raw Coconut milk"><span style="color: #00ff00">1.1</span></span></td>
+    <td><span id="SUGARFIELD-Raw Coconut milk">3.34</span></td>
+    <td><span id="CARBFIELD-Raw Coconut milk">5.54</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Butter").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Butter").innerHTML = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Butter");
+if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
+    <td>{{Butter}}</td>
+    <td><span style="color: #00ff00">0</span></td>
+    <td><span id="GLFIELD-Butter"><span style="color: #00ff00">0</span></span></td>
+    <td><span id="SUGARFIELD-Butter">0</span></td>
+    <td><span id="CARBFIELD-Butter">0</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Almond oil").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Almond oil").innerHTML = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Almond oil");
+if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
+    <td>{{Almond oil}}</td>
+    <td><span style="color: #00ff00">25</span></td>
+    <td><span id="GLFIELD-Almond oil"><span style="color: #00ff00">0</span></span></td>
+    <td><span id="SUGARFIELD-Almond oil">0</span></td>
+    <td><span id="CARBFIELD-Almond oil">0</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Olive oil").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Olive oil").innerHTML = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Olive oil");
+if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
+    <td>{{Olive oil}}</td>
+    <td><span style="color: #00ff00">0</span></td>
+    <td><span id="GLFIELD-Olive oil"><span style="color: #00ff00">0</span></span></td>
+    <td><span id="SUGARFIELD-Olive oil">0</span></td>
+    <td><span id="CARBFIELD-Olive oil">0</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.9 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Pesto (sauce)").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Pesto (sauce)").innerHTML = (5 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Pesto (sauce)");
+if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
+    <td>{{Pesto (sauce)}}</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><span id="GLFIELD-Pesto (sauce)"><span style="color: #00ff00">0.9</span></span></td>
+    <td><span innacurate id="SUGARFIELD-Pesto (sauce)">0</span></td>
+    <td><span innacurate id="CARBFIELD-Pesto (sauce)">5</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100" onchange='var v = (0.0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Vegetable Fat").innerHTML = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Vegetable Fat").innerHTML = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Vegetable Fat");
+if (v < 10) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'></td>
+    <td>{{Vegetable Fat}}</td>
+    <td><span style="color: #00ff00">0</span></td>
+    <td><span id="GLFIELD-Vegetable Fat"><span style="color: #00ff00">0</span></span></td>
+    <td><span id="SUGARFIELD-Vegetable Fat">0</span></td>
+    <td><span id="CARBFIELD-Vegetable Fat">0</span></td>
 </tr>
