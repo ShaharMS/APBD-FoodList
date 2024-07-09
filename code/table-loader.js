@@ -219,7 +219,7 @@ for (let i = 0; i < rows.length; i++) {
             } else if (element.hasAttribute("innacurate")) {
                 let par = document.createElement("span");
                 par.innerText = "~"
-                par.style.marginInlineStart = "-0.25em";
+                par.style.marginInlineStart = "0";
                 element.after(par)
             }
         }

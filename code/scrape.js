@@ -21,11 +21,6 @@ function GL(gl, name) {
     else return start + '<span style="color: #ff0000">' + gl + '</span>' + end;
 }
 
-if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
-else if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
-else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
-else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
-
 var table = document.getElementsByClassName("tftable")[0];
 
 var rows = table.getElementsByTagName("tr");
@@ -58,7 +53,7 @@ else e.innerHTML = "<span style=\\"color: #ff0000\\">" + v + "</span>";`;
     <td>{{${food.name}}}</td>
     <td>${GI(parseFloat(food.gi))}</td>
     <td>${GL(parseFloat(food.gl), food.name)}</td>
-    <td><span id="SUGARFIELD-${food.name}">-1</span<</td>
+    <td><span id="SUGARFIELD-${food.name}">-1</span></td>
     <td><span id="CARBFIELD-${food.name}">-1</span></td>
 </tr>`);
     }

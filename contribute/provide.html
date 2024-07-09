@@ -67,11 +67,11 @@
                 <tr>
 
                     <th>
-                        <help ti="47">{{Food name description}}.</help>
+                        <help ti="47">{{Food name (english) description}}.</help>
                         <span ti="38">{{Food name (english)}}</span>
                     </th>
                     <td>
-                        <input id="food-name" placeholder="Food name...">
+                        <input id="food-name-english" placeholder="Food name...">
                         <div class="button-row">
                             <button id="fn-ns" type="button" ti="41">I'm not sure</button>
                             <button id="fn-dk" type="button" ti="40">I don't know</button>
@@ -80,11 +80,11 @@
                 </tr>
                 <tr>
                     <th>
-                        <help ti="48">{{Additional Translations description}} :)</help>
-                        <span ti="39">{{Additional Translations}}</span>
+                        <help ti="48">{{Food name (hebrew) description}}.</help>
+                        <span ti="39">{{Food name (hebrew)}}</span>
                     </th>
                     <td>
-                        <input id="translations" placeholder="Translations...">
+                        <input id="food-name-hebrew" placeholder="שם מאכל...">
                         <div class="button-row">
                             <button id="t-ns" type="button" ti="41">I'm not sure</button>
                             <button id="t-dk" type="button" ti="40">I don't know any</button>
@@ -183,7 +183,7 @@
                 return;
             }
 
-            let foodName = document.getElementById("food-name").value;
+            let foodName = document.getElementById("food-name-english").value;
             let foodName__NotSure = document.getElementById("fn-ns").classList.contains("selected");
             let foodName__DontKnow = document.getElementById("fn-dk").classList.contains("selected");
 
@@ -196,7 +196,7 @@
                 return;
             }
 
-            let translations = document.getElementById("translations").value;
+            let translations = document.getElementById("food-name-hebrew").value;
             let translations__NotSure = document.getElementById("t-ns").classList.contains("selected");
             let translations__DontKnowAny = document.getElementById("t-dk").classList.contains("selected");
 
@@ -247,6 +247,15 @@
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Please provide carbs amount, or select 'I don't know'."; break;
                     case 1: output.innerHTML = "אנא הכנס כמות פחמימות, או בחר 'אני לא יודע'&rlm;"; break;
+                }
+                submit.textContent = translationMatrix[43][languageIndex];
+                return;
+            }
+
+            if (foodName.classList.contains("already-exists") || translations.classList.contains("already-exists")) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Food already exists in the food list."; break;
+                    case 1: output.innerHTML = "המאכל כבר נמצא ברשימה.&rlm;"; break;
                 }
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
@@ -312,6 +321,7 @@
     <script src="../code/help-marks.js"></script>
     <script src="../code/choice-buttons.js"></script>
     <script src="../code/switches.js"></script>
+    <script src="../code/food-name-validator.js"></script>
 
     <script type="module">
         let urlParams = new URLSearchParams(window.location.search);
@@ -322,6 +332,7 @@
         activateHelpMarks();
         activateChoiceButtons();
         activateSwitches();
+        activateFoodNameValidator();
     </script>
 </body>
 

@@ -66,11 +66,11 @@
                 <tr>
 
                     <th>
-                        <help ti="47">{{Food name description}}.</help>
+                        <help ti="47">{{Food name (english) description}}.</help>
                         <span ti="38">{{Food name (english)}}</span>
                     </th>
                     <td>
-                        <input id="food-name" placeholder="Food name...">
+                        <input id="food-name-english" placeholder="Food name...">
                         <div class="button-row">
                             <button id="fn-ns" type="button" ti="41">I'm not sure</button>
                             <button id="fn-dk" type="button" ti="40">I don't know</button>
@@ -79,11 +79,11 @@
                 </tr>
                 <tr>
                     <th>
-                        <help ti="48">{{Additional Translations description}} :)</help>
+                        <help ti="48">{{Food name (hebrew) description}}.</help>
                         <span ti="39">{{Additional Translations}}</span>
                     </th>
                     <td>
-                        <input id="translations" placeholder="Translations...">
+                        <input id="food-name-hebrew" placeholder="שם המאכל...">
                         <div class="button-row">
                             <button id="t-ns" type="button" ti="41">I'm not sure</button>
                             <button id="t-dk" type="button" ti="40">I don't know any</button>
@@ -110,6 +110,7 @@
     <script src="../code/help-marks.js"></script>
     <script src="../code/choice-buttons.js"></script>
     <script src="../code/switches.js"></script>
+    <script src="../code/food-name-validator.js"></script>
 
     <script>
         String.prototype.attemptedXSS = function () {
@@ -136,27 +137,45 @@
                 return;
             }
 
-            let foodName = document.getElementById("food-name").value;
+            let foodName = document.getElementById("food-name-english").value;
             let foodName_NotSure = document.getElementById("fn-ns").classList.contains("selected");
             let foodName_DontKnow = document.getElementById("fn-dk").classList.contains("selected");
 
             if (foodName.length === 0 && !foodName_DontKnow) {
                 switch (languageIndex) {
-                    case 0: output.innerHTML = "Please provide a food name, or select 'I don't know'."; break;
-                    case 1: output.innerHTML = "אנא הכנס שם מאכל, או בחר 'אני לא יודע'&rlm;"; break;
+                    case 0: output.innerHTML = "Please provide an english translation of the food name, or select 'I don't know'."; break;
+                    case 1: output.innerHTML = "אנא הכנס תרגום לאנגלית של שם מאכל, או בחר 'אני לא יודע'&rlm;"; break;
                 }
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
             }
 
-            let translations = document.getElementById("translations").value;
+            let translations = document.getElementById("food-name-hebrew").value;
             let translations_NotSure = document.getElementById("t-ns").classList.contains("selected");
             let translations_DontKnow = document.getElementById("t-dk").classList.contains("selected");
+
+            if (translations.length === 0 && !translations_DontKnow) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Please provide a hebrew translation of the food name, or select 'I don't know'."; break;
+                    case 1: output.innerHTML = "אנא הכנס תרגום לעברית של שם מאכל, או בחר 'אני לא יודע'&rlm;"; break;
+                }
+                submit.textContent = translationMatrix[43][languageIndex];
+                return;
+            }
 
             if (name.attemptedXSS() || foodName.attemptedXSS() || translations.attemptedXSS()) {
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Nice try 😉"; break;
                     case 1: output.innerHTML = "נסיון חמוד 😉"; break;
+                }
+                submit.textContent = translationMatrix[43][languageIndex];
+                return;
+            }
+
+            if (foodName.classList.contains("already-exists") || translations.classList.contains("already-exists")) {
+                switch (languageIndex) {
+                    case 0: output.innerHTML = "Food already exists in the food list."; break;
+                    case 1: output.innerHTML = "המאכל כבר נמצא ברשימה.&rlm;"; break;
                 }
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
@@ -171,7 +190,7 @@
                 foodHebrewSecurity: translations_DontKnow ? 0 : (translations_NotSure ? 1 : 2),
             }
 
-            if (payload.name.length === 0 && payload.foodName.length === 0 && payload.translations.length === 0) {
+            if (foodName_DontKnow && translations_DontKnow) {
                 // Ignore "nonsense" requests
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Request not submitted: no information provided."; break;
@@ -207,6 +226,7 @@
         activateHelpMarks();
         activateChoiceButtons();
         activateSwitches();
+        activateFoodNameValidator();
     </script>
 </body>
 
