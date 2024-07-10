@@ -145,3 +145,17 @@ Pesto Sauce¦רוטב פסטו⤓
 Vegetable Fat¦שומן ירקות⤓
 Website¦האתר⤓
 Food Database¦מסד נתוני מאכלים⤓
+Mutton¦בשר כבש⤓
+Beef¦בשר בקר⤓
+Beef Tongue¦לשון בקר⤓
+Beef Liver¦כבד בקר⤓
+Goose¦אווז⤓
+Turkey¦עוף הודו⤓
+Chicken¦עוף⤓
+Chicken Wings¦כנפיים (עוף)⤓
+Chicken Drums¦שוקיים (עוף)⤓
+Chicken Thighs¦רבע (עוף)⤓
+Veal¦בשר עגל⤓
+Duck¦בשר ברווז⤓
+Foie Gras¦כבד אווז⤓
+Eggs (All Sizes)¦ביצים (כל גודל)⤓
