@@ -169,8 +169,11 @@
         String.prototype.attemptedXSS = function() {
             return /[<>]/.test(this);
         }
+
+
         let submit = document.getElementById("submit");
         let output = document.getElementById("submition-output");
+        
         submit.onclick = () => {
 
             let notice = confirm("Are you sure you want to submit?");
@@ -178,7 +181,7 @@
 
             submit.textContent = translationMatrix[49][languageIndex];
 
-            output.innerHTML = "";
+            output.innerHTML = "Grabbing Data From Text Fields...";
 
             let name = document.getElementById("name").value;
             let name__RatherNotProvide = document.getElementById("n-np").classList.contains("selected");
@@ -261,7 +264,7 @@
                 return;
             }
 
-            if (foodName.classList.contains("already-exists") || translations.classList.contains("already-exists")) {
+            if (document.getElementById("food-name-english").classList.contains("already-exists") || document.getElementById("food-name-hebrew").classList.contains("already-exists")) {
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Food already exists in the food list."; break;
                     case 1: output.innerHTML = "המאכל כבר נמצא ברשימה.&rlm;"; break;
@@ -269,6 +272,8 @@
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
             }
+
+            output.innerHTML = "Testing For Attempted XSS Attacks...";
 
             if (name.attemptedXSS() || foodName.attemptedXSS() || glycemicIndex.attemptedXSS() || glycemicLoad.attemptedXSS() || sugar.attemptedXSS() || carbs.attemptedXSS() || translations.attemptedXSS()) {
                 switch (languageIndex) {
@@ -278,6 +283,8 @@
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
             }
+
+            output.innerHTML = "Building Submission Packet...";
 
             let payload = {
                 type: "provide",
@@ -304,6 +311,7 @@
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
             } else {
+                output.innerHTML = "Sending Submission Packet...";
                 fetch("https://apbd-contrib-bot.shaharmsecond.workers.dev/", {
                     /*Need a post request with payload*/
                     method: "POST",
@@ -312,7 +320,10 @@
                     },
                     body: JSON.stringify(payload),
                 })
-                    .then(response => response.text())
+                    .then(response => {
+                        output.innerHTML = "Getting Response...";
+                        return response.text();
+                    })
                     .then(data => {
                         output.innerHTML = data;
                         submit.textContent = translationMatrix[43][languageIndex];

@@ -133,6 +133,8 @@
             
             submit.textContent = translationMatrix[49][languageIndex];
 
+            output.innerHTML = "Grabbing Data From Text Fields...";
+
             let name = document.getElementById("name").value;
             let name_RatherNotProvide = document.getElementById("n-np").classList.contains("selected");
 
@@ -171,6 +173,8 @@
                 return;
             }
 
+            output.innerHTML = "Testing For Attempted XSS Attacks...";
+
             if (name.attemptedXSS() || foodName.attemptedXSS() || translations.attemptedXSS()) {
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Nice try 😉"; break;
@@ -180,7 +184,7 @@
                 return;
             }
 
-            if (foodName.classList.contains("already-exists") || translations.classList.contains("already-exists")) {
+            if (document.getElementById("food-name-english").classList.contains("already-exists") || document.getElementById("food-name-hebrew").classList.contains("already-exists")) {
                 switch (languageIndex) {
                     case 0: output.innerHTML = "Food already exists in the food list."; break;
                     case 1: output.innerHTML = "המאכל כבר נמצא ברשימה.&rlm;"; break;
@@ -188,6 +192,8 @@
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
             }
+
+            output.innerHTML = "Building Request Packet...";
 
             let payload = {
                 type: "request",
@@ -207,6 +213,7 @@
                 submit.textContent = translationMatrix[43][languageIndex];
                 return;
             } else {
+                output.innerHTML = "Sending Request Packet...";
                 fetch("https://apbd-contrib-bot.shaharmsecond.workers.dev/", {
                     /*Need a post request with payload*/
                     method: "POST",
@@ -216,7 +223,10 @@
                     body: JSON.stringify(payload),
                     /* CORS...*/
                 })
-                    .then(response => response.text())
+                    .then(response => {
+                        output.innerHTML = "Getting Response...";
+                        return response.text();
+                    })
                     .then(data => {
                         output.innerHTML = data;
                         submit.textContent = translationMatrix[43][languageIndex];
