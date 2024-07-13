@@ -159,3 +159,41 @@ Veal¦בשר עגל⤓
 Duck¦בשר ברווז⤓
 Foie Gras¦כבד אווז⤓
 Eggs (All Sizes)¦ביצים (כל גודל)⤓
+Amaranth Seeds¦זרעי אמרנט⤓
+White Corn¦תירס לבן⤓
+Yellow Corn¦תירס צהוב⤓
+Bulgur¦בורגול⤓
+Cooked¦מבושל⤓
+Buckwheat¦כוסמת⤓
+Potato Flour¦קמח תפוחי אדמה⤓
+Quinoa¦קינואה⤓
+Corn Starch¦עמילן תירס⤓
+Couscous¦קוסקוס⤓
+Buckwheat Flour¦קמח כוסמת⤓
+Semolina Flour¦קמח סמולינה⤓
+Whole Wheat Flour¦קמח חיטה מלאה⤓
+Arrowroot Flour¦קמח מרנטת הרנה⤓
+Quinoa Flour¦קמח קינואה⤓
+Chestnut Flour¦קמח ערמונים⤓
+Spelled Flour¦קמח כוסמין⤓
+Corn Flour¦קמח תירס⤓
+Chickpea Flour¦קמח חומוס⤓
+Rye Flour¦קמח שיפון⤓
+Whole-Grain Rye Flour¦קמח שיפון מלא⤓
+Rice Flour¦קמח אורז⤓
+Soy Flour¦קמח סויה⤓
+Oat Flour¦קמח שיבולת שועל⤓
+Barley Flour¦קמח שעורה⤓
+White Flour¦קמח לבן⤓
+Noodles¦נודלס⤓
+Pasta¦פסטה⤓
+Al-Dente¦אל-דנטה⤓
+Plain Matzo¦מצה רגילה⤓
+Basmati Rice¦אורז בסמטי⤓
+Wild Rice¦אורז פרא⤓
+Jasmine Rice¦אורז יסמין⤓
+Sushi Rice¦אורז סושי⤓
+Round Rice¦אורז עגול⤓
+Chia Seeds¦זרעי צ'יה⤓
+Dried¦מיובש⤓
+Sorghum¦דורה⤓

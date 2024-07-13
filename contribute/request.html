@@ -215,13 +215,11 @@
             } else {
                 output.innerHTML = "Sending Request Packet...";
                 fetch("https://apbd-contrib-bot.shaharmsecond.workers.dev/", {
-                    /*Need a post request with payload*/
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
                     },
                     body: JSON.stringify(payload),
-                    /* CORS...*/
                 })
                     .then(response => {
                         output.innerHTML = "Getting Response...";
