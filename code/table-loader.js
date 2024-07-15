@@ -1,3 +1,8 @@
+switch (LANGUAGE) {
+    case "en": document.getElementById("loading-details").innerHTML = "Script Started. Retrieving Table..."; break;
+    case "he": document.getElementById("loading-details").innerHTML = "הקוד הופעל. מנסה להשיג מידע.&rlm;.&rlm;.&rlm;"; break;
+}
+
 const parameters = new URLSearchParams(window.location.search);
 
 /**
@@ -8,13 +13,22 @@ let table = document.getElementById("food-list");
 const response = await fetch(window.location.origin + "/content/table.html")
 const html = await response.text()
 table.innerHTML = html
+
+switch (LANGUAGE) {
+    case "en": document.getElementById("loading-details").innerHTML = "Table Retrieved. Translating..."; break;
+    case "he": document.getElementById("loading-details").innerHTML = "המידע הושג. מתרגם רשימה.&rlm;.&rlm;.&rlm;"; break;
+}
+
+// First Rests - every time table.innerHTML is set, all references are lost.
+
 /**
  * @type {HTMLTableRowElement[]}
  */
 let rows = Array.from(table.getElementsByTagName("tr"));
 
-const TABLE = document.getElementById("food-list")
-TABLE.innerHTML = rows.map(row => row.outerHTML).join("\n")
+table = document.getElementById("food-list")
+table.style.display = "none"
+
 console.log("tables done, translating if needed");
 
 activateSwitches()
@@ -24,7 +38,13 @@ if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang")
     await translate("en");
 } else await translate(parameters.get("lang"));
 
-// translate resets HTML references
+
+switch (LANGUAGE) {
+    case "en": document.getElementById("loading-details").innerHTML = "Table Translated. Sorting table..."; break;
+    case "he": document.getElementById("loading-details").innerHTML = "הרשימה תורגמה. ממיין רשימה.&rlm;.&rlm;.&rlm;"; break;
+}
+
+// Second Reset - translate sets innerHTML as well
 
 table = document.getElementById("food-list");
 rows = Array.from(table.getElementsByTagName("tr"));
@@ -34,34 +54,12 @@ rows = Array.from(table.getElementsByTagName("tr"));
 // Sort if needed
 if (parameters.has("sort")) {
 
-    /**
-     * Sorts the rows of a table based on a provided predicate function.
-     *
-     * @param {HTMLTableElement} table - The table to sort.
-     * @param {(a: HTMLTableRowElement, b: HTMLTableRowElement) => number} predicate - The function used to determine the sort order.
-     * @return {void} This function does not return a value.
-     */
-    function sortTable(table, predicate) {
-        var rs = Array.from(table.rows).slice(1); // Convert rows collection to array, excluding header row
-        rs.sort(predicate); // Sort rows array using the provided predicate function
-
-        // Clear the existing table body
-        while (table.rows.length > 1) {
-            table.deleteRow(1);
-        }
-
-        // Re-append sorted rows to the table
-        rs.forEach(function (row) {
-            table.tBodies[0].appendChild(row);
-        });
-    }
-
     console.log("Sorting by " + parameters.get("sort"));
     let header = rows.shift();
     let sort = parameters.get("sort");
     switch (sort) {
         case "name-d": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aName = a.getElementsByTagName("td")[0].innerText;
                 let bName = b.getElementsByTagName("td")[0].innerText;
                 if (aName > bName) return 1;
@@ -71,7 +69,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "name-u": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aName = a.getElementsByTagName("td")[0].innerText;
                 let bName = b.getElementsByTagName("td")[0].innerText;
                 if (aName < bName) return 1;
@@ -81,7 +79,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "glycemic-index-d": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aIndex = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 let bIndex = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 if (aIndex == -1 && bIndex == -1) return 0;
@@ -94,7 +92,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "glycemic-index-u": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aIndex = parseFloat(a.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 let bIndex = parseFloat(b.getElementsByTagName("td")[2].getElementsByTagName("span")[0].innerText);
                 if (aIndex == -1 && bIndex == -1) return 0;
@@ -107,7 +105,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "glycemic-load-d": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aLoad = parseFloat(a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 let bLoad = parseFloat(b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 if (aLoad < 0 && bLoad < 0) return 0;
@@ -120,7 +118,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "glycemic-load-u": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aLoad = parseFloat(a.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 let bLoad = parseFloat(b.getElementsByTagName("td")[3].getElementsByTagName("span")[0].innerText);
                 if (aLoad < 0 && bLoad < 0) return 0;
@@ -133,7 +131,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "sugars-d": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aSugars = parseFloat(a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 let bSugars = parseFloat(b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 if (aSugars < 0 && bSugars < 0) return 0;
@@ -146,7 +144,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "sugars-u": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aSugars = parseFloat(a.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 let bSugars = parseFloat(b.getElementsByTagName("td")[4].getElementsByTagName("span")[0].innerText);
                 if (aSugars < 0 && bSugars < 0) return 0;
@@ -159,7 +157,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "carbs-d": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aCarbs = parseFloat(a.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 let bCarbs = parseFloat(b.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 if (aCarbs < 0 && bCarbs < 0) return 0;
@@ -172,7 +170,7 @@ if (parameters.has("sort")) {
             break;
         }
         case "carbs-u": {
-            sortTable(table, (a, b) => {
+            rows.sort((a, b) => {
                 let aCarbs = parseFloat(a.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 let bCarbs = parseFloat(b.getElementsByTagName("td")[5].getElementsByTagName("span")[0].innerText);
                 if (aCarbs < 0 && bCarbs < 0) return 0;
@@ -188,6 +186,17 @@ if (parameters.has("sort")) {
     }
     rows.unshift(header);
 }
+
+table.innerHTML = rows.map(x => x.outerHTML).join("\n");
+
+switch (LANGUAGE) {
+    case "en": document.getElementById("loading-details").innerHTML = "Table Sorted. Adding Metadata..."; break;
+    case "he": document.getElementById("loading-details").innerHTML = "הרשימה ממוינת. מוסיף מטא-דאטא.&rlm;.&rlm;.&rlm;"; break;
+}
+
+// Third Reset - innerHTML of table is set, rows var is lost.
+
+rows = Array.from(table.getElementsByTagName("tr"));
 
 console.log("postprocessing table");
 
@@ -255,3 +264,15 @@ for (let i = 0; i < rows.length; i++) {
         }
     }
 }
+
+switch (LANGUAGE) {
+    case "en": document.getElementById("loading-details").innerHTML = "Table built successfully!"; break;
+    case "he": document.getElementById("loading-details").innerHTML = "רשימה נבנתה בהצלחה!&rlm;"; break;
+}
+
+
+clearInterval(INTERVAL);
+for (let id of ["loading-h1", "loading-details", "loading-p"]) {
+    document.getElementById(id).style.display = "none";
+}
+table.style.display = "table";

@@ -87,13 +87,41 @@
         <table id="food-list">
 
         </table>
+
+        <h1 id="loading-h1" style="display: inline; direction: ltr !important;">Loading Table<span id="loading-dots">.</span></h1>
+        <code id="loading-details" style="direction: ltr !important; padding-top: 0px; margin-top: -20px;">Activating table loading script...</code>
+        <p id="loading-p" ti="200" style="text-align: center; direction: ltr !important; opacity: 0.5;">ⓘ The double curly-brackets are used when the website is translated to different languages.</p>
+        <script>
+            let parameters = new URLSearchParams(window.location.search);
+            var LANGUAGE = parameters.get("lang") || "en";
+            if (LANGUAGE === "he") {
+                let h1 = document.getElementById("loading-h1");
+                h1.style.direction = "rtl !important";
+                h1.innerHTML = "<span id=\"loading-dots\">.</span>טוען טבלה";
+
+                let details = document.getElementById("loading-details");
+                details.style.direction = "rtl !important";
+                details.innerHTML = "מפעיל קוד טעינת רשימה.&rlm;.&rlm;.&rlm;";
+
+                let p = document.getElementById("loading-p");
+                p.style.direction = "rtl !important";
+                p.innerHTML = "הסוגריים מסולסלים הכפולים מסביב לחלקים באתר נמצאים על מנת לעזור בתרגום האתר לשפות שונות.&rlm;"
+            }
+            let loadingDots = document.getElementById("loading-dots");
+            let dots = ".";
+            var INTERVAL = setInterval(() => {
+                loadingDots.innerText = dots;
+                dots += "."
+                if (dots.length > 3) dots = "."
+            }, 500)
+        </script>        
     </div>
 
     <script src="code/translator.js"></script>
     <script src="code/switches.js"></script>
     <script src="code/searchbar.js"></script>
     <script src="code/dropdowns.js"></script>
-    <script type="module" src="code/table-loader.js"></script>
+    <script type="module" src="code/table-loader.js" async="true"></script>
 </body>
 
 </html>

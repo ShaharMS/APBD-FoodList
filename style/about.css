@@ -16,16 +16,6 @@ h1 {
     padding-inline-start: 80px;
 }
 
-code {
-    font-size: 1.2em;
-    background-color: #333333;
-    color: white;
-    padding-inline: 4px;
-    padding-block: 1px;
-    border: 2px solid #222222;
-    border-radius: 4px;
-}
-
 ul>li {
     margin-bottom: 10px;
     line-height: 1.2rem;
