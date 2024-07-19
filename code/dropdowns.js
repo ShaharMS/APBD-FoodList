@@ -5,14 +5,9 @@ var translationMatrix = [];
 var languageIndex = 0;
 function activateDropdowns() {
     let about = document.getElementById("about");
-    let aboutBounds = about.getBoundingClientRect();
-
     let contribute = document.getElementById("contribute");
-    let contributeBounds = contribute.getBoundingClientRect();
-    
     let contact = document.getElementById("contact");
-    let contactBounds = contact.getBoundingClientRect();
-
+    
     let aboutMenu = document.getElementById("about-menu");
     let contributeMenu = document.getElementById("contribute-menu");
     let contactMenu = document.getElementById("contact-menu");
@@ -28,6 +23,7 @@ function activateDropdowns() {
 
     const switchAboutMenu = (e) => {console.log("switch about");
         hideContributeMenu();
+        hideContactMenu();
         if (aboutMenu.style.display == "block") {
             hideAboutMenu();
         } else {
@@ -45,6 +41,7 @@ function activateDropdowns() {
 
     const switchContributeMenu = (e) => {console.log("switch trib");
         hideContactMenu();
+        hideAboutMenu();
         if (contributeMenu.style.display == "block") {
             hideContributeMenu();
         } else {
@@ -62,6 +59,7 @@ function activateDropdowns() {
 
     const switchContactMenu = (e) => {console.log("switch contact");
         hideContributeMenu();
+        hideAboutMenu();
         if (contactMenu.style.display == "block") {
             hideContactMenu();
         } else {
