@@ -109,6 +109,7 @@ h1 {
 
 blockquote {
     padding-inline: 20px;
+    padding-inline-end: 10px;
     opacity: 0.5;
     margin-block: 50px;
     padding-block: 6px;
@@ -307,6 +308,12 @@ blockquote:hover {
 
     #food-list td:nth-child(1) > input {
         width: 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    blockquote {
+        margin-block: 30px;
     }
 }
 
