@@ -93,6 +93,7 @@
         <p id="loading-p" ti="200" style="text-align: center; direction: ltr !important; opacity: 0.5;">ⓘ The double curly-brackets are used when the website is translated to different languages.</p>
         <script>
             let parameters = new URLSearchParams(window.location.search);
+            document.getElementById("food-search").value = parameters.get("search") || "";
             var LANGUAGE = parameters.get("lang") || "en";
             if (LANGUAGE === "he") {
                 let h1 = document.getElementById("loading-h1");

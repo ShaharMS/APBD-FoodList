@@ -151,7 +151,8 @@ blockquote:hover {
     margin-bottom: 100px;
 }
 
-.language-switch, .sort-switch {
+.language-switch,
+.sort-switch {
     width: 100px;
     height: 40px;
     border: 2px solid #333333;
@@ -164,7 +165,8 @@ blockquote:hover {
     justify-content: center;
 }
 
-.language-switch:hover, .sort-switch:hover {
+.language-switch:hover,
+.sort-switch:hover {
     scale: 1.1;
 }
 
@@ -248,7 +250,7 @@ blockquote:hover {
     overflow-x: hidden;
 }
 
-#food-list td:nth-child(1) > input {
+#food-list td:nth-child(1)>input {
     width: 80px;
     color: white;
     background-color: #222222;
@@ -259,19 +261,29 @@ blockquote:hover {
 #food-list td:nth-child(1) {
     width: 80px;
 }
+
 #food-list td:nth-child(2) {
     text-align: unset;
     padding-inline: 10px;
 }
 
-#food-list td:nth-child(4) > input {
-    width: 50px;
-}
 #food-list th:nth-child(4) {
     justify-content: center;
 }
+
 #food-list tr:hover {
     background-color: #444444;
+}
+
+@media screen and (min-width: 1400px) {
+
+    #food-list td:nth-child(1)>input {
+        width: 120px;
+    }
+    #food-list td:nth-child(1) {
+        width: unset;
+        
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -306,7 +318,7 @@ blockquote:hover {
         padding-inline: 10px;
     }
 
-    #food-list td:nth-child(1) > input {
+    #food-list td:nth-child(1)>input {
         width: 50px;
     }
 }
@@ -326,11 +338,13 @@ blockquote:hover {
         padding-inline-start: 5px;
     }
 
-    header a, header h1, .navbar-menu a {
+    header a,
+    header h1,
+    .navbar-menu a {
         line-height: normal;
         display: flex !important;
         align-items: center !important;
-        justify-content: center !important; 
+        justify-content: center !important;
     }
 
     header h1 {
@@ -346,10 +360,10 @@ blockquote:hover {
 }
 
 @media screen and (max-width: 300px) {
-    #food-list td:nth-child(1) > input {
+    #food-list td:nth-child(1)>input {
         width: 42px;
     }
-    
+
     blockquote {
         width: 80%;
         margin-inline-start: calc(50px + 5%);
