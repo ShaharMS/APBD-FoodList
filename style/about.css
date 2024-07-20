@@ -11,7 +11,6 @@ h1 {
 }
 .container {
     margin-top: 50px;
-    direction: ltr;
     align-items: unset;
     padding-inline-start: 80px;
 }
@@ -23,4 +22,28 @@ ul>li {
 
 .hidden {
     display: none;
+}
+
+#language-switch {
+    background-color: #2b2a33;
+    border: 1px solid #8f8f9d;
+    border-radius: 4px;
+    width: 110px;
+    height: 46px;
+    font-size: 1.2em;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 400;
+
+    align-self: center;
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        padding-inline-start: 0px;
+        padding-inline: 30px;
+    }
+    h2 {
+        margin-inline-start: -10px;
+    }
 }

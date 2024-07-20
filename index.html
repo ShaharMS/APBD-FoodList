@@ -28,7 +28,7 @@
                     <a ti="145" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{Website}} <span>&UpperRightArrow;</span></a>
                     <a target="_blank" href="https://rarediseases.org/rare-diseases/adult-polyglucosan-body-disease/">APBD <span>&UpperRightArrow;</span></a>
                     <a ti="146" 
-                        onclick="window.location.href = window.location.origin + '/about/database.html' + window.location.search"
+                        onclick="window.location.href = window.location.origin + `/about/database${'_' + (new URLSearchParams(window.location.search).get('lang') || 'en')}.html` + window.location.search"
                         href="#">{{Food Database}}</a>
                 </div>
             </div>

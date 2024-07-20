@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APBD Food List: Database</title>
+
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/about.css">
+</head>
+<body>
+    <script>
+        let l = new URLSearchParams(window.location.search).get('lang') || 'en';
+        if (l !== 'he') {
+            window.location.href = window.location.origin + `/about/database${'_' + l}.html` + window.location.search
+        }
+    </script>
+    <header>
+        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
+        </h1>
+        <nav class="header-menu">
+            <div>
+                <a ti="1" id="about" href="#">{{About}}</a>
+                <div id="about-menu" class="navbar-menu">
+                    <a ti="145" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{Website}} <span>&UpperRightArrow;</span></a>
+                    <a target="_blank" href="https://rarediseases.org/rare-diseases/adult-polyglucosan-body-disease/">APBD <span>&UpperRightArrow;</span></a>
+                    <a ti="146" 
+                        onclick="window.location.href = window.location.origin + `/about/database${'_' + (new URLSearchParams(window.location.search).get('lang') || 'en')}.html` + window.location.search"
+                        href="#">{{Food Database}}</a>
+                </div>
+            </div>
+            <div>
+                <a ti="2" id="contribute" href="#">{{Contribute}}</a>
+                <div id="contribute-menu" class="navbar-menu">
+                    <a ti="32"
+                        onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
+                        href="#">{{Request data}}</a>
+                    <a ti="33"
+                        onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search"
+                        href="#">{{Provide data}}</a>
+                    <a ti="56"
+                        onclick="window.location.href = window.location.origin + '/contribute/leaderboards.html' + window.location.search"
+                        href="#">{{Leaderboards}}</a>
+                </div>
+            </div>
+
+            <div>
+                <a ti="3" id="contact" href="#">{{Contact}}</a>
+                <div id="contact-menu" class="navbar-menu">
+                    <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
+                    <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
+                        shaharms</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <select class="language-switch" id="language-switch">
+            <option ti="10" value="en">{{English}}</option>
+            <option ti="11" value="he">{{Hebrew}}</option>
+        </select>
+        <h1>איך האתר מאשר מידע</h1>
+        <p>
+            אחד מהגורמים העיקריים ליצירת אתר במיוחד בשביל זה, במקום להסתמך על רשימה חיצונית/אתר אחר, היא הכמות האדירה
+            של מידע לא עקבי, בכלל לא מדויק, ואפילו זדוני (ראיתי יותר מכמה אתרים שמטרתם בסוף להציג מתכונים/מוצרים שלהם
+            כ"אלטרנטיבה בריאה" לסכרתיים לדוגמה, בעוד שהומצר שלהם רחוק מאוד מזה...&rlm;)<br>
+            מכיוון שאני לא רוצה להחשב כ"חלק מהם", החלטתי להיות שקוף לגמרי בנוגע לפיתוח האתר - אפשר לצפות,
+            ואפילו לבקש לערוך את קוד האתר, ואני מתכוון להיות שקוף מאוד לגבי המקומות מהם אני משיג את המידע עצמו.&rlm;
+        </p>
+        <blockquote>
+            לפני שנתחיל, חשוב לדעת, שגם עם כל המאמצים שאני משקיע בלהציג מידע נכון ומדויק ככל האפשר, עדיין יכולים
+            להיות אי-דיוקים כאלה או אחרים. כמו שמוזכר באודות האתר וברשיון תחתיו הקוד שלו נמצא, אני לא אחראי לשום דבר
+            הנגרם עקב שימוש באתר. ראה את ה<a target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/LICENSE.md">רשיון</a> למידע נוסף.&rlm;<br>
+            חלק רלוונטי ברשיון נמצא למטה:
+            <br>
+            <button onclick="document.getElementById('warrenty').classList.toggle('hidden')">לחץ כאן על מנת להראות/להחביא חלק רלוונטי</button>
+            <pre id="warrenty" class="hidden" style="word-wrap: break-word; width: 100%; white-space: pre-wrap;">
+BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. 
+EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, 
+EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, 
+YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, 
+OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, 
+INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM 
+(INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR 
+A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), 
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+            </pre>
+        </blockquote>
+        <h2>מקורות מידע</h2>
+        <p>
+            נכון לעכשיו, מאגר הנתונים מורכב ממידע משני מקורות:&rlm;
+            <ul style="list-style-type: circle;">
+                <li>
+                    <a href="https://www.usda.gov/">USDA</a> - רוב המידע לגבי דברים "נאים" - מירקות ותבלינים עד לבשר, נלקח מכאן. 
+                    במקרים בהם המידע נמצא כאן, ערכים ועומסים גליקמיים נלקחים מהאתר <a href="https://glycemic-index.net/">Glycemic Index Guide</a>,
+                     שגם לוקח מידע מה-USDA.&rlm;                    
+                </li>
+                <li>
+                    <a href="https://www.foodsdictionary.co.il/">foodsdictionary.co.il</a> - In cases where details differ massively between sources, or the USDA doesn't provide
+                    enough/any data, this website is used to fill in the gaps. It also reports accurate data.
+                </li>
+            </ul>
+        </p>
+        <p>
+            When the website adds data, it uses these sources as much as it possibly can, and even drops data where there isn't any which is trusted.
+        </p>
+        <p>
+            Moreover - when an item is too broad, or is offered by multiple companies, of each the product varies wildly in data, it is rejected.
+            <br>
+            Example of rejected broad items with data:
+            <ul>
+                <li>Cornflakes - Almost nobody eats "raw" cornflakes with no sugar added, and each company makes its cornflakes with varying amounts of sugar.</li>
+                <li>Canned Fruit - each company processes canned food differently, adding specific ingrediants, including sugar most of the time</li>
+            </ul> 
+            Example of accepted broad items with data:
+            <ul>
+                <li>Pasta types - Pasta is almost always made only with a specific type of flour (semolina, durum, white flour...) + water/eggs, both with minimal impact on nutrition facts.</li>
+            </ul>
+
+            To conclude - if the same food has varying nutrition facts between companies, it is likely to not be present on the list "generaly", but attached to the producer's name. 
+        </p>
+
+        <h2>How Users Provide Data</h2>
+
+        <p>
+            When a user makes a contribution, it automatically writes "potential" code for the website, and alerts me of a request to 
+            write this code to the website. <br>
+            I Go over the data, and see if it is supported in any of the trusted sources, if available.
+            If not - I try to look for data in other sources, to see if they support the request's data.
+        </p>
+        <p>
+            If the data is supported, I manually allow the data to be merged into the website (may sound complicated, takes basically two clicks 😅),
+            update the leaderboards (if the user who provided the data gave their name) and the website online is updated.
+        </p>
+        <p>
+            If the data is partially supported, i fix what needs fixing, and do the steps above.
+        </p>
+        <p>
+            If the data is not supported, I reject the request to add the code to the website, and basically nothing happens.
+        </p>
+
+        <h2>Different Identifiers</h2>
+        <p>
+            You may have noticed some cells in the database contain some extra information, 
+            in the form of additional signs/replacement words. 
+            These are listed below:
+            <li>
+                <code>~</code> - One of three reasons (ordered from most common to least common):
+                <ul style="list-style-type: circle;">
+                    <li>The food contains a very broad range of data, and the most supported & common value was chosen</li>
+                    <li>A source other than the USDA (or any of website's other trusted sources) was used because of a lack of data.</li>
+                    <li>Too many reliable sources conflicted. In which case, a sensible average is chosen</li>
+                </ul>
+            </li>
+            <li>
+                <code>&lt;</code> There is no accurately averageable data, but there is a "clear" upper bound for it.
+            </li>
+            <li>
+                <code>No Data</code> - No reliable data was found for this food item. Important to note -
+                Even if one column has no data, that doesnt necessarily mean that the other columns have innacurate/estimated data. If they do, a <code>~</code> is used.
+            </li>
+        </ul>
+    </div>
+
+    <script src="../code/translator.js"></script>
+    <script src="../code/dropdowns.js"></script>
+    <script src="../code/switches.js"></script>
+
+    <script type="module">
+        let urlParams = new URLSearchParams(window.location.search);
+
+        let lang = urlParams.get("lang") || "en";
+        await translate(lang);
+        activateDropdowns();
+        activateSwitches();
+    </script>
+</body>
+</html>

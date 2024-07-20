@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="../style/about.css">
 </head>
 <body>
+    <script>
+        let l = new URLSearchParams(window.location.search).get('lang') || 'en';
+        if (l !== 'en') {
+            window.location.href = window.location.origin + `/about/database${'_' + l}.html` + window.location.search
+        }
+    </script>
     <header>
         <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
         </h1>
@@ -19,7 +25,7 @@
                     <a ti="145" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{Website}} <span>&UpperRightArrow;</span></a>
                     <a target="_blank" href="https://rarediseases.org/rare-diseases/adult-polyglucosan-body-disease/">APBD <span>&UpperRightArrow;</span></a>
                     <a ti="146" 
-                        onclick="window.location.href = window.location.origin + '/about/database.html' + window.location.search"
+                        onclick="window.location.href = window.location.origin + `/about/database${'_' + (new URLSearchParams(window.location.search).get('lang') || 'en')}.html` + window.location.search"
                         href="#">{{Food Database}}</a>
                 </div>
             </div>
@@ -50,13 +56,17 @@
     </header>
 
     <div class="container">
+        <select class="language-switch" id="language-switch">
+            <option ti="10" value="en">{{English}}</option>
+            <option ti="11" value="he">{{Hebrew}}</option>
+        </select>
         <h1>How This Website Confrims Data</h1>
         <p>
-            One of the main drives to creating a concentrated website for this, instead of relying on some documents/extrnal lists,
-            is the shear amount of inconsistent, wildly innacurate, and sometimes, even malicious data. (I've seen more than a handful of websites
+            One of the main drives to creating a concentrated website for this, instead of relying on some documents/external lists,
+            is the shear amount of inconsistent, wildly inaccurate, and sometimes, even malicious data. (I've seen more than a handful of websites
             trying to seem legitimate while wildly exaggerating the 'healthiness' of certain products they sell..)<br>
             Since i don't want to be even near the same category as some of these website, i decided to be fully transparent as to where
-            i get my data, and even open-source the website (meaning the website's code is publically viewable). 
+            i get my data, and even open-source the website (meaning the website's code is publicly viewable). 
         </p>
         <blockquote>
             Before we begin, it's important to remember, that even with the efforts i take to validate data, some may still be innacurate. 
@@ -96,9 +106,23 @@ EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH D
                 </li>
             </ul>
         </p>
-
         <p>
             When the website adds data, it uses these sources as much as it possibly can, and even drops data where there isn't any which is trusted.
+        </p>
+        <p>
+            Moreover - when an item is too broad, or is offered by multiple companies, of each the product varies wildly in data, it is rejected.
+            <br>
+            Example of rejected broad items with data:
+            <ul>
+                <li>Cornflakes - Almost nobody eats "raw" cornflakes with no sugar added, and each company makes its cornflakes with varying amounts of sugar.</li>
+                <li>Canned Fruit - each company processes canned food differently, adding specific ingrediants, including sugar most of the time</li>
+            </ul> 
+            Example of accepted broad items with data:
+            <ul>
+                <li>Pasta types - Pasta is almost always made only with a specific type of flour (semolina, durum, white flour...) + water/eggs, both with minimal impact on nutrition facts.</li>
+            </ul>
+
+            To conclude - if the same food has varying nutrition facts between companies, it is likely to not be present on the list "generaly", but attached to the producer's name. 
         </p>
 
         <h2>How Users Provide Data</h2>
@@ -145,6 +169,7 @@ EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH D
 
     <script src="../code/translator.js"></script>
     <script src="../code/dropdowns.js"></script>
+    <script src="../code/switches.js"></script>
 
     <script type="module">
         let urlParams = new URLSearchParams(window.location.search);
@@ -152,6 +177,7 @@ EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH D
         let lang = urlParams.get("lang") || "en";
         await translate(lang);
         activateDropdowns();
+        activateSwitches();
     </script>
 </body>
 </html>
