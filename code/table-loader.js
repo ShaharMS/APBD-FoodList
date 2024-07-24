@@ -200,7 +200,14 @@ rows = Array.from(table.getElementsByTagName("tr"));
 
 console.log("postprocessing table");
 
-// Fix floating point precision errors
+// Add meta-data
+/*
+ - Floating Point Errors
+ - less/more than signs (< or >, `less-than` or `more-than`)
+ - Estimated values (~) (`inaccurate`)
+ - Attach approximated value indicator (todo) (`approximated`)
+ - Attach company name + image (todo) (`company="..."`)
+*/
 
 for (let i = 0; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
@@ -241,7 +248,7 @@ for (let i = 0; i < rows.length; i++) {
         let sugar = cells[4].getElementsByTagName("span")[0];
         let carbs = cells[5].getElementsByTagName("span")[0];
 
-        // Check for missing data
+        // Add actual meta-data
         let elements = [gi, gl, sugar, carbs];
         for (let element of elements) {
             if (parseFloat(element.innerText) < 0) {
@@ -260,6 +267,24 @@ for (let i = 0; i < rows.length; i++) {
                 par.innerText = "<"
                 par.style.marginInlineStart = "0";
                 element.before(par)
+            } else if (element.hasAttribute("company")) {
+                let companies = element.getAttribute("company").split("|").map(item => item.trim());
+                for (let companyName of companies) {
+                    let companyImg = document.createElement("img");
+                    companyImg.crossOrigin = "Anonymous";
+                    companyImg.style.height = "1rem";
+                    switch (companyName) {
+                        case "gad-dairy":
+                            companyImg.src = "https://upload.wikimedia.org/wikipedia/he/5/51/GAD-LOGO.png"
+                            break;
+                        case "tnuva":
+                            companyImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tnuva.svg/1280px-Tnuva.svg.png"
+                            break;
+                        case "tara":
+                            
+                        default: continue;
+                    }
+                }
             }
         }
     }
