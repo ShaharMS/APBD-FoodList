@@ -257,7 +257,7 @@ for (let i = 0; i < rows.length; i++) {
                 par.style.color = "gray";
                 element.style.display = "none";
                 element.after(par)
-            } else if (element.hasAttribute("innacurate")) {
+            } else if (element.hasAttribute("inaccurate")) {
                 let par = document.createElement("span");
                 par.innerText = "~"
                 par.style.marginInlineStart = "0";
@@ -273,17 +273,8 @@ for (let i = 0; i < rows.length; i++) {
                     let companyImg = document.createElement("img");
                     companyImg.crossOrigin = "Anonymous";
                     companyImg.style.height = "1rem";
-                    switch (companyName) {
-                        case "gad-dairy":
-                            companyImg.src = "https://upload.wikimedia.org/wikipedia/he/5/51/GAD-LOGO.png"
-                            break;
-                        case "tnuva":
-                            companyImg.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Tnuva.svg/1280px-Tnuva.svg.png"
-                            break;
-                        case "tara":
-                            
-                        default: continue;
-                    }
+                    companyImg.src = window.location.origin + `/assets/logos/${companyName}.png`;
+                    
                 }
             }
         }
