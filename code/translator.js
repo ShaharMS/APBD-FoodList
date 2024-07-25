@@ -1,3 +1,9 @@
+/**
+ * @type {string[][]}
+ */
+var translationMatrix = [];
+var languageIndex = 0;
+
 let transRegex = /{{(.*?)}}/;
 
 function index(lang) {
@@ -41,5 +47,31 @@ async function translate(lang) {
             }            
         }
     }
-            
+}
+
+function translateCompanyName(companyName, languageIndex) {
+    switch (companyName) {
+        case "tara": return languageIndex == 0 ? "tara" : "טרה";
+        case "tnuva": return languageIndex == 0 ? "tnuva" : "תנובה";
+        case "gad": return languageIndex == 0 ? "gad" : "גד";
+        case "shtrauss": return languageIndex == 0 ? "shtrauss" : "שטראוס";
+        case "osem": return languageIndex == 0 ? "osem" : "אוסם";
+        case "nestle": return languageIndex == 0 ? "nestle" : "נסטלה";
+        case "feldman": return languageIndex == 0 ? "feldman" : "פלדמן";
+        case "shufersal": return languageIndex == 0 ? "shufersal" : "שופרסל";
+        case "coca-cola": return languageIndex == 0 ? "coca-cola" : "קוקה-קולה";
+        case "pepsi": return languageIndex == 0 ? "pepsi" : "פפסי";
+        case "blu": return languageIndex == 0 ? "blu" : "בלו";
+        case "rami-levy": return languageIndex == 0 ? "rami levy" : "רמי לוי";
+        case "sugat": return languageIndex == 0 ? "sugat" : "סוגת";
+        case "unilever": return languageIndex == 0 ? "unilever" : "יונילבר";
+        case "elit": return languageIndex == 0 ? "elit" : "עלית";
+        case "burger-king": return languageIndex == 0 ? "burger king" : "בורגר קינג";
+        case "mcdonalds": return languageIndex == 0 ? "McDonalds" : "מקדונלדס";
+        case "roladin": return languageIndex == 0 ? "roladin" : "רולדין";
+        case "soglowek": return languageIndex == 0 ? "soglowek" : "זוגלובק";
+        case "hazi-hinam": return languageIndex == 0 ? "hazi hinam" : "חצי חינם";
+        case "neto": return languageIndex == 0 ? "neto" : "נטו";
+        default: return companyName
+    }
 }

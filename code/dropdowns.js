@@ -1,8 +1,4 @@
-/**
- * @type {string[][]}
- */
-var translationMatrix = [];
-var languageIndex = 0;
+
 function activateDropdowns() {
     let about = document.getElementById("about");
     let contribute = document.getElementById("contribute");

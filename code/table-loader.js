@@ -267,16 +267,36 @@ for (let i = 0; i < rows.length; i++) {
                 par.innerText = "<"
                 par.style.marginInlineStart = "0";
                 element.before(par)
-            } else if (element.hasAttribute("company")) {
-                let companies = element.getAttribute("company").split("|").map(item => item.trim());
-                for (let companyName of companies) {
-                    let companyImg = document.createElement("img");
-                    companyImg.crossOrigin = "Anonymous";
-                    companyImg.style.height = "1rem";
-                    companyImg.src = window.location.origin + `/assets/logos/${companyName}.png`;
-                    
-                }
             }
+        }
+
+        let name = cells[1];
+        if (name.hasAttribute("company")) {
+            name.style.display = "flex";
+            name.style.alignItems = "center";
+
+            let companyName = name.getAttribute("company")
+            let companyImg = document.createElement("img");
+            
+            companyImg.crossOrigin = "Anonymous";
+            companyImg.style.height = "1.2em";
+            companyImg.style.display = "inline";
+            companyImg.src = window.location.origin + `/assets/logos/${companyName}.png`;
+            companyImg.alt = companyName + " Logo";
+            companyImg.style.paddingInlineEnd = "0.5rem";
+
+            companyImg.onerror = function () {
+                companyImg.src = window.location.origin + "/assets/logos/default.png";
+            }
+
+            name.prepend(companyImg);
+
+            let par = document.createElement("span");
+            par.innerText = translateCompanyName(companyName, languageIndex) + ":";
+            par.style.color = "gray";
+            par.style.paddingInlineEnd = "0.5rem";
+            par.style.textTransform = "capitalize";
+            companyImg.after(par);
         }
     }
 }
