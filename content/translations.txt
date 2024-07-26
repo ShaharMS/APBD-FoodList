@@ -198,6 +198,6 @@ Chia Seeds¦זרעי צ'יה⤓
 Dried¦מיובש⤓
 Sorghum¦דורה⤓
 Coconut¦קוקוס⤓
-Optionals¦אופציונאלי⤓
+Optional¦אופציונאלי⤓
 Food's Companys¦חברת המאכל⤓
 If this food is produced by a specific company (for example, a specific sauce), input the name of the company here¦אם המאכל הזה מיוצר על ידי חברה ספציפית (למשל, רוטב של חברה מסוימת), מומלץ לכניס כאן את שם החברה⤓
