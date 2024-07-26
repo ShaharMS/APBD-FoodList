@@ -102,6 +102,19 @@
                 </tr>
                 <tr>
                     <th>
+                        <help ti="202">{{Food's Company description}}</help>
+                        <span ti="200 201">{{Optional}}: {{Food's Company}}</span>
+                    </th>
+                    <td>
+                        <input id="company" placeholder="Company Name...">
+                        <div class="button-row">
+                            <button id="co-ns" type="button" ti="41">I'm not sure</button>
+                            <button id="co-dk" type="button" ti="40">I don't know</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
                         <help ti="52">{{Glycemic Index description}}.</help>
                         <span ti="6">{{Glycemic Index}}</span>
                     </th>
@@ -212,6 +225,10 @@
             let translations__NotSure = document.getElementById("t-ns").classList.contains("selected");
             let translations__DontKnowAny = document.getElementById("t-dk").classList.contains("selected");
 
+            let company = document.getElementById("company").value;
+            let company__NotSure = document.getElementById("co-ns").classList.contains("selected");
+            let company__DontKnowAny = document.getElementById("co-dk").classList.contains("selected");
+
             let glycemicIndex = document.getElementById("glycemic-index").value;
             let glycemicIndex__NotSure = document.getElementById("gi-ns").classList.contains("selected");
             let glycemicIndex__DontKnow = document.getElementById("gi-dk").classList.contains("selected");
@@ -301,6 +318,7 @@
                 sugarSecurity: sugar__DontKnow ? 0 : (sugar__NotSure ? 1 : 2),
                 carbs: carbs.length === 0 ? -1 : parseFloat(carbs),
                 carbsSecurity: carbs__DontKnow ? 0 : (carbs__NotSure ? 1 : 2),
+                company: company.length === 0 ? null : company,
             }
 
             if (payload.foodEnglishSecurity == 0 && payload.foodHebrewSecurity == 0 && payload.glycemicIndexSecurity == 0) {
