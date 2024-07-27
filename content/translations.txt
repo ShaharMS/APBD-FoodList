@@ -201,3 +201,17 @@ Coconut¦קוקוס⤓
 Optional¦אופציונאלי⤓
 Food's Company¦חברת המאכל⤓
 If this food is produced by a specific company (for example, a specific sauce), input the name of the company here¦אם המאכל הזה מיוצר על ידי חברה ספציפית (למשל, רוטב של חברה מסוימת), מומלץ לכניס כאן את שם החברה⤓
+Big Mac¦ביג מק⤓
+¦⤓
+Whopper¦וופר⤓
+McChicken¦מק צ'יקן⤓
+Chicken McNuggets¦מק נאגטס⤓
+4-Piece¦ 4 נאגטס⤓
+5-Piece¦ 5 נאגטס⤓
+9-Piece¦ 9 נאגטס⤓
+10-Piece¦ 10 נאגטס⤓
+12-Piece¦ 12 נאגטס⤓
+French Fries¦צ'יפס⤓
+Regular¦רגיל⤓
+Medium¦גדול⤓
+Large¦ענק⤓

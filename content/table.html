@@ -2231,3 +2231,237 @@ else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'>
 	<td><span inaccurate id="SUGARFIELD-Coconut">6</span></td>
 	<td><span id="CARBFIELD-Coconut">15</span></td>
 </tr>
+<tr>
+    <td><input type="number" id="grams" value="220"
+            onchange='var v = (28.38 / 220) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Big Mac").innerHTML = (9 / 220) * this.value;
+                document.getElementById("CARBFIELD-Big Mac").innerHTML = (46 / 220) * this.value;
+                var e = document.getElementById("GLFIELD-Big Mac");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="203" company="mcdonalds">{{Big Mac}}</td>
+    <td><span style="color: #ffff00">66</span></td>
+    <td><span id="GLFIELD-Big Mac"><span style='color: #ff0000'>28.38</span></span></td>
+    <td><span id="SUGARFIELD-Big Mac">9</span></td>
+    <td><span id="CARBFIELD-Big Mac">46</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="131"
+            onchange='var v = (23.3 / 131) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-McChicken").innerHTML = (4.7 / 131) * this.value;
+                document.getElementById("CARBFIELD-McChicken").innerHTML = (37 / 131) * this.value;
+                var e = document.getElementById("GLFIELD-McChicken");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="206" company="mcdonalds">{{McChicken}}</td>
+    <td><span style="color: #ffff00">66</span></td>
+    <td><span id="GLFIELD-McChicken"><span style='color: #ff0000'>23.3</span></span></td>
+    <td><span id="SUGARFIELD-McChicken">4.7</span></td>
+    <td><span id="CARBFIELD-McChicken">37</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100"
+            onchange='var v = (6.9 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Chicken McNuggets").innerHTML = (0.1 / 100) * this.value;
+                document.getElementById("CARBFIELD-Chicken McNuggets").innerHTML = (15 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Chicken McNuggets");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="207" company="mcdonalds">{{Chicken McNuggets}}</td>
+    <td><span style="color: #9fe2bf">46</span></td>
+    <td><span id="GLFIELD-Chicken McNuggets"><span style='color: #9fe2bf'>6.9</span></span></td>
+    <td><span id="SUGARFIELD-Chicken McNuggets">0.1</span></td>
+    <td><span id="CARBFIELD-Chicken McNuggets">15</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="70"
+            onchange='var v = (4.83 / 70) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Chicken McNuggets 4").innerHTML = (0.07 / 70) * this.value;
+                document.getElementById("CARBFIELD-Chicken McNuggets 4").innerHTML = (10.5 / 70) * this.value;
+                var e = document.getElementById("GLFIELD-Chicken McNuggets 4");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="207 208" company="mcdonalds">{{Chicken McNuggets}}, {{4-Piece}}</td>
+    <td><span style="color: #9fe2bf">46</span></td>
+    <td><span id="GLFIELD-Chicken McNuggets 4"><span style='color: #00ff00'>4.83</span></span></td>
+    <td><span id="SUGARFIELD-Chicken McNuggets 4">0.07</span></td>
+    <td><span id="CARBFIELD-Chicken McNuggets 4">10.5</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="87.5"
+            onchange='var v = (6.9 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Chicken McNuggets 5").innerHTML = (0.1 / 100) * this.value;
+                document.getElementById("CARBFIELD-Chicken McNuggets 5").innerHTML = (15 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Chicken McNuggets 5");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="207 209" company="mcdonalds">{{Chicken McNuggets}}, {{5-Piece}}</td>
+    <td><span style="color: #9fe2bf">46</span></td>
+    <td><span id="GLFIELD-Chicken McNuggets 5"><span style='color: #9fe2bf'>6.037</span></span></td>
+    <td><span id="SUGARFIELD-Chicken McNuggets 5">0.087</span></td>
+    <td><span id="CARBFIELD-Chicken McNuggets 5">13.125</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="157.5"
+            onchange='var v = (6.9 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Chicken McNuggets 9").innerHTML = (0.1 / 100) * this.value;
+                document.getElementById("CARBFIELD-Chicken McNuggets 9").innerHTML = (15 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Chicken McNuggets 9");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="207 210" company="mcdonalds">{{Chicken McNuggets}}, {{9-Piece}}</td>
+    <td><span style="color: #9fe2bf">46</span></td>
+    <td><span id="GLFIELD-Chicken McNuggets 9"><span style='color: #ffff00'>10.867</span></span></td>
+    <td><span id="SUGARFIELD-Chicken McNuggets 9">0.157</span></td>
+    <td><span id="CARBFIELD-Chicken McNuggets 9">23.625</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="175"
+            onchange='var v = (6.9 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Chicken McNuggets 10").innerHTML = (0.1 / 100) * this.value;
+                document.getElementById("CARBFIELD-Chicken McNuggets 10").innerHTML = (15 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Chicken McNuggets 10");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="207 211" company="mcdonalds">{{Chicken McNuggets}}, {{10-Piece}}</td>
+    <td><span style="color: #9fe2bf">46</span></td>
+    <td><span id="GLFIELD-Chicken McNuggets 10"><span style='color: #ffff00'>12.075</span></span></td>
+    <td><span id="SUGARFIELD-Chicken McNuggets 10">0.175</span></td>
+    <td><span id="CARBFIELD-Chicken McNuggets 10">26.25</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="210"
+            onchange='var v = (6.9 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Chicken McNuggets 12").innerHTML = (0.1 / 100) * this.value;
+                document.getElementById("CARBFIELD-Chicken McNuggets 12").innerHTML = (15 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Chicken McNuggets 12");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="207 212" company="mcdonalds">{{Chicken McNuggets}}, {{12-Piece}}</td>
+    <td><span style="color: #9fe2bf">46</span></td>
+    <td><span id="GLFIELD-Chicken McNuggets 12"><span style='color: #ffff00'>14.49</span></span></td>
+    <td><span id="SUGARFIELD-Chicken McNuggets 12">0.21</span></td>
+    <td><span id="CARBFIELD-Chicken McNuggets 12">31.25</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100"
+            onchange='var v = (32 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-French Fries").innerHTML = (0.21 / 100) * this.value;
+                document.getElementById("CARBFIELD-French Fries").innerHTML = (41.9 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-French Fries");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="213" company="mcdonalds">{{French Fries}}</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><span id="GLFIELD-French Fries"><span style='color: #ff0000'>32</span></span></td>
+    <td><span id="SUGARFIELD-French Fries">0.21</span></td>
+    <td><span id="CARBFIELD-French Fries">41.9</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="71"
+            onchange='var v = (32 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-French Fries R").innerHTML = (0.21 / 100) * this.value;
+                document.getElementById("CARBFIELD-French Fries R").innerHTML = (41.9 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-French Fries R");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="213 214" company="mcdonalds">{{French Fries}}, {{Regular}}</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><span id="GLFIELD-French Fries R"><span style='color: #ff0000'>22.72</span></span></td>
+    <td><span id="SUGARFIELD-French Fries R">0.149</span></td>
+    <td><span id="CARBFIELD-French Fries R">29.749</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="117"
+            onchange='var v = (32 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-French Fries M").innerHTML = (0.21 / 100) * this.value;
+                document.getElementById("CARBFIELD-French Fries M").innerHTML = (41.9 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-French Fries M");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="213 215" company="mcdonalds">{{French Fries}}, {{Medium}}</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><span id="GLFIELD-French Fries M"><span style='color: #ff0000'>37.44</span></span></td>
+    <td><span id="SUGARFIELD-French Fries M">0.245</span></td>
+    <td><span id="CARBFIELD-French Fries M">49.022</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="154"
+            onchange='var v = (32 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-French Fries L").innerHTML = (0.21 / 100) * this.value;
+                document.getElementById("CARBFIELD-French Fries L").innerHTML = (41.9 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-French Fries L");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="213 216" company="mcdonalds">{{French Fries}}, {{Large}}</td>
+    <td><span style="color: #ff0000">70</span></td>
+    <td><span id="GLFIELD-French Fries L"><span style='color: #ff0000'>49.92</span></span></td>
+    <td><span id="SUGARFIELD-French Fries L">0.327</span></td>
+    <td><span id="CARBFIELD-French Fries L">65.364</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="291"
+            onchange='var v = (29.39 / 291) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Whopper").innerHTML = (12 / 291) * this.value;
+                document.getElementById("CARBFIELD-Whopper").innerHTML = (54 / 291) * this.value;
+                var e = document.getElementById("GLFIELD-Whopper");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="205" company="burger-king">{{Whopper}}</td>
+    <td><span style="color: #ffff00">61</span></td>
+    <td><span id="GLFIELD-Whopper"><span style='color: #ff0000'>29.39</span></span></td>
+    <td><span id="SUGARFIELD-Whopper">12</span></td>
+    <td><span id="CARBFIELD-Whopper">54</span></td>
+</tr>

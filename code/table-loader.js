@@ -187,6 +187,7 @@ if (parameters.has("sort")) {
     rows.unshift(header);
 }
 
+rows.reverse();
 table.innerHTML = rows.map(x => x.outerHTML).join("\n");
 
 switch (LANGUAGE) {
