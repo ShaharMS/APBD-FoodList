@@ -72,6 +72,11 @@ function translateCompanyName(companyName, languageIndex) {
         case "soglowek" | "זוגלובק": return languageIndex == 0 ? "soglowek" : "זוגלובק";
         case "hazi-hinam" | "hazi hinam" | "חצי-חינם" | "חצי חינם" : return languageIndex == 0 ? "hazi hinam" : "חצי חינם";
         case "neto" | "נטו": return languageIndex == 0 ? "neto" : "נטו";
+        case "gatorade" | "גיטורייד": return languageIndex == 0 ? "gatorade" : "גיטורייד";
+        case "mars" | "מרס": return languageIndex == 0 ? "mars" : "מרס";
+        case "monster" | "מאנסטר": return languageIndex == 0 ? "monster" : "מאנסטר";
+        case "red-bull" | "red bull" | "רד-בול" | "רד בול": return languageIndex == 0 ? "red bull" : "רד בול";
+        case "xl" | "אקסל": return languageIndex == 0 ? "xl" : "אקסל";
         default: return companyName
     }
 }
