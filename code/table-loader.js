@@ -207,8 +207,21 @@ console.log("postprocessing table");
  - less/more than signs (< or >, `less-than` or `more-than`)
  - Estimated values (~) (`inaccurate`)
  - Attach approximated value indicator (todo) (`approximated`)
- - Attach company name + image (todo) (`company="..."`)
+ - Attach company name + image (`company="..."`)
+ - Attach danger notes (`danger="..."`)
 */
+let pre = document.createElement("p"); //Global creating is easier
+pre.style.width = "min(150px, 20vw)";
+pre.style.position = "absolute";
+pre.style.zIndex = "1000";
+pre.style.display = "none";
+pre.style.fontSize = "0.8em";
+pre.style.backgroundColor = "#222222";
+pre.style.border = "2px solid gray";
+pre.style.borderRadius = "5px";
+pre.style.padding = "5px";
+pre.style.display = "none";
+document.body.append(pre);
 
 for (let i = 0; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
@@ -249,6 +262,7 @@ for (let i = 0; i < rows.length; i++) {
         let sugar = cells[4].getElementsByTagName("span")[0];
         let carbs = cells[5].getElementsByTagName("span")[0];
 
+
         // Add actual meta-data
         let elements = [gi, gl, sugar, carbs];
         for (let element of elements) {
@@ -268,6 +282,51 @@ for (let i = 0; i < rows.length; i++) {
                 par.innerText = "<"
                 par.style.marginInlineStart = "0";
                 element.before(par)
+            } else if (element.hasAttribute("danger")) {
+                let par = document.createElement("span");
+                par.innerText = "!"
+                par.style.color = "red";
+                par.style.fontWeight = "900"
+                par.style.marginInlineStart = "0";
+                element.after(par)
+                if (element.getElementsByTagName("span").length == 0) element.style.cssText += "color: red;"
+                else element.getElementsByTagName("span")[0].style.cssText += "color: red;"
+                let text = translationMatrix[element.getAttribute("danger")][languageIndex];
+
+                element.addEventListener("mouseover", function () {
+                    pre.textContent = text;
+                    pre.style.top = `${element.getBoundingClientRect().y}px`;
+                    pre.style.left = `${element.getBoundingClientRect().x}px`;
+                    pre.style.display = "block";
+                });
+                par.addEventListener("mouseover", function () {
+                    pre.textContent = text;
+                    pre.style.top = `${element.getBoundingClientRect().y}px`;
+                    pre.style.left = `${element.getBoundingClientRect().x}px`;
+                    pre.style.display = "block";
+                })
+                element.addEventListener("mouseleave", function () {
+                    pre.style.display = "none";
+                });
+                par.addEventListener("mouseleave", function () {
+                    pre.style.display = "none";
+                })
+                element.addEventListener("touchstart", function () {
+                    console.log("touchstart");
+                    pre.textContent = text;
+                    pre.style.top = `${element.getBoundingClientRect().y}px`;
+                    pre.style.left = `${element.getBoundingClientRect().x}px`;
+                    if (pre.focused === element) {
+                        pre.style.display = "none";
+                        pre.focused = null;
+                    } else {
+                        pre.focused = element;
+                        pre.style.display = "block";
+                    }
+
+                })
+
+                document.body.append(pre);
             }
         }
 
@@ -278,7 +337,7 @@ for (let i = 0; i < rows.length; i++) {
 
             let companyName = name.getAttribute("company")
             let companyImg = document.createElement("img");
-            
+
             companyImg.crossOrigin = "Anonymous";
             companyImg.style.height = "1.2em";
             companyImg.style.display = "inline";
