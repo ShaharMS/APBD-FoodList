@@ -187,7 +187,6 @@ if (parameters.has("sort")) {
     rows.unshift(header);
 }
 
-rows.reverse();
 table.innerHTML = rows.map(x => x.outerHTML).join("\n");
 
 switch (LANGUAGE) {
@@ -282,6 +281,11 @@ for (let i = 0; i < rows.length; i++) {
                 par.innerText = "<"
                 par.style.marginInlineStart = "0";
                 element.before(par)
+            } else if (element.hasAttribute("more-than")) {
+                let par = document.createElement("span");
+                par.innerText = "<"
+                par.style.marginInlineStart = "0";
+                element.after(par)
             } else if (element.hasAttribute("danger")) {
                 let par = document.createElement("span");
                 par.innerText = "!"
@@ -351,12 +355,14 @@ for (let i = 0; i < rows.length; i++) {
 
             name.prepend(companyImg);
 
-            let par = document.createElement("span");
-            par.innerText = translateCompanyName(companyName, languageIndex) + ":";
-            par.style.color = "gray";
-            par.style.paddingInlineEnd = "0.5rem";
-            par.style.textTransform = "capitalize";
-            companyImg.after(par);
+            if (window.innerWidth > 700) {
+                let par = document.createElement("span");
+                par.innerText = translateCompanyName(companyName, languageIndex) + ":";
+                par.style.color = "gray";
+                par.style.paddingInlineEnd = "0.5rem";
+                par.style.textTransform = "capitalize";
+                companyImg.after(par);
+            }
         }
     }
 }
