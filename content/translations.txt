@@ -223,3 +223,4 @@ Sprite Zero¦ספרייט זירו⤓
 Sprite Zero uses Aspertame as a sweetner. Aspertame still triggers insulin production, prompting glycogen synthesis, which is problematic.¦ספרייט זירו מומתק באמצעות אספרטיים. אספרטיים גם גורם לגוף להפריש אינסולין, שגורר יצירת גליקוגן, דבר שמאוד בעייתי.⤓
 
 Fanta¦פאנטה⤓
+Fanta Zero¦פאנטה זירו⤓
