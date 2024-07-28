@@ -2551,3 +2551,19 @@ else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'>
 	<td><span id="SUGARFIELD-Fanta">7.2</span></td>
 	<td><span id="CARBFIELD-Fanta">7.2</span></td>
 </tr>
+<tr>
+	<td><input type="number" id="grams" value="100" onchange='var v = (0 / 100) * parseFloat(this.value);
+document.getElementById("SUGARFIELD-Fanta Zero").innerText = (0 / 100) * this.value;
+document.getElementById("CARBFIELD-Fanta Zero").innerText = (0 / 100) * this.value;
+var e = document.getElementById("GLFIELD-Fanta Zero");
+if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'>
+	</td>
+	<td ti="224" company="coca-cola">{{Fanta Zero}}</td>
+	<td><span danger="225" style="color: #00ff00">0</span></td>
+	<td><span danger="225" id="GLFIELD-Fanta Zero"><span style='color: #00ff00'>0</span></span></td>
+	<td><span id="SUGARFIELD-Fanta Zero">0</span></td>
+	<td><span id="CARBFIELD-Fanta Zero">0</span></td>
+</tr>
