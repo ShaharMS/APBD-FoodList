@@ -219,3 +219,4 @@ Coke¦קולה⤓
 Coke Zero¦קולה זירו⤓
 Coke Zero uses Aspertame as a sweetner. Aspertame still triggers insulin production, prompting glycogen synthesis, which is problematic.¦קולה זירו מומתק באמצעות אספרטיים. אספרטיים גם גורם לגוף להפריש אינסולין, שגורר יצירת גליקוגן, דבר שמאוד בעייתי.⤓
 Sprite¦ספרייט⤓
+Sprite Zero¦ספרייט זירו⤓
