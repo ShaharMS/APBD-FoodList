@@ -224,3 +224,5 @@ Sprite Zero uses Aspertame as a sweetner. Aspertame still triggers insulin produ
 Fanta¦פאנטה⤓
 Fanta Zero¦פאנטה זירו⤓
 Fanta Zero uses Aspertame as a sweetner. Aspertame still triggers insulin production, prompting glycogen synthesis, which is problematic.¦פאנטה זירו מומתק באמצעות אספרטיים. אספרטיים גם גורם לגוף להפריש אינסולין, שגורר יצירת גליקוגן, דבר שמאוד בעייתי.⤓
+
+Milk 3%¦חלב 3%⤓
