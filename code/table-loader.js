@@ -211,7 +211,7 @@ console.log("postprocessing table");
 */
 let pre = document.createElement("p"); //Global creating is easier
 pre.style.width = "min(150px, 20vw)";
-pre.style.position = "absolute";
+pre.style.position = "fixed";
 pre.style.zIndex = "1000";
 pre.style.display = "none";
 pre.style.fontSize = "0.8em";
