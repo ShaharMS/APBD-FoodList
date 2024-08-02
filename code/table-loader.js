@@ -134,28 +134,28 @@ for (let i = 0; i < rows.length; i++) {
         let elements = [gi, gl, sugar, carbs];
         for (let element of elements) {
             if (parseFloat(element.innerText) < 0) {
-                let par = document.createElement("span");
+                let par = document.createElement("desc");
                 par.innerText = translationMatrix[88][languageIndex];
                 par.style.color = "gray";
                 element.style.display = "none";
                 element.after(par)
             } else if (element.hasAttribute("inaccurate")) {
-                let par = document.createElement("span");
+                let par = document.createElement("desc");
                 par.innerText = "~"
                 par.style.marginInlineStart = "0";
                 element.after(par)
             } else if (element.hasAttribute("less-than")) {
-                let par = document.createElement("span");
+                let par = document.createElement("desc");
                 par.innerText = "<"
                 par.style.marginInlineStart = "0";
                 element.before(par)
             } else if (element.hasAttribute("more-than")) {
-                let par = document.createElement("span");
+                let par = document.createElement("desc");
                 par.innerText = "<"
                 par.style.marginInlineStart = "0";
                 element.after(par)
             } else if (element.hasAttribute("danger")) {
-                let par = document.createElement("span");
+                let par = document.createElement("desc");
                 par.innerText = "!"
                 par.style.color = "red";
                 par.style.fontWeight = "900"
@@ -207,7 +207,7 @@ for (let i = 0; i < rows.length; i++) {
             name.style.display = "flex";
             name.style.alignItems = "center";
 
-            let companyName = name.getAttribute("company")
+            let companyName = translateCompanyName(name.getAttribute("company"), 0).replace(" ", "-");
             let companyImg = document.createElement("img");
 
             companyImg.crossOrigin = "Anonymous";
@@ -224,7 +224,7 @@ for (let i = 0; i < rows.length; i++) {
             name.prepend(companyImg);
 
             if (window.innerWidth > 700) {
-                let par = document.createElement("span");
+                let par = document.createElement("desc");
                 par.innerText = translateCompanyName(companyName, languageIndex) + ":";
                 par.style.color = "gray";
                 par.style.paddingInlineEnd = "0.5rem";
@@ -246,3 +246,4 @@ for (let id of ["loading-h1", "loading-details", "loading-p"]) {
     document.getElementById(id).style.display = "none";
 }
 table.style.display = "table";
+onTableReady(table);
