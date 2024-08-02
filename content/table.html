@@ -2601,3 +2601,22 @@ else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'>
 	<td><span id="SUGARFIELD-Milk 3%">5</span></td>
 	<td><span id="CARBFIELD-Milk 3%">5</span></td>
 </tr>
+
+<tr>
+    <td><input type="number" id="grams" value="100"
+            onchange='var v = (0.7 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Courgette").innerHTML = (2.2 / 100) * this.value;
+                document.getElementById("CARBFIELD-Courgette").innerHTML = (3.35 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Courgette");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="229">{{Courgette}}</td>
+    <td><span style="color: #00ff00">15</span></td>
+    <td><span id="GLFIELD-Courgette"><span style='color: #00ff00'>0.7</span></span></td>
+    <td><span id="SUGARFIELD-Courgette">2.2</span></td>
+    <td><span id="CARBFIELD-Courgette">3.35</span></td>
+</tr>
