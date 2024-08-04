@@ -207,9 +207,9 @@ for (let i = 0; i < rows.length; i++) {
             name.style.display = "flex";
             name.style.alignItems = "center";
 
-            let companyName = translateCompanyName(name.getAttribute("company"), 0).replace(" ", "-");
+            let companyName = translateCompanyName(name.getAttribute("company").toLowerCase(), 0).replace(" ", "-");
             let companyImg = document.createElement("img");
-
+            console.log(companyName);
             companyImg.crossOrigin = "Anonymous";
             companyImg.style.height = "1.2em";
             companyImg.style.display = "inline";
