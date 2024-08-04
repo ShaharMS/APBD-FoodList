@@ -10,7 +10,6 @@ function sortBy(rows, method) {
             rows.sort((a, b) => {
                 let aName = a.getElementsByTagName("td")[1].innerText;
                 let bName = b.getElementsByTagName("td")[1].innerText;
-                if (Math.random() > 0.99) console.log(aName, bName);
                 if (aName > bName) return 1;
                 if (aName < bName) return -1;
                 return 0;
@@ -21,7 +20,26 @@ function sortBy(rows, method) {
             rows.sort((a, b) => {
                 let aName = a.getElementsByTagName("td")[1].innerText;
                 let bName = b.getElementsByTagName("td")[1].innerText;
-                if (Math.random() > 0.99) console.log(aName, bName);
+                if (aName < bName) return 1;
+                if (aName > bName) return -1;
+                return 0;
+            });
+            break;
+        }
+        case "company-d": {
+            rows.sort((a, b) => {
+                let aName = a.getElementsByTagName("td")[1].getAttribute("company") ?? String.fromCharCode(65535);
+                let bName = b.getElementsByTagName("td")[1].getAttribute("company") ?? String.fromCharCode(65535);
+                if (aName > bName) return 1;
+                if (aName < bName) return -1;
+                return 0;
+            });
+            break;
+        }
+        case "company-u": {
+            rows.sort((a, b) => {
+                let aName = a.getElementsByTagName("td")[1].getAttribute("company") ?? String.fromCharCode(65535);
+                let bName = b.getElementsByTagName("td")[1].getAttribute("company") ?? String.fromCharCode(65535);
                 if (aName < bName) return 1;
                 if (aName > bName) return -1;
                 return 0;
