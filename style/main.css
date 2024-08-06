@@ -321,6 +321,10 @@ blockquote:hover {
     #food-list td:nth-child(1)>input {
         width: 50px;
     }
+
+    .company-name {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 650px) {

@@ -138,25 +138,31 @@ EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH D
             אם המרקה הוא איפשהו בין לבין, אני מתקן את מה שצריך, ומשלב את הקוד עם הפרטים המתקנים לתוך האתר.&rlm;
         </p>
 
-        <h2>Different Identifiers</h2>
+        <h2>סממני מידע</h2>
         <p>
-            You may have noticed some cells in the database contain some extra information, 
-            in the form of additional signs/replacement words. 
-            These are listed below:
+            אולי שמת לב שבחלק מהתאים ברשימה יש עוד סימנים/מילים, בנוסף למספרים שיש בדרך כלל.&rlm;<br>
+            להלן כל הסממנים השונים:&rlm;
             <li>
-                <code>~</code> - One of three reasons (ordered from most common to least common):
+                <code>~</code> - אחת משלוש סיבות (מסודרות מהנפוצות ביותר, לנדירות ביותר):&rlm;
                 <ul style="list-style-type: circle;">
-                    <li>The food contains a very broad range of data, and the most supported & common value was chosen</li>
-                    <li>A source other than the USDA (or any of website's other trusted sources) was used because of a lack of data.</li>
-                    <li>Too many reliable sources conflicted. In which case, a sensible average is chosen</li>
+                    <li>למאכל טווח מידע מאוד רחב, והערך הנתמך והנפוץ ביותר נבחר.&rlm;</li>
+                    <li>המידע על המאכל לקוח ממקומות שאינם מרשימת המקורות האמינים. נעשה בגלל חוסר מידע, לרוב למאכלים האקזוטיים.&rlm;</li>
+                    <li>המקורות האמינים לא הסכימו אחד עם השני. במקרה כזה, מתבצע "ממוצע" הגיוני בין המקומות, או רק מקור אחד שומש.&rlm;</li>
                 </ul>
             </li>
             <li>
-                <code>&lt;</code> There is no accurately averageable data, but there is a "clear" upper bound for it.
+                <code>&lt;</code> - אין מידע שמתרכז סביב ערך מסוים, אבל נראה שיש בבירור מגבלה עליונה לערך.&rlm;
             </li>
             <li>
-                <code>No Data</code> - No reliable data was found for this food item. Important to note -
-                Even if one column has no data, that doesnt necessarily mean that the other columns have innacurate/estimated data. If they do, a <code>~</code> is used.
+                <code>&gt;</code> - זהה ל-<code>&lt;</code>, אבל בכיוון ההפוך (נראה שיש בבירור מגבלה תחתונה.)&rlm;
+            </li>
+            <li>
+                <code style="color: red; font-weight: 900;">!</code> - למרות שפרטי האוכל מציגים אותו באור טוב, הם לא מראים את התמונה המלאה - שלפיה, אפשר לראות שהאוכל גורם נזק.
+                  במקרים שבהם סימן הקריאה מוצג על פרט, אפשר ללחוץ עליו, ותופיע תיבת טקסט, שתתאר למה האוכל מסוכן.&rlm;
+            </li>
+            <li>
+                <code>No Data</code> - לא נמצא מידע אמין מספיק/בכלל לגבי המאכל הזה. חשוב להבהיר -
+                אפילו אם לעמודה אחת אין מידע, זה לא אומר שהעמודות האחרות בהכרך יהיו פחות מדויקות. אם המידע בעמודות האחרות לא מדויק, יופיעו הסימנים המוזכרים לעיל.&rlm;
             </li>
         </ul>
     </div>

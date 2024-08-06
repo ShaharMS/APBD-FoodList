@@ -223,14 +223,13 @@ for (let i = 0; i < rows.length; i++) {
 
             name.prepend(companyImg);
 
-            if (window.innerWidth > 700) {
-                let par = document.createElement("desc");
-                par.innerText = translateCompanyName(companyName, languageIndex) + ":";
-                par.style.color = "gray";
-                par.style.paddingInlineEnd = "0.5rem";
-                par.style.textTransform = "capitalize";
-                companyImg.after(par);
-            }
+            let par = document.createElement("desc");
+            par.innerText = translateCompanyName(companyName, languageIndex) + ":";
+            par.style.color = "gray";
+            par.style.paddingInlineEnd = "0.5rem";
+            par.style.textTransform = "capitalize";
+            par.classList.add("company-name");
+            companyImg.after(par);
         }
     }
 }

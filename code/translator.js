@@ -77,6 +77,8 @@ function translateString(string, wordIndices, lang) {
  * @returns {string}
  */
 function translateCompanyName(companyName, li) {
+    if (companyName === null) return null;
+    companyName = companyName.toLowerCase();
     switch (companyName) {
         case "tara":
         case "טרה": return li === 0 ? "tara" : "טרה";
@@ -140,8 +142,8 @@ function translateCompanyName(companyName, li) {
         case "רד בול": return li === 0 ? "red bull" : "רד בול";
         case "xl":
         case "אקסל": return li === 0 ? "xl" : "אקסל";
-        case "barca":
-        case "בארכה": return li === 0 ? "barca" : "בארכה";
+        case "barake":
+        case "בארכה": return li === 0 ? "barake" : "בארכה";
         default: {
             console.log("company name not found: " + companyName);
             return companyName
