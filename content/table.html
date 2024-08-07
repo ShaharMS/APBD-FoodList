@@ -2675,3 +2675,39 @@ else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";'>
     <td><span id="SUGARFIELD-Denis">0</span></td>
     <td><span id="CARBFIELD-Denis">0</span></td>
 </tr>
+<tr>
+    <td><input type="number" id="grams" value="100"
+            onchange='var v = (4.5 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Green Peas").innerHTML = (6 / 100) * this.value;
+                document.getElementById("CARBFIELD-Green Peas").innerHTML = (14 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Green Peas");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="233">{{Green Peas}}</td>
+    <td><span style="color: #9fe2bf">35</span></td>
+    <td><span id="GLFIELD-Green Peas"><span style='color: #00ff00'>4.5</span></span></td>
+    <td><span id="SUGARFIELD-Green Peas">6</span></td>
+    <td><span id="CARBFIELD-Green Peas">14</span></td>
+</tr>
+<tr>
+    <td><input type="number" id="grams" value="100"
+            onchange='var v = (4.6 / 100) * parseFloat(this.value);
+                document.getElementById("SUGARFIELD-Green Peas, Cooked").innerHTML = (6 / 100) * this.value;
+                document.getElementById("CARBFIELD-Green Peas, Cooked").innerHTML = (16 / 100) * this.value;
+                var e = document.getElementById("GLFIELD-Green Peas, Cooked");
+                if (v < 5) e.innerHTML = "<span style=\"color: #00ff00\">" + v + "</span>";
+                if (v < 10) e.innerHTML = "<span style=\"color: #9fe2bf\">" + v + "</span>";
+                else if (v < 20) e.innerHTML = "<span style=\"color: #ffff00\">" + v + "</span>";
+                else e.innerHTML = "<span style=\"color: #ff0000\">" + v + "</span>";
+            '>
+    </td>
+    <td ti="234">{{Green Peas, Cooked}}</td>
+    <td><span style="color: #9fe2bf">51</span></td>
+    <td><span id="GLFIELD-Green Peas, Cooked"><span style='color: #00ff00'>4.6</span></span></td>
+    <td><span id="SUGARFIELD-Green Peas, Cooked">6</span></td>
+    <td><span id="CARBFIELD-Green Peas, Cooked">16</span></td>
+</tr>

@@ -54,7 +54,7 @@ Each food has a glycemic index, ranging from 0 to 100. A higher value spikes blo
 Glycemic Load is defined by the glycemic index, divided by 100, then multiplied by the amount of carbs the food contains (in grams). A higher value spikes blood sugar higher and more rapidly¦עומס גליקמי מחושב באמצעות חילוק הערך הגליקמי ב-100, והכפלת התוצאה בכמות הפחממות שבאוכל, בגרמים. ערכים גבוהים יותר "מקפיצים" את רמת הסוכר בדם לרמה גבוהה, ובמהירות⤓
 Sugar is one of the three types of carbohydrates. aside from it, there are also starches & fibers. Fibers are "ok" carbs, while starches & sugars are "bad" carbs.¦סוכר הוא אחד משלושת סוגי הפחמימות: סיבים, סוכר, ועמילן. סיבים הן פחמימה "טובה", בעוד שעמילן וסוכר הן פחמימות "רעות".⤓
 Almost every single food contains carbohydrates. Our body uses them to generate energy¦רוב המאכלים מכילים כמות מסוימת של פחמימות. הגוף שלנו משתמש בהם על מנת לייצר אנרגיה⤓
-Leaderboards¦לוח תורמים⤓
+¦⤓
 Those who took part in improving and expanding the list should be remembered. Major thank-yous! ♥️¦מגיע לכל מי שלקח חלק בשיפור והרחבת האתר, שידעו שעשה ותרם רבות. תודה רבה רבה לכם! ♥️⤓
 This is the name the contributor provided when they made different contributions, such as food requests or additions¦זה השם שתורם התוכן הזדהה איתו כאשר סיפק נתונים לאתר⤓
 The amount of fulfilled requests this contributor made for food additions. The more the merrier¦כמות הבקשות להוספת מאכלים שמומשו, ונוספו לרשימת המאכלים. כמה שיותר - יותר טוב⤓
@@ -64,7 +64,7 @@ Name¦שם⤓
 Contributions¦תרומות תוכן⤓
 Direct Contributions¦תרומות תוכן ישירות⤓ 
 Score¦נקודות⤓
-Contribution Leaderboards¦לוח הישגים⤓
+Leaderboards¦לוח הישגים⤓
 Onion¦בצל⤓
 Water¦מים⤓
 Apricot¦משמש⤓
@@ -231,3 +231,5 @@ Salmon¦זג סלמון⤓
 Tuna¦דג טונה⤓
 Mackerel¦דג מקרל⤓
 Denis¦דג דניס⤓
+Green Peas¦אפונה ירוקה⤓
+Green Peas, Cooked¦אפונה ירוקה, מבושל⤓
