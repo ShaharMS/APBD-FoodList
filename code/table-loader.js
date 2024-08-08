@@ -259,7 +259,7 @@ let prevRows = parseInt(localStorage.currentRowAmount);
 let currentRows = parseInt(table.rows.length);
 console.log(`Current Rows: ${currentRows}, Previous Rows: ${prevRows}`);
 if (prevRows !== currentRows) {
-    if (prevRows === undefined) {
+    if (localStorage.currentRowAmount === undefined) {
         localStorage.currentRowAmount = currentRows;
     } else {
         let t = document.getElementById("change-count-text");
