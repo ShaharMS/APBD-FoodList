@@ -66,6 +66,7 @@ switch (LANGUAGE) {
 
 rows = Array.from(table.getElementsByTagName("tr"));
 
+
 console.log("postprocessing table");
 
 // Add meta-data
@@ -245,4 +246,30 @@ for (let id of ["loading-h1", "loading-details", "loading-p"]) {
     document.getElementById(id).style.display = "none";
 }
 table.style.display = "table";
+
+if (parameters.has("search")) {
+    let search = parameters.get("search");
+    let searchField = document.getElementById("food-search");
+    searchField.value = search;
+    searchField.dispatchEvent(new Event("input"));
+}
+
+// Grab previous amount of rows, before this load
+let prevRows = parseInt(localStorage.currentRowAmount);
+let currentRows = parseInt(table.rows.length);
+console.log(`Current Rows: ${currentRows}, Previous Rows: ${prevRows}`);
+if (prevRows !== currentRows) {
+    if (prevRows === undefined) {
+        localStorage.currentRowAmount = currentRows;
+    } else {
+        let t = document.getElementById("change-count-text");
+        switch (LANGUAGE) {
+            case "en": t.innerText = `${currentRows - prevRows} Food Items Were Added Since Your Last Visit 😃`; break;
+            case "he": t.innerText = `${currentRows - prevRows} מוצרים נוספו לרשימה מאז ביקורך האחרון 😃`; break;
+        }
+        t.style.display = "block";
+        localStorage.currentRowAmount = currentRows;
+    }
+}
+
 onTableReady(table);
