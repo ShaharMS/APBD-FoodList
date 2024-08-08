@@ -43,7 +43,7 @@
             <div>
                 <a ti="3" id="contact" href="#">{{Contact}}</a>
                 <div id="contact-menu" class="navbar-menu">
-                    <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}}</a>
+                    <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}} <span>&UpperRightArrow;</span></a>
                     <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
                         shaharms</a>
                 </div>
@@ -56,22 +56,29 @@
             {{A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugars & carbs. Low glycemic loads & indices should be better for people with APBD. Some foods are missing? click the "contribute" option}}
         </blockquote>
 
+        <div class="color-range-display">
+            <p style="--color: #00ff00" ti="235"> - {{Great}}</p>
+            <p style="--color: #9fe2bf" ti="236"> - {{Okay}}</p>
+            <p style="--color: #ffff00" ti="237"> - {{Not Good}}</p>
+            <p style="--color: #ff0000" ti="238"> - {{Very Bad}}</p>
+        </div>
+
         <div id="search-form">
             <button type="button" class="search">⌕</button>
             <input id="food-search" placeholder="Search..." autocomplete="on">
             <select class="sort-switch" id="sort-switch">
-                <option ti="5" value="name-d">{{Name}} &darr;</option>
-                <option ti="5" value="name-u">{{Name}} &uarr;</option>
-                <option ti="201" value="company-d">{{Food Company}} &darr;</option>
-                <option ti="201" value="company-u">{{Food Company}} &uarr;</option>
-                <option ti="6" value="glycemic-index-d">{{Glycemic Index}} &darr;</option>
-                <option ti="6" value="glycemic-index-u">{{Glycemic Index}} &uarr;</option>
-                <option ti="7" value="glycemic-load-d">{{Glycemic Load}} &darr;</option>
-                <option ti="7" value="glycemic-load-u">{{Glycemic Load}} &uarr;</option>
-                <option ti="8 50" value="sugars-d">{{Sugars}} ({{In Grams}})&darr;</option>
-                <option ti="8 50" value="sugars-u">{{Sugars}} ({{In Grams}})&uarr;</option>
-                <option ti="9 50" value="carbs-d">{{Carbs}} ({{In Grams}})&darr;</option>
-                <option ti="9 50" value="carbs-u">{{Carbs}} ({{In Grams}})&uarr;</option>
+                <option ti="56 5" value="name-d">{{Sort By}}: {{Name}} &darr;</option>
+                <option ti="56 5" value="name-u">{{Sort By}}: {{Name}} &uarr;</option>
+                <option ti="56 201" value="company-d">{{Sort By}}: {{Food Company}} &darr;</option>
+                <option ti="56 201" value="company-u">{{Sort By}}: {{Food Company}} &uarr;</option>
+                <option ti="56 6" value="glycemic-index-d">{{Sort By}}: {{Glycemic Index}} &darr;</option>
+                <option ti="56 6" value="glycemic-index-u">{{Sort By}}: {{Glycemic Index}} &uarr;</option>
+                <option ti="56 7" value="glycemic-load-d">{{Sort By}}: {{Glycemic Load}} &darr;</option>
+                <option ti="56 7" value="glycemic-load-u">{{Sort By}}: {{Glycemic Load}} &uarr;</option>
+                <option ti="56 8 50" value="sugars-d">{{Sort By}}: {{Sugars}} ({{In Grams}})&darr;</option>
+                <option ti="56 8 50" value="sugars-u">{{Sort By}}: {{Sugars}} ({{In Grams}})&uarr;</option>
+                <option ti="56 9 50" value="carbs-d">{{Sort By}}: {{Carbs}} ({{In Grams}})&darr;</option>
+                <option ti="56 9 50" value="carbs-u">{{Sort By}}: {{Carbs}} ({{In Grams}})&uarr;</option>
             </select>
             <select class="language-switch" id="language-switch">
                 <option ti="10" value="en">{{English}}</option>

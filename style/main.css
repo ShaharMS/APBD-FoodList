@@ -174,6 +174,35 @@ blockquote:hover {
     width: 200px;
 }
 
+.color-range-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    gap: 5%;
+    width: min(100%, 1200px);
+}
+
+.color-range-display p {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.color-range-display p::before {
+    /* draw circle */
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-inline-end: 8px;
+    background-color: var(--color);
+}
+
 #search-form {
     width: min(100%, 1200px);
     display: flex;
@@ -286,9 +315,31 @@ blockquote:hover {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .color-range-display {
+        /* make it so i t displays as a 2x2 grid */
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+        max-width: max(50%, 300px);
+        max-height: 10vh;
+        margin-inline-start: 15%;
+    }
+
+    .color-range-display p {
+        padding-block: -20px;
+    }
+}
+
 @media screen and (max-width: 700px) {
     :root {
         font-size: 0.8em;
+    }
+
+    .color-range-display p::before {
+        width: 24px;
+        height: 24px;
     }
 
     header a {
