@@ -4,7 +4,8 @@ switch (LANGUAGE) {
 }
 
 const parameters = new URLSearchParams(window.location.search);
-
+if (!parameters.has("sort")) parameters.set("sort", "name-d");
+if (!parameters.has("lang") && localStorage.lastTableLang) parameters.set("lang", localStorage.lastTableLang);
 /**
  * @type {HTMLTableElement}
  */

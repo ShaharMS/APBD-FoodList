@@ -46,6 +46,7 @@ var TABLE_DATA;
  */
 function onTableReady(table) {
     localStorage.table = table;
+    localStorage.lastTableLang = parameters.get("lang") || "en";
     TABLE_DATA = Array.from(table.rows).slice(1).map(row => {
         let defaultWeight = parseFloat(row.children[0].getElementsByTagName("input")[0].value);
         let translationIndices = row.children[1].getAttribute("ti").split(" ").map(x => parseInt(x));

@@ -237,3 +237,6 @@ Great¦מצוין⤓
 Okay¦סביר⤓
 Not Good¦לא טוב⤓
 Very Bad¦רע מאוד⤓
+Milk 1%¦חלב 1%⤓
+Milk 3.6%¦חלב 3.6%⤓
+Goat Milk 3.7%¦חלב עזים 3.7%⤓

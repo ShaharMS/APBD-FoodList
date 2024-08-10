@@ -144,6 +144,12 @@ function translateCompanyName(companyName, li) {
         case "אקסל": return li === 0 ? "xl" : "אקסל";
         case "barake":
         case "בארכה": return li === 0 ? "barake" : "בארכה";
+        case "yotveta":
+        case "יטבתה": return li === 0 ? "yotveta" : "יטבתה";
+        case "meshek-tsuriel":
+        case "meshek tsuriel":
+        case "משק-צוריאל":
+        case "משק צוריאל": return li === 0 ? "meshek tsuriel" : "משק צוריאל";
         default: {
             console.log("company name not found: " + companyName);
             return companyName

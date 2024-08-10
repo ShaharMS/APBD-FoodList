@@ -6,6 +6,13 @@ function sortBy(rows, method) {
     console.log("Sorting by " + parameters.get("sort"));
     let header = rows.shift();
     switch (method) {
+        case "last-added": {
+            rows.reverse();
+            break;
+        }
+        case "first-added": {
+            break;
+        }
         case "name-d": {
             rows.sort((a, b) => {
                 let aName = a.getElementsByTagName("td")[1].innerText;
