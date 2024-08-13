@@ -45,7 +45,7 @@ async function translate(lang) {
                 if (transRegex.test(element.textContent)) {
                     element.textContent = element.textContent.replace(transRegex, translation);
                 } else element.textContent = translation;
-            }            
+            }
         }
     }
 }
@@ -127,7 +127,7 @@ function translateCompanyName(companyName, li) {
         case "hazi-hinam":
         case "hazi hinam":
         case "חצי-חינם":
-        case "חצי חינם" : return li === 0 ? "hazi hinam" : "חצי חינם";
+        case "חצי חינם": return li === 0 ? "hazi hinam" : "חצי חינם";
         case "neto":
         case "נטו": return li === 0 ? "neto" : "נטו";
         case "gatorade":
@@ -156,3 +156,52 @@ function translateCompanyName(companyName, li) {
         }
     }
 }
+
+var supportedCompanyNames = [
+    ["tara", "tara", "טרה"],
+    ["tnuva", "tnuva", "תנובה"],
+    ["elit", "elit", "עלית"],
+    ["gad", "gad", "גד"],
+    ["shtrauss", "shtrauss", "שטראוס"],
+    ["osem", "osem", "אוסם"],
+    ["nestle", "nestle", "נסטלה"],
+    ["feldman", "feldman", "פלדמן"],
+    ["shufersal", "shufersal", "שופרסל"],
+    ["pepsi", "pepsi", "פפסי"],
+    ["blu", "blu", "בלו"],
+    ["rami-levy", "rami levy", "רמי לוי"],
+    ["sugat", "sugat", "סוגת"],
+    ["unilever", "unilever", "יונילבר"],
+    ["burger-king", "burger king", "בורגר קינג"],
+    ["mcdonalds", "mcdonalds", "מקדונלדס"],
+    ["roladin", "roladin", "רולדין"],
+    ["soglowek", "soglowek", "זוגלובק"],
+    ["hazi-hinam", "hazi hinam", "חצי חינם"],
+    ["neto", "neto", "נטו"],
+    ["gatorade", "gatorade", "גיטורייד"],
+    ["mars", "mars", "מרס"],
+    ["monster", "monster", "מאנסטר"],
+    ["red-bull", "red bull", "רד בול"],
+    ["xl", "xl", "אקסל"],
+    ["barake", "barake", "בארכה"],
+    ["yotveta", "yotveta", "יטבתה"],
+    ["meshek-tsuriel", "meshek tsuriel", "משק צוריאל"],
+];
+
+function toTitleCase(str) {
+    return str.replace(
+        /\w\S*/g,
+        text => text.charAt(0).toUpperCase() + text.substring(1).toLowerCase()
+    );
+}
+
+var companies = document.createElement("datalist");
+companies.id = "companies";
+for (let company of supportedCompanyNames) {
+    let option = document.createElement("option");
+    option.value = company[0];
+    option.label = toTitleCase(company[1]) + ", " + toTitleCase(company[2]);
+    companies.appendChild(option);
+}
+
+document.body.appendChild(companies);
