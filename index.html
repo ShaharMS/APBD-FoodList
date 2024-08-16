@@ -8,6 +8,7 @@
     <meta name="description"
         content="A list of foods sorted by glycemic indices, glycemic loads, sugar & carbs. Can help people with APBD by letting them know which foods are better for them, and which are worse.">
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/dropdown.css">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -22,12 +23,19 @@
 
 <body>
     <header>
-        <h1 ti="0" onclick="window.location.href = window.location.origin + window.location.search">{{APBD Foods List}}
-        </h1>
+        <div class="logo">
+            <img src="./favicon.ico" alt="Website logo">
+            <div class="row">
+                <a class="title" href="https://apbd.net">APBD.net</a>
+            </div>
+            <a class="sub" ti="0" href="#" onclick="window.location.href = window.location.origin + window.location.search">
+                Allowed Foods List
+            </a>
+        </div>
         <nav class="header-menu">
-            <div>
+            <div class="dropdown">
                 <a ti="1" id="about" href="#">{{About}}</a>
-                <div id="about-menu" class="navbar-menu">
+                <div class="dropdown-content">
                     <a ti="145" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md">{{Website}} <span>&UpperRightArrow;</span></a>
                     <a target="_blank" href="https://rarediseases.org/rare-diseases/adult-polyglucosan-body-disease/">APBD <span>&UpperRightArrow;</span></a>
                     <a ti="146" 
@@ -35,9 +43,9 @@
                         href="#">{{Food Database}}</a>
                 </div>
             </div>
-            <div>
+            <div class="dropdown">
                 <a ti="2" id="contribute" href="#">{{Contribute}}</a>
-                <div id="contribute-menu" class="navbar-menu">
+                <div class="dropdown-content">
                     <a ti="32"
                         onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
                         href="#">{{Request data}}</a>
@@ -50,9 +58,9 @@
                 </div>
             </div>
 
-            <div>
+            <div class="dropdown">
                 <a ti="3" id="contact" href="#">{{Contact}}</a>
-                <div id="contact-menu" class="navbar-menu">
+                <div class="dropdown-content">
                     <a ti="34" href="https://github.com/ShaharMS/APBD-FoodList">{{Website Code}} <span>&UpperRightArrow;</span></a>
                     <a id="discord" ti="35" href="#" onclick="navigator.clipboard.writeText('shaharms');">{{Discord}}:
                         shaharms</a>
@@ -138,7 +146,6 @@
     <script src="code/translator.js"></script>
     <script src="code/switches.js"></script>
     <script src="code/searchbar.js"></script>
-    <script src="code/dropdowns.js"></script>
     <script src="code/table-sorter.js"></script>
     <script src="code/table-data.js"></script>
     <script type="module" src="code/table-loader.js" async="true"></script>

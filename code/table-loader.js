@@ -34,7 +34,7 @@ console.log("tables done, translating if needed");
 
 activateSwitches()
 activateSearchbar()
-activateDropdowns()
+
 if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang") === "en")) {
     await translate("en");
 } else await translate(parameters.get("lang"));
