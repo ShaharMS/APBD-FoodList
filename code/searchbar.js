@@ -22,6 +22,7 @@ function activateSearchbar() {
 
         let rows = table.getElementsByTagName("tr");
 
+        let shouldTableRemainVisible = false;
         for (let i = 0; i < rows.length; i++) {
             let cells = rows[i].getElementsByTagName("td");
             if (cells.length > 0) {
@@ -31,11 +32,19 @@ function activateSearchbar() {
                 let name = cells[1];
                 if (name.textContent.toLowerCase().includes(searchbar.value.toLowerCase())) {
                     rows[i].style.display = "";
+                    shouldTableRemainVisible = true;
                 } else {
                     rows[i].style.display = "none";
                 }
             }
         }
+
+        if (shouldTableRemainVisible) {
+            table.style.display = "";
+        } else {
+            table.style.display = "none";
+        }
+        
     })
 
     searchbar.addEventListener("keydown", function () {

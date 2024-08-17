@@ -1,7 +1,7 @@
-APBD: Allowed Foods List¦רשימת מאכלים מותרים: APBD⤓
+Allowed Foods List¦רשימת מאכלים מותרים⤓
 About¦אודות⤓
 Contribute¦הוספה לאתר⤓
-Contact¦צרו קשר⤓
+Language¦שפה⤓
 A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugars & carbs. Low glycemic loads & indices should be better for people with APBD. Some foods are missing? click the "contribute" option to request/provide data.¦רשימת מאכלים ממויינת לקטגוריות, כגון ערך גליקמי, עומס גליקמי, פחמימות וסוכרים. עומסים גליקמיים נמוכים אמורים להיות טובים יותר לאכילה לאנשים עם APBD. חסר מאכלים? לחצו על אפשרות "הוספה לאתר" כדי לבקש/לספק נתונים.⤓
 Food Name¦שם מאכל⤓
 Glycemic Index¦ערך גליקמי⤓
