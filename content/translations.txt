@@ -72,7 +72,7 @@ Quince¦חבוש⤓
 Pineapple¦אננס⤓
 Orange¦תפוז⤓
 Watermelon¦אבטיח⤓
-Acerola Cherries¦דובדבן ברבדוס⤓
+Acerola Cherry¦דובדבן ברבדוס⤓
 Banana¦בננה⤓
 Green Banana¦בננה ירוקה⤓
 Green Grapes¦ענבים ירוקים⤓
@@ -80,7 +80,7 @@ Red Grapes¦ענבים אדומים⤓
 Purple Grapes¦ענבים סגולים⤓
 Black Grapes¦ענבים שחורים⤓
 Pomegranate¦רימון⤓
-Grapefruit¦פומלה⤓
+Grapefruit¦אשכולית⤓
 Pear¦אגס⤓
 Pepino¦פיפנו⤓
 Melon¦מלון⤓
@@ -92,10 +92,10 @@ Raisins¦צימוקים⤓
 Fig¦תאנה⤓
 Kiwi¦קיווי⤓
 Strawberry¦תות⤓
-Cranberries¦חמוציות⤓
+Cranberry¦חמוציות⤓
 Lemon¦לימון⤓
 Lychee¦ליצ'י⤓
-Raspberries¦פטל (פרי)⤓
+Raspberry¦פטל (פרי)⤓
 Mango¦מנגו⤓
 Mandarin¦תפוז סיני⤓
 Passion Fruit¦פסיפלורה⤓
@@ -115,11 +115,11 @@ Physalis¦שלפח⤓
 Date¦תמר⤓
 Persimmon¦אפרסמון⤓
 Cherries¦דובדבנים⤓
-Blueberries¦אוכמניות⤓
+Blueberry¦אוכמניית⤓
 Prune¦שזיפים מיובשים⤓
 Dried Apples¦תפוח מיובש⤓
 Apple¦תפוח⤓
-Goji Berries¦אוכמניות גוג'י⤓
+Goji Berry¦אוכמניית גוג'י⤓
 Garlic¦שום⤓
 Potato¦תפוח אדמה⤓
 Basil¦בזיליקום⤓
@@ -202,7 +202,7 @@ Optional¦אופציונאלי⤓
 Food Company¦חברת המאכל⤓
 If this food is produced by a specific company (for example, a specific sauce), input the name of the company here¦אם המאכל הזה מיוצר על ידי חברה ספציפית (למשל, רוטב של חברה מסוימת), מומלץ לכניס כאן את שם החברה⤓
 Big Mac¦ביג מק⤓
-¦⤓
+Chicken Breast¦חזה (עוף)⤓
 Whopper¦וופר⤓
 McChicken¦מק צ'יקן⤓
 Chicken McNuggets¦מק נאגטס⤓
