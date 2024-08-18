@@ -45,6 +45,7 @@ var TABLE_DATA;
  * @param {HTMLTableElement} table 
  */
 function onTableReady(table) {
+    const parameters = new URLSearchParams(window.location.search);
     localStorage.table = table;
     localStorage.lastTableLang = parameters.get("lang") || "en";
     TABLE_DATA = Array.from(table.rows).slice(1).map(row => {

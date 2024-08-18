@@ -1,8 +1,3 @@
-switch (LANGUAGE) {
-    case "en": document.getElementById("loading-details").innerHTML = "Script Started. Retrieving Table..."; break;
-    case "he": document.getElementById("loading-details").innerHTML = "הקוד הופעל. מנסה להשיג מידע.&rlm;.&rlm;.&rlm;"; break;
-}
-
 const parameters = new URLSearchParams(window.location.search);
 if (!parameters.has("sort")) parameters.set("sort", "name-d");
 if (!parameters.has("lang") && localStorage.lastTableLang) parameters.set("lang", localStorage.lastTableLang);
@@ -10,65 +5,11 @@ if (!parameters.has("lang") && localStorage.lastTableLang) parameters.set("lang"
  * @type {HTMLTableElement}
  */
 let table = document.getElementById("food-list");
-
-const response = await fetch(window.location.origin + "/content/table.html")
-const html = await response.text()
-table.innerHTML = html
-
-switch (LANGUAGE) {
-    case "en": document.getElementById("loading-details").innerHTML = "Table Retrieved. Translating..."; break;
-    case "he": document.getElementById("loading-details").innerHTML = "המידע הושג. מתרגם רשימה.&rlm;.&rlm;.&rlm;"; break;
-}
-
-// First Rests - every time table.innerHTML is set, all references are lost.
-
-/**
- * @type {HTMLTableRowElement[]}
- */
 let rows = Array.from(table.getElementsByTagName("tr"));
 
-table = document.getElementById("food-list")
-table.style.display = "none"
+sortBy(rows, parameters.get("sort"));
 
-console.log("tables done, translating if needed");
-
-activateSwitches()
-activateSearchbar()
-
-if (!parameters.has("lang") || (parameters.has("lang") && parameters.get("lang") === "en")) {
-    await translate("en");
-} else await translate(parameters.get("lang"));
-
-
-switch (LANGUAGE) {
-    case "en": document.getElementById("loading-details").innerHTML = "Table Translated. Sorting table..."; break;
-    case "he": document.getElementById("loading-details").innerHTML = "הרשימה תורגמה. ממיין רשימה.&rlm;.&rlm;.&rlm;"; break;
-}
-
-// Second Reset - translate sets innerHTML as well
-
-table = document.getElementById("food-list");
-rows = Array.from(table.getElementsByTagName("tr"));
-
-// Post-process th table
-
-// Sort if needed
-if (parameters.has("sort")) {
-    sortBy(rows, parameters.get("sort"));
-    table.innerHTML = rows.map(x => x.outerHTML).join("\n");
-}
-
-switch (LANGUAGE) {
-    case "en": document.getElementById("loading-details").innerHTML = "Table Sorted. Adding Metadata..."; break;
-    case "he": document.getElementById("loading-details").innerHTML = "הרשימה ממוינת. מוסיף מטא-דאטא.&rlm;.&rlm;.&rlm;"; break;
-}
-
-// Third Reset - innerHTML of table may have changed, rows var is lost.
-
-rows = Array.from(table.getElementsByTagName("tr"));
-
-
-console.log("postprocessing table");
+console.log(rows, table);
 
 // Add meta-data
 /*
@@ -92,38 +33,32 @@ pre.style.padding = "5px";
 pre.style.display = "none";
 document.body.append(pre);
 
+window.colorByGL = (gl) => {
+    if (gl < 5) return "#00ff00";
+    if (gl < 10) return "#9fe2bf";
+    if (gl < 15) return "#ffff00";
+    return "#ff0000";
+}
+
 for (let i = 0; i < rows.length; i++) {
     let cells = rows[i].getElementsByTagName("td");
     if (cells.length > 0) {
-
-        function fixFloatingPoint() {
-            let gl = cells[3].getElementsByTagName("span")[0].getElementsByTagName("span")[0];
-            let sugar = cells[4].getElementsByTagName("span")[0];
-            let carbs = cells[5].getElementsByTagName("span")[0];
-
-            if (gl.innerText.includes(".")) {
-                gl.innerText = gl.innerText.split(".")[0] + "." + gl.innerText.split(".")[1].substring(0, 3);
-                if (gl.innerText.endsWith(".000")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 4);
-                if (gl.innerText.endsWith("00")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 2);
-                else if (gl.innerText.endsWith("0")) gl.innerText = gl.innerText.substring(0, gl.innerText.length - 1);
-            }
-            if (sugar.innerText.includes(".")) {
-                sugar.innerText = sugar.innerText.split(".")[0] + "." + sugar.innerText.split(".")[1].substring(0, 3);
-                if (sugar.innerText.endsWith(".000")) sugar.innerText = sugar.innerText.substring(0, sugar.innerText.length - 4);
-                else if (sugar.innerText.endsWith("00")) sugar.innerText = sugar.innerText.substring(0, sugar.innerText.length - 2);
-                else if (sugar.innerText.endsWith("0")) sugar.innerText = sugar.innerText.substring(0, sugar.innerText.length - 1);
-            }
-            if (carbs.innerText.includes(".")) {
-                carbs.innerText = carbs.innerText.split(".")[0] + "." + carbs.innerText.split(".")[1].substring(0, 3);
-                if (carbs.innerText.endsWith(".000")) carbs.innerText = carbs.innerText.substring(0, carbs.innerText.length - 4);
-                else if (carbs.innerText.endsWith("00")) carbs.innerText = carbs.innerText.substring(0, carbs.innerText.length - 2);
-                else if (carbs.innerText.endsWith("0")) carbs.innerText = carbs.innerText.substring(0, carbs.innerText.length - 1);
-            }
-        }
-        fixFloatingPoint();
-
+        
         let input = cells[0].getElementsByTagName("input")[0];
-        input.addEventListener("change", fixFloatingPoint);
+        let defaultWeight = parseFloat(cells[0].getElementsByTagName("input")[0].value);
+        input.setAttribute("default-value", defaultWeight);
+        input.addEventListener("input", () => {
+            let glSpan = rows[i].getElementsByClassName('GLFIELD')[0], 
+                sugarSpan = rows[i].getElementsByClassName('SUGARFIELD')[0], 
+                carbsSpan = rows[i].getElementsByClassName('CARBFIELD')[0];
+            let gl = Math.trunc((((glSpan.getAttribute("value")) / input.getAttribute("default-value")) * input.value) * 1000) / 1000;
+            sugarSpan.textContent = Math.trunc((((sugarSpan.getAttribute("value")) / input.getAttribute('default-value')) * input.value) * 1000) / 1000;
+            carbsSpan.textContent = Math.trunc((((carbsSpan.getAttribute("value")) / input.getAttribute('default-value')) * input.value) * 1000) / 1000;
+            glSpan.style.color = window.colorByGL(gl);
+            glSpan.textContent = gl;
+        });
+
+        input.dispatchEvent(new Event("input"));
 
         // Get the "gi", "gl", "sugar" and "carbs" spans
         let gi = cells[2].getElementsByTagName("span")[0];
@@ -137,7 +72,7 @@ for (let i = 0; i < rows.length; i++) {
         for (let element of elements) {
             if (parseFloat(element.innerText) < 0) {
                 let par = document.createElement("desc");
-                par.innerText = translationMatrix[88][languageIndex];
+                par.innerText = "No Data";
                 par.style.color = "gray";
                 element.style.display = "none";
                 element.after(par)
@@ -158,14 +93,14 @@ for (let i = 0; i < rows.length; i++) {
                 element.after(par)
             } else if (element.hasAttribute("danger")) {
                 let par = document.createElement("desc");
-                par.innerText = "!"
+                par.innerText = "⚠"
                 par.style.color = "red";
                 par.style.fontWeight = "900"
                 par.style.marginInlineStart = "0";
                 element.after(par)
                 if (element.getElementsByTagName("span").length == 0) element.style.cssText += "color: red;"
                 else element.getElementsByTagName("span")[0].style.cssText += "color: red;"
-                let text = translationMatrix[element.getAttribute("danger")][languageIndex];
+                let text = "TODO";
 
                 element.addEventListener("mouseover", function () {
                     pre.textContent = text;
@@ -236,18 +171,6 @@ for (let i = 0; i < rows.length; i++) {
     }
 }
 
-switch (LANGUAGE) {
-    case "en": document.getElementById("loading-details").innerHTML = "Table built successfully!"; break;
-    case "he": document.getElementById("loading-details").innerHTML = "רשימה נבנתה בהצלחה!&rlm;"; break;
-}
-
-
-clearInterval(INTERVAL);
-for (let id of ["loading-h1", "loading-details", "loading-p"]) {
-    document.getElementById(id).style.display = "none";
-}
-table.style.display = "table";
-
 if (parameters.has("search")) {
     let search = parameters.get("search");
     let searchField = document.getElementById("food-search");
@@ -264,9 +187,9 @@ if (prevRows !== currentRows) {
         localStorage.currentRowAmount = currentRows;
     } else {
         let t = document.getElementById("change-count-text");
-        switch (LANGUAGE) {
-            case "en": t.innerText = `${currentRows - prevRows} Food Items Were Added Since Your Last Visit 😃`; break;
-            case "he": t.innerText = `${currentRows - prevRows} מוצרים נוספו לרשימה מאז ביקורך האחרון 😃`; break;
+        switch (languageIndex) {
+            case 0: t.innerText = `${currentRows - prevRows} Food Items Were Added Since Your Last Visit 😃`; break;
+            case 1: t.innerText = `${currentRows - prevRows} מוצרים נוספו לרשימה מאז ביקורך האחרון 😃`; break;
         }
         t.style.display = "block";
         localStorage.currentRowAmount = currentRows;

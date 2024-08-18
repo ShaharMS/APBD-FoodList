@@ -46,6 +46,18 @@ async function translate(lang) {
                     element.textContent = element.textContent.replace(transRegex, translation);
                 } else element.textContent = translation;
             }
+
+            // Grab translations for he and en and put them each in a correspodning attribute.
+            // user pre-ti for the original string, delete it and `ti` after use
+            let initial = element.getAttribute("pre-ti");
+            for (let langIndex = 0; langIndex < matrix[0].length; langIndex++) {
+                let wordIndices = element.getAttribute("ti").split(" ").map(x => parseInt(x));
+                element.setAttribute("en", translateString(initial, wordIndices, 0));
+                element.setAttribute("he", translateString(initial, wordIndices, 1));
+            }
+
+            element.removeAttribute("pre-ti");
+            element.removeAttribute("ti");
         }
     }
 }
@@ -55,7 +67,7 @@ async function translate(lang) {
  *
  * @param {string} string - The string to be translated.
  * @param {number[]} wordIndices - An array of indices representing the positions of the words to be translated in the string.
- * @param {string} lang - The language code indicating the target language for translation.
+ * @param {number} lang - The language code indicating the target language for translation.
  * @return {string} The translated string.
  */
 function translateString(string, wordIndices, lang) {
