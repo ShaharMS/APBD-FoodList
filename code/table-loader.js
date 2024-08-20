@@ -1,6 +1,14 @@
 const parameters = new URLSearchParams(window.location.search);
+
 if (!parameters.has("sort")) parameters.set("sort", "name-d");
-if (!parameters.has("lang") && localStorage.lastTableLang) parameters.set("lang", localStorage.lastTableLang);
+else {
+    let sort = parameters.get("sort");
+    if (!["first-added", "last-added"].includes(sort)) {
+        let selectElement = document.getElementById("sort-switch");
+        selectElement.value = sort;
+    }
+}
+
 /**
  * @type {HTMLTableElement}
  */
@@ -9,7 +17,10 @@ let rows = Array.from(table.getElementsByTagName("tr"));
 
 sortBy(rows, parameters.get("sort"));
 
-console.log(rows, table);
+table.innerHTML = rows.map(row => row.outerHTML).join("\n");
+
+table = document.getElementById("food-list");
+rows = Array.from(table.getElementsByTagName("tr"));
 
 // Add meta-data
 /*
@@ -72,7 +83,7 @@ for (let i = 0; i < rows.length; i++) {
         for (let element of elements) {
             if (parseFloat(element.innerText) < 0) {
                 let par = document.createElement("desc");
-                par.innerText = "No Data";
+                par.innerText = window.document.documentElement.getAttribute("nodata");
                 par.style.color = "gray";
                 element.style.display = "none";
                 element.after(par)
@@ -144,13 +155,12 @@ for (let i = 0; i < rows.length; i++) {
             name.style.display = "flex";
             name.style.alignItems = "center";
 
-            let companyName = translateCompanyName(name.getAttribute("company").toLowerCase(), 0).replace(" ", "-");
+            let companyName = name.getAttribute("company-id");
             let companyImg = document.createElement("img");
-            console.log(companyName);
             companyImg.crossOrigin = "Anonymous";
             companyImg.style.height = "1.2em";
             companyImg.style.display = "inline";
-            companyImg.src = window.location.origin + `/assets/logos/${companyName}.png`;
+            companyImg.src = `./assets/logos/${companyName}.png`;
             companyImg.alt = companyName + " Logo";
             companyImg.style.paddingInlineEnd = "0.5rem";
 
@@ -161,7 +171,7 @@ for (let i = 0; i < rows.length; i++) {
             name.prepend(companyImg);
 
             let par = document.createElement("desc");
-            par.innerText = translateCompanyName(companyName, languageIndex) + ":";
+            par.innerText = name.getAttribute("company") + ":";
             par.style.color = "gray";
             par.style.paddingInlineEnd = "0.5rem";
             par.style.textTransform = "capitalize";

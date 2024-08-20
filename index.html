@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir-he="rtl" dir="ltr" nodata-he="אין מידע" nodata-en="No Data">
 
 <head>
     <meta charset="UTF-8">
@@ -22,12 +22,27 @@
 </script>
 
 <body>
+    <script>
+        const touch = matchMedia('(hover: none)').matches
+        console.log(touch);
+        
+        if (touch) {
+            let prev = window.document.body;
+            window.addEventListener("touchend", function (e) {
+                if (e.target.onclick) e.target.onclick();
+                if (prev !== e.target) prev.classList.remove("hover");
+                e.target.classList.toggle("hover");
+                prev = e.target;
+                console.log(e.target);
+            }, { passive: false });
+        }
+    </script>
     <header>
         <div class="logo">
             <img src="./favicon.ico" alt="Website logo">
             <div class="column">
                 <a class="title" href="https://apbd.net">APBD.net</a>
-                <a class="sub" ti="0" href="#" onclick="window.location.href = window.location.origin + window.location.search" en="Allowed Foods List" he="רשימת מאכלים מותרים">
+                <a class="sub" href="#" onclick="window.location.href = window.location.origin + window.location.search" en="Allowed Foods List" he="רשימת מאכלים מותרים">
                     Allowed Foods List
                 </a>
             </div>
@@ -35,52 +50,49 @@
         </div>
         <nav class="header-menu">
             <div class="dropdown">
-                <a ti="1" id="about" href="#" en="About" he="אודות">About</a>
+                <a id="about" href="#" en="About" he="אודות">About</a>
                 <div class="dropdown-content">
-                    <a ti="145" target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md" en="Website" he="אתר">Website<span>&UpperRightArrow;</span></a>
+                    <a target="_blank" href="https://github.com/ShaharMS/APBD-FoodList/blob/main/README.md" en="Website" he="אתר">Website<span>&UpperRightArrow;</span></a>
                     <a target="_blank" href="https://rarediseases.org/rare-diseases/adult-polyglucosan-body-disease/">APBD <span>&UpperRightArrow;</span></a>
-                    <a ti="146" 
+                    <a 
                         onclick="window.location.href = window.location.origin + `/about/database${'_' + (new URLSearchParams(window.location.search).get('lang') || 'en')}.html` + window.location.search"
                         href="#" en="Food Database" he="מסד הנתונים">Food Database</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a ti="2" id="contribute" href="#" en="Contribute" he="תרום תוכן">Contribute</a>
+                <a id="contribute" href="#" en="Contribute" he="תרום תוכן">Contribute</a>
                 <div class="dropdown-content">
-                    <a ti="32"
-                        onclick="window.location.href = window.location.origin + '/contribute/request.html' + window.location.search"
-                        href="#" en="Request data" he="בקשת נתונים">Request data</a>
-                    <a ti="33"
-                        onclick="window.location.href = window.location.origin + '/contribute/provide.html' + window.location.search"
-                        href="#" en="Provide data" he="סיפוק נתונים">Provide data</a>
-                    <a ti="66"
-                        onclick="window.location.href = window.location.origin + '/contribute/leaderboards.html' + window.location.search"
-                        href="#" en="Leaderboards" he="תורמים מובילים">Leaderboards</a>
+                    <a
+                        href="./contribute/request.html" en="Request data" he="בקשת נתונים">Request data</a>
+                    <a
+                        href="./contribute/provide.html" en="Provide data" he="סיפוק נתונים">Provide data</a>
+                    <a
+                        href="./contribute/leaderboards.html" en="Leaderboards" he="תורמים מובילים">Leaderboards</a>
                 </div>
             </div>
 
             <div class="dropdown">
-                <a ti="3" id="contact" href="#" en="Language" he="שפה">Language</a>
+                <a id="contact" href="#" en="Language" he="שפה">Language</a>
                 <div class="dropdown-content">
-                    <a href="?lang=en" ti="10" en="English" he="אנגלית">English</a>
-                    <a href="?lang=he" ti="11" en="Hebrew" he="עברית">Hebrew</a>
+                    <a onclick="window.location.href = window.location.href.replace(new RegExp('he|en'), 'en')" href="#" en="English" he="אנגלית">English</a>
+                    <a onclick="window.location.href = window.location.href.replace(new RegExp('he|en'), 'he')" href="#" en="Hebrew" he="עברית">Hebrew</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <blockquote ti="4"
+        <blockquote
             en='A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugars & carbs. Low glycemic loads & indices should be better for people with APBD. Some foods are missing? click the "contribute" option to request/provide data.'
             he='רשימת מאכלים ממויינת לקטגוריות, כגון ערך גליקמי, עומס גליקמי, פחמימות וסוכרים. עומסים גליקמיים נמוכים אמורים להיות טובים יותר לאכילה לאנשים עם APBD. חסר מאכלים? לחצו על אפשרות "הוספה לאתר" כדי לבקש/לספק נתונים.'>
             A list of foods sorted by multiple catorgories, such as glycemic indices, glycemic loads, sugars & carbs. Low glycemic loads & indices should be better for people with APBD. Some foods are missing? click the "contribute" option to request/provide data.
         </blockquote>
 
         <div class="color-range-display">
-            <p style="--color: #00ff00" ti="235" en=" - Great" he=" - מצויין"> - Great</p>
-            <p style="--color: #9fe2bf" ti="236" en=" - Okay" he=" - סביר"> - Okay</p>
-            <p style="--color: #ffff00" ti="237" en=" - Not Good" he=" - לא טוב"> - Not Good</p>
-            <p style="--color: #ff0000" ti="238" en=" - Very Bad" he=" - רע מאוד"> - Very Bad</p>
+            <p style="--color: #00ff00" en=" - Great" he=" - מצויין"> - Great</p>
+            <p style="--color: #9fe2bf" en=" - Okay" he=" - סביר"> - Okay</p>
+            <p style="--color: #ffff00" en=" - Not Good" he=" - לא טוב"> - Not Good</p>
+            <p style="--color: #ff0000" en=" - Very Bad" he=" - רע מאוד"> - Very Bad</p>
         </div>
 
         <h3 id="change-count-text" style="display: none;">
@@ -89,19 +101,19 @@
         <div id="search-form">
             <button type="button" class="search">⌕</button>
             <input id="food-search" placeholder="Search..." autocomplete="on">
-            <select class="sort-switch" id="sort-switch">
-                <option ti="56 5" value="name-d" en="Sort By: Name &darr;" he="מיין לפי: שם &darr;">Sort By: Name &darr;</option>
-                <option ti="56 5" value="name-u" en="Sort By: Name &uarr;" he="מיין לפי: שם &uarr;">Sort By: Name &uarr;</option>
-                <option ti="56 201" value="company-d" en="Sort By: Company &darr;" he="מיין לפי: חברה &darr;">Sort By: Food Company &darr;</option>
-                <option ti="56 201" value="company-u" en="Sort By: Company &uarr;" he="מיין לפי: חברה &uarr;">Sort By: Food Company &uarr;</option>
-                <option ti="56 6" value="glycemic-index-d" en="Sort By: Glycemic Index &darr;" he="מיין לפי: ערך גליקמי &darr;">Sort By: Glycemic Index &darr;</option>
-                <option ti="56 6" value="glycemic-index-u" en="Sort By: Glycemic Index &uarr;" he="מיין לפי: ערך גליקמי &uarr;">Sort By: Glycemic Index &uarr;</option>
-                <option ti="56 7" value="glycemic-load-d" en="Sort By: Glycemic Load &darr;" he="מיין לפי: ערך גליקמי &darr;">Sort By: Glycemic Load &darr;</option>
-                <option ti="56 7" value="glycemic-load-u" en="Sort By: Glycemic Load &uarr;" he="מיין לפי: ערך גליקמי &uarr;">Sort By: Glycemic Load &uarr;</option>
-                <option ti="56 8 50" value="sugars-d" en="Sort By: Sugars (Grams) &darr;" he="מיין לפי: סוגרים (גרם) &darr;">Sort By: Sugars (In Grams)&darr;</option>
-                <option ti="56 8 50" value="sugars-u" en="Sort By: Sugars (Grams) &uarr;" he="מיין לפי: סוגרים (גרם) &uarr;">Sort By: Sugars (In Grams)&uarr;</option>
-                <option ti="56 9 50" value="carbs-d" en="Sort By: Carbs (Grams) &darr;" he="מיין לפי: קרבים (גרם) &darr;">Sort By: Carbs (In Grams)&darr;</option>
-                <option ti="56 9 50" value="carbs-u" en="Sort By: Carbs (Grams) &uarr;" he="מיין לפי: קרבים (גרם) &uarr;">Sort By: Carbs (In Grams)&uarr;</option>
+            <select class="sort-switch" id="sort-switch" onchange="window.location.href = window.location.origin + window.location.pathname + '?sort=' + this.value">
+                <option value="name-d" en="Sort By: Food Name &darr;" he="מיין לפי: שם מאכל &darr;">Sort By: Name &darr;</option>
+                <option value="name-u" en="Sort By: Food Name &uarr;" he="מיין לפי: שם מאכל &uarr;">Sort By: Name &uarr;</option>
+                <option value="company-d" en="Sort By: Company Name &darr;" he="מיין לפי: שם חברה &darr;">Sort By: Food Company &darr;</option>
+                <option value="company-u" en="Sort By: Company Name &uarr;" he="מיין לפי: שם חברה &uarr;">Sort By: Food Company &uarr;</option>
+                <option value="glycemic-index-d" en="Sort By: Glycemic Index &darr;" he="מיין לפי: ערך גליקמי &darr;">Sort By: Glycemic Index &darr;</option>
+                <option value="glycemic-index-u" en="Sort By: Glycemic Index &uarr;" he="מיין לפי: ערך גליקמי &uarr;">Sort By: Glycemic Index &uarr;</option>
+                <option value="glycemic-load-d" en="Sort By: Glycemic Load &darr;" he="מיין לפי: עומס גליקמי &darr;">Sort By: Glycemic Load &darr;</option>
+                <option value="glycemic-load-u" en="Sort By: Glycemic Load &uarr;" he="מיין לפי: עומס גליקמי &uarr;">Sort By: Glycemic Load &uarr;</option>
+                <option value="sugars-d" en="Sort By: Sugars (Grams) &darr;" he="מיין לפי: סוכר (גרם) &darr;">Sort By: Sugars (In Grams)&darr;</option>
+                <option value="sugars-u" en="Sort By: Sugars (Grams) &uarr;" he="מיין לפי: סוכר (גרם) &uarr;">Sort By: Sugars (In Grams)&uarr;</option>
+                <option value="carbs-d" en="Sort By: Carbs (Grams) &darr;" he="מיין לפי: פחמימות (גרם) &darr;">Sort By: Carbs (In Grams)&darr;</option>
+                <option value="carbs-u" en="Sort By: Carbs (Grams) &uarr;" he="מיין לפי: פחמימות (גרם) &uarr;">Sort By: Carbs (In Grams)&uarr;</option>
             </select>
         </div>
 
@@ -253,7 +265,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="220"></td>
-                        <td company="mcdonalds" en="Big Mac" he="ביג מק">Big Mac</td>
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Big Mac" he="ביג מק">Big Mac</td>
                         <td><span style="color: #ffff00">66</span></td>
                         <td><span class="GLFIELD" value="28.38">28.38</span></td>
                         <td><span class="SUGARFIELD" value="9">9</span></td>
@@ -453,7 +465,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="mcdonalds" en="Chicken McNuggets" he="מק נאגטס">
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Chicken McNuggets" he="מק נאגטס">
                             Chicken McNuggets</td>
                         <td><span style="color: #9fe2bf">46</span></td>
                         <td><span class="GLFIELD" value="6.9">6.9</span></td>
@@ -462,7 +474,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="175"></td>
-                        <td company="mcdonalds" en="Chicken McNuggets, 10-Piece" he="מק נאגטס,  10 נאגטס"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Chicken McNuggets, 10-Piece" he="מק נאגטס,  10 נאגטס"
                            >Chicken McNuggets, 10-Piece</td>
                         <td><span style="color: #9fe2bf">46</span></td>
                         <td><span class="GLFIELD" value="12.075">12.075</span></td>
@@ -471,7 +483,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="210"></td>
-                        <td company="mcdonalds" en="Chicken McNuggets, 12-Piece" he="מק נאגטס,  12 נאגטס"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Chicken McNuggets, 12-Piece" he="מק נאגטס,  12 נאגטס"
                            >Chicken McNuggets, 12-Piece</td>
                         <td><span style="color: #9fe2bf">46</span></td>
                         <td><span class="GLFIELD" value="14.49">14.49</span></td>
@@ -480,7 +492,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="70"></td>
-                        <td company="mcdonalds" en="Chicken McNuggets, 4-Piece" he="מק נאגטס,  4 נאגטס"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Chicken McNuggets, 4-Piece" he="מק נאגטס,  4 נאגטס"
                            >Chicken McNuggets, 4-Piece</td>
                         <td><span style="color: #9fe2bf">46</span></td>
                         <td><span class="GLFIELD" value="4.83">4.83</span></td>
@@ -489,7 +501,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="87.5"></td>
-                        <td company="mcdonalds" en="Chicken McNuggets, 5-Piece" he="מק נאגטס,  5 נאגטס"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Chicken McNuggets, 5-Piece" he="מק נאגטס,  5 נאגטס"
                            >Chicken McNuggets, 5-Piece</td>
                         <td><span style="color: #9fe2bf">46</span></td>
                         <td><span class="GLFIELD" value="6.037">6.037</span></td>
@@ -498,7 +510,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="157.5"></td>
-                        <td company="mcdonalds" en="Chicken McNuggets, 9-Piece" he="מק נאגטס,  9 נאגטס"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="Chicken McNuggets, 9-Piece" he="מק נאגטס,  9 נאגטס"
                            >Chicken McNuggets, 9-Piece</td>
                         <td><span style="color: #9fe2bf">46</span></td>
                         <td><span class="GLFIELD" value="10.867">10.867</span></td>
@@ -547,7 +559,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="coca-cola" en="Coke" he="קולה">Coke</td>
+                        <td company-id="coca-cola" company-en="Coca Cola" company-he="קוקה קולה" en="Coke" he="קולה">Coke</td>
                         <td><span style="color: #ffff00">63</span></td>
                         <td><span class="GLFIELD" value="6.3">6.3</span></td>
                         <td><span class="SUGARFIELD" value="10">10</span></td>
@@ -555,7 +567,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="coca-cola" en="Coke Zero" he="קולה זירו">Coke Zero</td>
+                        <td company-id="coca-cola" company-en="Coca Cola" company-he="קוקה קולה" en="Coke Zero" he="קולה זירו">Coke Zero</td>
                         <td><span danger="219" style="color: red;">0</span></td>
                         <td><span danger="219" class="GLFIELD" value="0">0</span></td>
                         <td><span class="SUGARFIELD" value="0">0</span></td>
@@ -683,7 +695,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="coca-cola" en="Fanta" he="פאנטה">Fanta</td>
+                        <td company-id="coca-cola" company-en="Coca Cola" company-he="קוקה קולה" en="Fanta" he="פאנטה">Fanta</td>
                         <td><span style="color: #ffff00">68</span></td>
                         <td><span class="GLFIELD" value="23.1">23.1</span></td>
                         <td><span class="SUGARFIELD" value="7.2">7.2</span></td>
@@ -691,7 +703,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="coca-cola" en="Fanta Zero" he="פאנטה זירו">Fanta
+                        <td company-id="coca-cola" company-en="Coca Cola" company-he="קוקה קולה" en="Fanta Zero" he="פאנטה זירו">Fanta
                             Zero</td>
                         <td><span danger="225" style="color: red;">0</span></td>
                         <td><span danger="225" class="GLFIELD" value="0">0</span></td>
@@ -732,7 +744,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="mcdonalds" en="French Fries" he="צ'יפס">French
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="French Fries" he="צ'יפס">French
                             Fries</td>
                         <td><span style="color: #ff0000">70</span></td>
                         <td><span class="GLFIELD" value="32">32</span></td>
@@ -741,7 +753,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="154"></td>
-                        <td company="mcdonalds" en="French Fries, Large" he="צ'יפס, ענק"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="French Fries, Large" he="צ'יפס, ענק"
                            >French Fries, Large</td>
                         <td><span style="color: #ff0000">70</span></td>
                         <td><span class="GLFIELD" value="49.92">49.92</span></td>
@@ -750,7 +762,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="117"></td>
-                        <td company="mcdonalds" en="French Fries, Medium" he="צ'יפס, גדול"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="French Fries, Medium" he="צ'יפס, גדול"
                            >French Fries, Medium</td>
                         <td><span style="color: #ff0000">70</span></td>
                         <td><span class="GLFIELD" value="37.44">37.44</span></td>
@@ -759,7 +771,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="71"></td>
-                        <td company="mcdonalds" en="French Fries, Regular" he="צ'יפס, רגיל"
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="French Fries, Regular" he="צ'יפס, רגיל"
                            >French Fries, Regular</td>
                         <td><span style="color: #ff0000">70</span></td>
                         <td><span class="GLFIELD" value="22.72">22.72</span></td>
@@ -784,7 +796,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="meshek-tsuriel" en="Goat Milk 3.7%" he="חלב עזים 3.7%"
+                        <td company-id="meshek-tsuriel" company-en="Meshek Tsuriel" company-he="משק צוריאל" en="Goat Milk 3.7%" he="חלב עזים 3.7%"
                            >Goat Milk 3.7%</td>
                         <td><span style="color: #00ff00">25.63</span></td>
                         <td><span class="GLFIELD" value="1.174">1.174</span></td>
@@ -945,7 +957,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="131"></td>
-                        <td company="mcdonalds" en="McChicken" he="מק צ'יקן">McChicken</td>
+                        <td company-id="mcdonalds" company-en="McDonald's" company-he="מקדונלדס" en="McChicken" he="מק צ'יקן">McChicken</td>
                         <td><span style="color: #ffff00">66</span></td>
                         <td><span class="GLFIELD" value="23.3">23.3</span></td>
                         <td><span class="SUGARFIELD" value="4.7">4.7</span></td>
@@ -969,7 +981,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="tnuva" en="Milk 1%" he="חלב 1%">Milk 1%</td>
+                        <td company-id="tnuva" company-en="Tnuva" company-he="תנובה" en="Milk 1%" he="חלב 1%">Milk 1%</td>
                         <td><span style="color: #9fe2bf">31</span></td>
                         <td><span class="GLFIELD" value="1.515">1.515</span></td>
                         <td><span class="SUGARFIELD" value="5.1">5.1</span></td>
@@ -977,7 +989,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="tara" en="Milk 1%" he="חלב 1%">Milk 1%</td>
+                        <td company-id="tara" company-en="Tara" company-he="טארה" en="Milk 1%" he="חלב 1%">Milk 1%</td>
                         <td><span style="color: #9fe2bf">30</span></td>
                         <td><span class="GLFIELD" value="1.5">1.5</span></td>
                         <td><span class="SUGARFIELD" value="5">5</span></td>
@@ -985,7 +997,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="tnuva" en="Milk 3%" he="חלב 3%">Milk 3%</td>
+                        <td company-id="tnuva" company-en="Tnuva" company-he="תנובה" en="Milk 3%" he="חלב 3%">Milk 3%</td>
                         <td><span style="color: #00ff00">29.85</span></td>
                         <td><span class="GLFIELD" value="1.492">1.492</span></td>
                         <td><span class="SUGARFIELD" value="4.95">4.95</span></td>
@@ -993,7 +1005,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="tara" en="Milk 3%" he="חלב 3%">Milk 3%</td>
+                        <td company-id="tara" company-en="Tara" company-he="טארה" en="Milk 3%" he="חלב 3%">Milk 3%</td>
                         <td><span style="color: #00ff00">29.7</span></td>
                         <td><span class="GLFIELD" value="1.485">1.485</span></td>
                         <td><span class="SUGARFIELD" value="4.9">4.9</span></td>
@@ -1001,7 +1013,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="yotveta" en="Milk 3.6%" he="חלב 3.6%">Milk 3.6%</td>
+                        <td company-id="yotveta" company-en="Yotveta" company-he="יוטבתה" en="Milk 3.6%" he="חלב 3.6%">Milk 3.6%</td>
                         <td><span style="color: #00ff00">29.4</span></td>
                         <td><span class="GLFIELD" value="1.47">1.47</span></td>
                         <td><span class="SUGARFIELD" value="4.8">4.8</span></td>
@@ -1418,7 +1430,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="coca-cola" en="Sprite" he="ספרייט">Sprite</td>
+                        <td company-id="coca-cola" company-en="Coca Cola" company-he="קוקה קולה" en="Sprite" he="ספרייט">Sprite</td>
                         <td><span style="color: #ffff00">64</span></td>
                         <td><span class="GLFIELD" value="17">17</span></td>
                         <td><span class="SUGARFIELD" value="10">10</span></td>
@@ -1426,7 +1438,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="100"></td>
-                        <td company="coca-cola" en="Sprite Zero" he="ספרייט זירו">Sprite
+                        <td company-id="coca-cola" company-en="Coca Cola" company-he="קוקה קולה" en="Sprite Zero" he="ספרייט זירו">Sprite
                             Zero</td>
                         <td><span danger="222" style="color: red;">0</span></td>
                         <td><span danger="222" class="GLFIELD" value="0">0</span></td>
@@ -1563,7 +1575,7 @@
                     </tr>
                     <tr>
                         <td><input type="number" id="grams" value="291"></td>
-                        <td company="burger-king" en="Whopper" he="וופר">Whopper</td>
+                        <td company-id="burger-king" company-en="Burger King" company-he="בורגר קינג" en="Whopper" he="וופר">Whopper</td>
                         <td><span style="color: #ffff00">61</span></td>
                         <td><span class="GLFIELD" value="29.39">29.39</span></td>
                         <td><span class="SUGARFIELD" value="12">12</span></td>
@@ -1611,7 +1623,6 @@
             </button>
         </div>
     </div>  
-    <script src="code/translator.js"></script>
     <script src="code/searchbar.js"></script>
     <script src="code/table-sorter.js"></script>
     <script src="code/table-data.js"></script>

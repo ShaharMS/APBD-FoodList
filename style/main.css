@@ -2,6 +2,7 @@
 
 html {
     color-scheme: dark;
+    overflow-x: hidden;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     color: white;
     font-family: 'Open Sans', sans-serif;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
@@ -71,18 +73,6 @@ blockquote {
 
 blockquote:hover {
     opacity: 1;
-}
-
-.button-row button {
-    background-color: #333333;
-    border: 1px solid #8f8f9d;
-    color: white;
-    border-radius: 4px;
-    width: calc(max(100px, 100%));
-}
-
-.button-row .selected {
-    background-color: #555555;
 }
 
 .header-menu {
@@ -383,6 +373,14 @@ blockquote:hover {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
+    }
+
+    html:dir(ltr) #food-list tr:first-child {
+        font-size: 0.8em;
+    }
+    
+    html:dir(ltr) header .logo {
+        font-size: 0.9em;
     }
 }
 

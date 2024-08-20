@@ -2,7 +2,7 @@
 
 import { JSDOM } from "jsdom";
 import { homedir, constants } from "os";
-import { readdirSync, Stats, copyFileSync, mkdirSync, readFileSync, writeFileSync } from "fs";
+import { readdirSync, Stats, copyFileSync, mkdirSync, readFileSync, writeFileSync, existsSync, unlinkSync } from "fs";
 import { log } from "console";
 import { watch } from "chokidar";
 
@@ -11,7 +11,7 @@ const EXCLUDED_ROOT_PATHS = ["scrapes", "compiler", "robots.txt", "LICENSE.md", 
 const SUPPORTED_LANGUAGES = ["en", "he"];
 const RESULT_PATH = homedir() + "\\Documents\\GitHub\\apbd.net";
 const TOOL_ID = "foods";
-
+const MIGRATE_TRANSLATION_SYSTEM = process.argv.includes("--migrate-translation-system");
 
 /**
  * Returns the directory path for a given language.
@@ -31,8 +31,6 @@ let rootFiles = readdirSync(".");
 rootFiles = rootFiles
     .filter(file => !EXCLUDED_ROOT_PATHS.includes(file))
 
-log(rootFiles);
-
 const watcher = watch(rootFiles, { persistent: true });
 
 watcher
@@ -49,7 +47,8 @@ watcher
  * @return {void}
  */
 function manipulateFile(path) {
-    log("Going over:", getLangDir("*") + path.split("\\").slice(0, -1).join("\\").concat(path));
+    if (existsSync(path)) log("Editing: .\\" + path);
+    else log("Creating: .\\" + path);
     SUPPORTED_LANGUAGES.forEach(lang => {
         if (path.endsWith(".html")) {
             let content = readFileSync(path, "utf-8");
@@ -93,7 +92,6 @@ function onFilesReady() {
         });
     }
 
-    log(files);
     files.forEach(file => {
         manipulateFile(file);
     })
@@ -108,7 +106,13 @@ function onFilesReady() {
  * @return {void}
  */
 function onFileRemoved(path) {
-
+    log("Removing: .\\" + path);
+    for (let lang of SUPPORTED_LANGUAGES) {
+        let filePath = getLangDir(lang) + path;
+        if (existsSync(filePath)) {
+            unlinkSync(filePath);
+        }
+    }
 }
 
 function generateTranslation(content, lang) {
@@ -118,10 +122,23 @@ function generateTranslation(content, lang) {
     let list = doc.getElementsByTagName("*");
 
     for (let element of list) {
-        if (element.hasAttribute(lang)) {
-            element.innerHTML = element.getAttribute(lang);
+        if (element.hasAttribute(lang)) element.innerHTML = element.getAttribute(lang);
+        for (let l of SUPPORTED_LANGUAGES) if (element.hasAttribute(l)) element.removeAttribute(l);
+        for (let attribute of element.getAttributeNames()) {
+            if (attribute.endsWith("-" + lang)) {
+                if (element.hasAttribute(attribute.replace("-" + lang, ""))) {
+                    element.setAttribute(attribute, element.getAttribute(attribute.replace("-" + lang, "")) + element.getAttribute(attribute));
+                }
+                element.setAttribute(attribute.replace("-" + lang, ""), element.getAttribute(attribute));
+                element.removeAttribute(attribute);
+            } 
+            for (let l of SUPPORTED_LANGUAGES) if (attribute.endsWith("-" + l)) element.removeAttribute(attribute);
+        }
+        if (MIGRATE_TRANSLATION_SYSTEM) {
+            if (element.hasAttribute("ti")) element.removeAttribute("ti");
+            if (element.hasAttribute("pre-ti")) element.removeAttribute("pre-ti");
         }
     }
 
-    return doc.documentElement.outerHTML;
+    return "<!DOCTYPE html>\n" + doc.documentElement.outerHTML;
 }

@@ -1,36 +1,53 @@
-#request-table, #provide-table {
+#request-table, #provide-table, #image-request-table {
     width: 100%;
     border: none;
     border-collapse: collapse;
 }
 
-#request-table th, #provide-table th {
+#request-table tr, #image-request-table tr, #provide-table tr {
+    display: table-row;
+}
+
+#request-table th, #image-request-table th, #provide-table th {
+    display: table-cell;
     padding-block: 20px;
     padding-inline: 5px;
     border: 2px solid #333333;
 }
 
-#request-table input, #provide-table input {
+#request-table input, #image-request-table input, #provide-table input {
     background-color: #2b2a33;
     border: 1px solid #8f8f9d;
     border-radius: 4px;
     width: 180px;
 }
 
-#request-table td, #provide-table td {
-    display: flex;
-    flex-direction: column;
-    padding-block: 20px;
+#request-table td, #image-request-table td, #provide-table td {
+    display: table-cell;
     padding-inline: 5px;
     border: 2px solid #333333;
     border-inline-start: none;
-    margin: -1px;
 }
 
-#request-table td div, #provide-table td div {
+#request-table td div, #image-request-table td div, #provide-table td div {
     display: flex;
     flex-direction: row;
 }
+
+.button-row>* {
+    background-color: #333333;
+    border: 1px solid #8f8f9d;
+    color: white;
+    border-radius: 4px;
+    width: calc(max(100px, 100%));
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.button-row .selected {
+    background-color: #555555;
+}
+
 
 #provide-table {
     margin-top: -50px;
@@ -47,19 +64,6 @@
     background-color: #2b2a33;
     border: 1px solid #8f8f9d;
     border-radius: 4px;
-}
-
-#language-switch {
-    background-color: #2b2a33;
-    border: 1px solid #8f8f9d;
-    border-radius: 4px;
-    width: 110px;
-    height: 46px;
-    margin-top: 20px;
-    font-size: 1.2em;
-    padding: 5px;
-    cursor: pointer;
-    font-weight: 400;
 }
 
 .row {
@@ -85,4 +89,31 @@ span.already-exists {
     font-size: 0.8rem;
     margin-top: -15px;
     margin-bottom: 4px;
+}
+
+.request-options {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.request-options h3 {
+    font-size: 2em;
+}
+
+#image-picker {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+@media screen and (max-width: 700px) {
+    .request-options {
+        flex-direction: column;
+    }
+    
 }
