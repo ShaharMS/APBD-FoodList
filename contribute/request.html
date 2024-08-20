@@ -93,108 +93,168 @@
         </blockquote>
 
         <div class="request-options">
-            <form id="request-form">
-                <table id="request-table">
-                    <tr>
-                        <th>
-                            <help
-                                en="Your first and last name. Used to add this contribution to the leaderboards, under your name. Contribute enough, and maybe one day you'll get to 1st place 😁"
-                                he="השם הפרטי + משפחה שלך. אם ניתן, ישמש בתור מזהה בלוח ההישגים, שתחתיו תווסף תרומת התוכן. תרום מספיק תוכן, ואולי תגיע למקום הראשון 😁&rlm;">
-                            </help>
-                            <span en="Name" he="שם">Name</span>
-                        </th>
-                        <td>
-                            <input id="name" placeholder-en="First and last name..."
-                                placeholder-he="שם פרטי ושם משפחה...">
-                            <div class="button-row">
-                                <button id="n-np" type="button" en="I'd rather not provide" he="מעדיף שלא למסור">I'd
-                                    rather not provide</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
+            <div class="column">
+                <h2 en="Request Using: Details" he="בקשה באמצעות: פרטים"></h2>
+                <form id="request-form">
+                    <table id="request-table">
+                        <tr>
+                            <th>
+                                <help
+                                    en="Your first and last name. Used to add this contribution to the leaderboards, under your name. Contribute enough, and maybe one day you'll get to 1st place 😁"
+                                    he="השם הפרטי + משפחה שלך. אם ניתן, ישמש בתור מזהה בלוח ההישגים, שתחתיו תווסף תרומת התוכן. תרום מספיק תוכן, ואולי תגיע למקום הראשון 😁&rlm;">
+                                </help>
+                                <span en="Name" he="שם">Name</span>
+                            </th>
+                            <td>
+                                <input id="name" placeholder-en="First and last name..."
+                                    placeholder-he="שם פרטי ושם משפחה...">
+                                <div class="button-row">
+                                    <button id="n-np" type="button" en="I'd rather not provide" he="מעדיף שלא למסור">I'd
+                                        rather not provide</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
 
-                        <th>
-                            <help
-                                en="The Food's name. More useful to leave a concise name here, and if a company is involved, mention it after the fact."
-                                he="שם המאכל אותו אתה רוצה להוסיף. עדיף להביא שם ממוקד יותר אם אפשר (כמובן מבלי להשמיט מידע). אם מעורבת חברה מסוימת ביצור האוכל, ניתן להזכיר זאת בשדה נפרד.&rlm;">
-                            </help>
-                            <span en="Food name (english)" he="שם המאכל (אנגלית)">">Food name (english)</span>
-                        </th>
-                        <td>
-                            <input id="food-name-english" placeholder="Food name...">
-                            <div class="button-row">
-                                <button id="fn-ns" type="button" en="I'm not sure" he="אני לא בטוח">I'm not
-                                    sure</button>
-                                <button id="fn-dk" type="button" en="I don't know" he="אני לא יודע">I don't
-                                    know</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <help
-                                en="For Translation purposes, It is a good idea to add the name in Hebrew. (makes my job a little easier 🙃)"
-                                he="למטרות תרגום, מומלץ לתת גם את שם המאכל בעברית (הופך לי את העבודה לקלה יותר 🙃)&rlm;">
-                            </help>
-                            <span en="Food name (hebrew)" he="שם המאכל (עברית)">">Food name (hebrew)</span>
-                        </th>
-                        <td>
-                            <input id="food-name-hebrew" placeholder="שם המאכל...">
-                            <div class="button-row">
-                                <button id="t-ns" type="button" en="I'm not sure" he="אני לא בטוח">I'm not sure</button>
-                                <button id="t-dk" type="button" en="I don't know" he="אני לא יודע">>I don't
-                                    know</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <help
-                                en="If the specific food you're requesting is produced by a specific company, mention it here, This allows me to tag the item with the company and it's logo."
-                                he="אם המוצר הספציפי אותו אתה מבקש מיוצר ע&quot;י חברה מסוימת, תזכיר את שמה כאן. זה נותן לי להצמיד את שם ולוגו החברה למוצר באתר עצמו.&rlm;">
-                            </help>
-                            <span en="Optional: Food's Company" he="אופציונאלי: שם החברה">Optional: Food's
-                                Company</span>
-                        </th>
-                        <td>
-                            <input id="company" placeholder-en="Company Name..." placeholder-he="שם החברה..."
-                                list="companies">
-                            <div class="button-row">
-                                <button id="co-ns" type="button" en="I'm not sure" he="אני לא בטוח">I'm not
-                                    sure</button>
-                                <button id="co-dk" type="button" en="I don't know" he="אני לא יודע">I don't
-                                    know</button>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                            <th>
+                                <help
+                                    en="The Food's name. More useful to leave a concise name here, and if a company is involved, mention it after the fact."
+                                    he="שם המאכל אותו אתה רוצה להוסיף. עדיף להביא שם ממוקד יותר אם אפשר (כמובן מבלי להשמיט מידע). אם מעורבת חברה מסוימת ביצור האוכל, ניתן להזכיר זאת בשדה נפרד.&rlm;">
+                                </help>
+                                <span en="Food name (english)" he="שם המאכל (אנגלית)">">Food name (english)</span>
+                            </th>
+                            <td>
+                                <input id="food-name-english" placeholder="Food name...">
+                                <div class="button-row">
+                                    <button id="fn-ns" type="button" en="I'm not sure" he="אני לא בטוח">I'm not
+                                        sure</button>
+                                    <button id="fn-dk" type="button" en="I don't know" he="אני לא יודע">I don't
+                                        know</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <help
+                                    en="For Translation purposes, It is a good idea to add the name in Hebrew. (makes my job a little easier 🙃)"
+                                    he="למטרות תרגום, מומלץ לתת גם את שם המאכל בעברית (הופך לי את העבודה לקלה יותר 🙃)&rlm;">
+                                </help>
+                                <span en="Food name (hebrew)" he="שם המאכל (עברית)">">Food name (hebrew)</span>
+                            </th>
+                            <td>
+                                <input id="food-name-hebrew" placeholder="שם המאכל...">
+                                <div class="button-row">
+                                    <button id="t-ns" type="button" en="I'm not sure" he="אני לא בטוח">I'm not
+                                        sure</button>
+                                    <button id="t-dk" type="button" en="I don't know" he="אני לא יודע">>I don't
+                                        know</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <help
+                                    en="If the specific food you're requesting is produced by a specific company, mention it here, This allows me to tag the item with the company and it's logo."
+                                    he="אם המוצר הספציפי אותו אתה מבקש מיוצר ע&quot;י חברה מסוימת, תזכיר את שמה כאן. זה נותן לי להצמיד את שם ולוגו החברה למוצר באתר עצמו.&rlm;">
+                                </help>
+                                <span en="Optional: Food's Company" he="אופציונאלי: שם החברה">Optional: Food's
+                                    Company</span>
+                            </th>
+                            <td>
+                                <input id="company" placeholder-en="Company Name..." placeholder-he="שם החברה..."
+                                    list="companies">
+                                <div class="button-row">
+                                    <button id="co-ns" type="button" en="I'm not sure" he="אני לא בטוח">I'm not
+                                        sure</button>
+                                    <button id="co-dk" type="button" en="I don't know" he="אני לא יודע">I don't
+                                        know</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
 
             <h3 en="Or" he="או"></h3>
 
-            <form id="image-request-form">
-                <table id="image-request-table">
-                    <tr>
-                        <th>
-                            <help
-                                en="The way the food looks from the front. On packaged food, usually contains the name of the food, it's company and what it actually is."
-                                he="איך האוכל נראה כאשר הקדימה שלו מצולם. במאכלים ארוזים, החלק הקדמי של החבילה בד&quot;כ מכיל את שם האוכל, החברה שמייצרת אותו, ומה בעצם האוכל.&rlm;">
-                            </help>
-                            <span en="Food/Packaging Front" he="אוכל/מארז - מקדימה">Food/Packaging Front</span>
-                        </th>
-                        <td>
-                            <img width="0" height="0">
-                            <div class="button-row">
-                                <button type="button" onclick="takeAndDisplay(this.parentElement)">Take Image</button>
-                                <label for="image-picker" en="Choose from the Gallery..." he="בחר תמונה מהגלריה..."></label>
-                                <input id="image-picker" type="file" accept="image/*" placeholder-en="Choose from the Gallery..." placeholder-he="בחר תמונה מהגלריה..."/>
-                            </div>
+            <div class="column">
+                <h2 en="Request Using: Images" he="בקשה באמצעות: תמונות"></h2>
+                <form id="image-request-form">
+                    <table id="image-request-table">
+                        <tr>
+                            <th>
+                                <help
+                                    en="The way the food looks from the front. On packaged food, usually contains the name of the food, it's company and what it actually is."
+                                    he="איך האוכל נראה כאשר הקדימה שלו מצולם. במאכלים ארוזים, החלק הקדמי של החבילה בד&quot;כ מכיל את שם האוכל, החברה שמייצרת אותו, ומה בעצם האוכל.&rlm;">
+                                </help>
+                                <span en="Food/Packaging's Front" he="אוכל/מארז - מקדימה"></span>
+                            </th>
+                            <td>
+                                <div style="display: flex; width: 100%; flex-direction: row; justify-content: center;">
+                                    <img width="0" height="0" style="display: none;" />
+                                </div>
+                                <div class="button-row">
+                                    <button type="button"
+                                        onclick="takeAndDisplay(this.parentElement.parentElement)">Take Image</button>
+                                    <label for="image-picker" en="Pick from the Gallery..."
+                                        he="בחר תמונה מהגלריה..."></label>
+                                    <input id="image-picker" type="file" accept="image/*"
+                                        placeholder-en="Choose from the Gallery..."
+                                        placeholder-he="בחר תמונה מהגלריה..." />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <help
+                                    en="The way the food looks from the back. On packaged food, usually contains the food's nutrition facts, its ingredients, and more details about the food/its comapny."
+                                    he="איך האוכל נראה כאשר חלקו האחורי מצולם. במאכלים ארוזים, החלק האחורי לרוב מכיל את הערכים התזונתיים של המאכל, המרכיבים שלו, ועוד פרטים נוספים על המאכל/החברה.&rlm;">
+                                </help>
+                                <span en="Food/Packaging's Back" he="אוכל/מארז - מאחורה"></span>
+                            </th>
+                            <td>
+                                <div style="display: flex; width: 100%; flex-direction: row; justify-content: center;">
+                                    <img width="0" height="0" style="display: none;" />
+                                </div>
+                                <div class="button-row">
+                                    <button type="button"
+                                        onclick="takeAndDisplay(this.parentElement.parentElement)">Take Image</button>
+                                    <label for="image-picker" en="Pick from the Gallery..."
+                                        he="בחר תמונה מהגלריה..."></label>
+                                    <input id="image-picker" type="file" accept="image/*"
+                                        placeholder-en="Choose from the Gallery..."
+                                        placeholder-he="בחר תמונה מהגלריה..." />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <help
+                                    en="Some food packages are thick, and contain extra info on one of their sides (for example, a cereal box). Use this field to provide an image, if necessary."
+                                    he="חלק מאריזות המאכלים עבות, ויש להן מידע נוסף על אחד הצדדים שלהם (לדוגמה - אריזות קורנפלקס). אפשר להשתמש בשדה זה אם יש צורך בתמונה נוספת מהצד.&rlm;">
+                                </help>
+                                <span en="Optional: Food/Packaging's Side" he="אופציונאלי: אוכל/מארז - מהצד"></span>
+                            </th>
+                            <td>
+                                <div style="display: flex; width: 100%; flex-direction: row; justify-content: center;">
+                                    <img width="0" height="0" style="display: none;" />
+                                </div>
+                                <div class="button-row">
+                                    <button type="button"
+                                        onclick="takeAndDisplay(this.parentElement.parentElement)">Take Image</button>
+                                    <label for="image-picker" en="Pick from the Gallery..."
+                                        he="בחר תמונה מהגלריה..."></label>
+                                    <input id="image-picker" type="file" accept="image/*"
+                                        placeholder-en="Choose from the Gallery..."
+                                        placeholder-he="בחר תמונה מהגלריה..." />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
 
-                        </td>
-                    </tr>
-                </table>
-            </form>
         </div>
 
 

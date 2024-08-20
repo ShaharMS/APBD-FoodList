@@ -72,6 +72,11 @@
     gap: 20px;
 }
 
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
 #submition-output {
     margin-top: 20px;
     text-align: center;

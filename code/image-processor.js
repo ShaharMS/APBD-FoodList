@@ -50,7 +50,7 @@ function pickImage(video, tdCell) {
         img.src = data;
         img.style.width = video.videoWidth / 4 + "px";
         img.style.height = video.videoHeight / 4 + "px";
-        tdCell.prepend(img);
+        img.style.display = "block";
         video.remove();
         button.remove();
         dropshadow.remove();
