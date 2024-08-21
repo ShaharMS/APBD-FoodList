@@ -47,7 +47,8 @@ watcher
  * @return {void}
  */
 function manipulateFile(path) {
-    if (existsSync(path)) log("Editing: .\\" + path);
+    if (existsSync(path) && path.endsWith(".html")) log("Editing: .\\" + path);
+    else if (existsSync(path)) log("Copying: .\\" + path);
     else log("Creating: .\\" + path);
     SUPPORTED_LANGUAGES.forEach(lang => {
         if (path.endsWith(".html")) {
