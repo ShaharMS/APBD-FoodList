@@ -1,4 +1,6 @@
-> **Important** - I'm not a medical professional, therefore I only have limited knowledge about APBD. I'm just tryna help :)
+> ### Notice - This repository is no longer active. Work was transferred to [@Apbd-net](https://github.com/Apbd-net/apbd.net)
+
+**Important** - I'm not a medical professional, therefore I only have limited knowledge about APBD. I'm just tryna help :)
 
 # APBD Food List
 
