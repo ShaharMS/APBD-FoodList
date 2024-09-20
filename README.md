@@ -36,7 +36,7 @@ Complex carbohydrates are digested slowly, causing a more gradual release of glu
 
 ---
 
-Therefore, I assume that less blood glucose spikes ar good, and we can expect these spikes from foods with a high glycemic load.
+Therefore, I assume that less blood glucose spikes are good, and we can expect these spikes from foods with a high glycemic load.
 
 Glycemic load is calculated by multiplying a foods glycemic index, converted from 0 to 100 percentage to a 0 to 1 range, multiplied by the amount of carbs the food contains if the food weighs `grams`:
 $$Load_{grams} = \frac{index}{100} \cdot FoodCarbs(grams)$$
